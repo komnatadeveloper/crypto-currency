@@ -14,15 +14,7 @@ export const LeftSide = () => {
       }}
     >
       <Prices />
-      <Row
-        className='bg-danger m-0'
-        style={{
-          height: "250px"
-        }}
-      >
-        <h5 className='text-white p-0 m-0'>Left Side2</h5>
-        {/* <button>Click</button> */}
-      </Row>
+
     </Col>
   );
 }

@@ -8,6 +8,21 @@ body {
 
 }
 
+.text-sm-1 {
+  font-size: .9rem;
+}
+.text-sm-2 {
+  font-size: .75rem;
+}
+.text-sm-3 {
+  font-size: .6rem;
+}
+
+.h-0 {
+  height: 0 !important;
+  font-size: 0 !important;
+}
+
 
 /* For Home / Left Side / Prices Tabs */
 nav[role='tablist'] {

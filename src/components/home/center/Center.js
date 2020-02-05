@@ -1,5 +1,8 @@
 import React from 'react'
 import { Row, Col } from "react-bootstrap";
+import { Graph } from './graph/Graph';
+import { Bidding } from './Bidding';
+
 
 export const Center = () => {
   return (
@@ -11,15 +14,11 @@ export const Center = () => {
         borderRadius:'1rem'
       }}
     >
-      <Row
-        className='bg-primary m-0'
-        style={{
-          height: "250px"
-        }}
-      >
-        <h5 className='text-white p-0 m-0'>Center</h5>
-        <button>Click</button>
-      </Row>
+      <div className="d-flex flex-column">
+        <Graph />
+        <Bidding />
+
+      </div>
     </Col>
   );
 }

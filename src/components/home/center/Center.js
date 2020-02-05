@@ -8,7 +8,7 @@ export const Center = () => {
   return (
     <Col
       sm={6}
-      className='bg-success m-0 p-1'
+      className='bg-dark m-0 p-1'
       style={{
         minHeight: "50vh",
         borderRadius:'1rem'

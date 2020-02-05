@@ -21,6 +21,12 @@ export const Markets = () => {
         </thead>
         <tbody>
           <MarketItem />
+          <MarketItem />
+          <MarketItem />
+          <MarketItem />
+          <MarketItem />
+          <MarketItem />
+          <MarketItem />
         </tbody>
       </Table>
       {/* End of Market Table */}

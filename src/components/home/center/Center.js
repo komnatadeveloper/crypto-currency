@@ -1,10 +1,10 @@
 import React from 'react'
 import { Row, Col } from "react-bootstrap";
-import { Graph } from './graph/Graph';
 import { Bidding } from './Bidding';
 import { Funds } from './Funds';
 import { OpenOrders } from './OpenOrders';
 import { TradeHistory } from './TradeHistory';
+import { SizedGraph } from './graph/SizedGraph.';
 
 
 
@@ -19,7 +19,9 @@ export const Center = () => {
       }}
     >
       <div className='d-flex flex-column'>
-        <Graph />
+        <div>
+          <SizedGraph />
+        </div>
         <Bidding />
 
         <Row className='m-0'>

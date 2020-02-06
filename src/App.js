@@ -4,6 +4,7 @@ import { Container } from "react-bootstrap";
 import './App.css';
 import AppNavbar from './components/layout/AppNavbar';
 import Home from './components/home/Home';
+import { AppNavbar2 } from './components/layout/AppNavbar2';
 
 
 const App = () => {

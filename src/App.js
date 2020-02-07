@@ -5,6 +5,7 @@ import './App.css';
 import AppNavbar from './components/layout/AppNavbar';
 import Home from './components/home/Home';
 import { AppNavbar2 } from './components/layout/AppNavbar2';
+import { AppFooter } from './components/layout/AppFooter';
 
 
 const App = () => {
@@ -12,13 +13,20 @@ const App = () => {
     <div className='App'>
       <Router>
         <AppNavbar />
-        {/* <Container className='mx-auto d-block'> */}
+        <div
+          id='app-container'
+          style={{
+
+          }}
+        //  className='mx-auto d-block'
+        >
           <Switch>
             <Route exact path='/' component={Home} />
 
             <p>This is App</p>
           </Switch>
-        {/* </Container> */}
+        </div>
+        <AppFooter />
       </Router>
     </div>
   );

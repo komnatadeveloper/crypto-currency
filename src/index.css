@@ -29,8 +29,19 @@ body {
 }
 /* End of Navbar */
 
+/* App Container */
+#app-container {
+  width: 100vw !important;
+  display:block;
+  width: 100vw;
+  min-height: calc( 100vh - 4rem );  /* Navbar 3.5rem footer: ~1.25rem */
+  margin: 0;
+  padding: 0
+}
+/* End of App Container */
 
-/* For Home / Left Side / Prices Tabs */
+
+/* For Home / Left Side / Prices / Tabs */
 nav[role='tablist'] {
   display: flex;
   justify-content: center;
@@ -43,6 +54,7 @@ a[role='tab'] {
   border-top-right-radius: .7rem !important;
   margin-right: 1rem;
 }
+/* End of For Home / Left Side / Prices / Tabs */
 
 
 

@@ -1,53 +1,25 @@
 import React, {useEffect} from "react";
 import { createChart } from "lightweight-charts";
-import ReactDOM from "react-dom";
-
-class ThisIsId {
-  static id = {
-    containerId: "lightweight_chart_container"
-  };
-}
-//   static defaultProps = {
-//     containerId: "lightweight_chart_container"
-//   };
+import PropTypes from "prop-types";
 
 
-export const Graph = ({width, height, text}) => {
-
-
+export const Graph = ({width, height}) => {
 
   const containerId = "lightweight_chart_container"
-
-  let chart = null;
-  let mounted = false
-  let testArray = []
-
-
-  
-
+  let chart = null; 
   
   useEffect(() => {
-    console.log(width, height);
-    console.log(text);
-
+    // Delete the existing graph if already exists
     let element = document.querySelector('.tv-lightweight-charts')
-    console.log(element)
     if(element) {
-      console.log(element)
       element.parentNode.removeChild(element)
     }
-
-    // if(chart) {
-    //   document.getElementById(containerId).remove()
-    // }
 
     chart = createChart(
       containerId,
       {
         width: width,
         height: height,
-        // width: 500,
-        // height: 300
       },
       [width, height]
     );
@@ -80,27 +52,18 @@ export const Graph = ({width, height, text}) => {
         close: 108.19
       }
     ]);
-
-    // ReactDOM.render(containerId)
-    testArray.push("22", "33");
-    setTimeout(() => {
-      console.log("mounted is true now");
-      mounted = true;
-    }, 1000);
   }, [width, height]);
 
-  useEffect( () => {
-    console.log(width, height, mounted,  testArray);
-    if(mounted){
-      console.log('Chart exists')
-      // chart.resize(width, height);
-      chart.applyOptions({width, height})
-    }
-  }, [width, height, mounted])
-
     return <div id={containerId} className={"LightweightChart"} />;
-
 }
+
+
+Graph.propTypes = {
+  width: PropTypes.number.isRequired,
+  height: PropTypes.number.isRequired,
+};
+
+
 
 
 // import React, {useEffect} from "react";

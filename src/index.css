@@ -23,6 +23,12 @@ body {
   font-size: 0 !important;
 }
 
+/* Navbar */
+.navbar-collapse {
+  justify-content: flex-end !important;
+}
+/* End of Navbar */
+
 
 /* For Home / Left Side / Prices Tabs */
 nav[role='tablist'] {

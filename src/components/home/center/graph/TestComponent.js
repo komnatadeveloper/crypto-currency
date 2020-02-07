@@ -7,3 +7,9 @@ export const TestComponent = ({width, height}) => {
     </div>
   )
 }
+
+
+
+
+export default TestComponent
+

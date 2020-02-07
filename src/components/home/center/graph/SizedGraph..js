@@ -16,15 +16,14 @@ export function SizedGraph  ()  {
         display: "relative",
         margin: "0",
         padding: "0",
-        width: "100%",
+        width: "calc(100%)",
         height: "100%",
         minHeight: "350px"
       }}
     >
-      <AutoSizer>
-        {({ height, width }) => (
-          <Graph width={width} height={height} />
-        )}
+      <AutoSizer id='Auto-Fuck-Sizer' className='m-0 p-0'>
+        {({ height, width }) => <Graph width={width} height={height} />}
+        {/* {({ height, width }) => <div style={{width, height, backgroundColor:'red'}}  />} */}
       </AutoSizer>
     </div>
   );

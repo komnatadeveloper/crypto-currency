@@ -10,16 +10,10 @@ import { AppFooter } from './components/layout/AppFooter';
 
 const App = () => {
   return (
-    <div className='App'>
+    <div className='App bg-dark' >
       <Router>
         <AppNavbar />
-        <div
-          id='app-container'
-          style={{
-
-          }}
-        //  className='mx-auto d-block'
-        >
+        <div  id='app-container'>
           <Switch>
             <Route exact path='/' component={Home} />
 

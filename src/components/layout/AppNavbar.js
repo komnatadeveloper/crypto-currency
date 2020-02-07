@@ -9,7 +9,7 @@ import {
 const AppNavbar = () => {
 
   return (
-    <Navbar bg='dark' variant='dark' expand='lg'>
+    <Navbar style={{backgroundColor:'#222'}} className='mb-2' variant='dark' expand='lg'>
       <Navbar.Brand href='#home'>LoGoHeRe</Navbar.Brand>
 
       <Navbar.Toggle aria-controls='basic-navbar-nav' />

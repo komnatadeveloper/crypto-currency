@@ -19,8 +19,8 @@ export const Center = () => {
       }}
     >
       <div className='d-flex flex-column'>
-        <div>
-          <SizedGraph />
+        <div className='m-0'>
+          <SizedGraph/>
         </div>
         <Bidding />
 

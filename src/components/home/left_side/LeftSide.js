@@ -7,10 +7,11 @@ export const LeftSide = () => {
   return (
     <Col
       sm={3}
-      className='bg-warning m-0 p-1'
+      id='market-left-side'
+      className='m-0 pt-1 px-1 pb-2'
       style={{
-        minHeight: "50vh",
-        borderRadius: "1rem"
+        borderRadius: "1rem",
+        backgroundColor:'#222'
       }}
     >
       <Prices />

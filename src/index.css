@@ -1,8 +1,12 @@
 :root {
 
+  --market-column-height:calc( 100vh - 5rem );  /*Left, Center, Right*/
+
   --table-head-height: 2.20rem;
   --scrollbar-width: .4rem;
   --border-bottom-height: .9rem; /*This is because of  border radiuses which should be taken into consideration*/
+
+
 }
 
 
@@ -64,7 +68,9 @@ body {
 
 /* MARKET / LEFT SIDE */
 #market-left-side {
-  height: calc( 100vh - 5rem );
+  height: var(--market-column-height);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
 }
 
 /* For Home / Left Side / Prices / Tabs */
@@ -160,12 +166,27 @@ body {
 }
 /* End of For Home / Left Side / Prices / Tabs */
 
-
-
 /* End of MARKET / LEFT SIDE */
 
 
+/*-----------------------MARKET CENTER------------------------------------*/
+#market-center {
+  height: var(--market-column-height);
+}
+
+#market-center #sized-graph {
+  /*height: 2rem+*/
+  /* height: calc( + 2rem +  var(--table-head-height) + var(--buy-table-body-height) ) !important; */
+  height: calc(
+
+      2rem +  var(--table-head-height) +
+     (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height) /*Table Body */
+     
+     ) ;
+}
+
+/* Graph Height */
 
 
 
-
+/*-----------------------End of MARKET CENTER------------------------------------*/

@@ -12,6 +12,7 @@ export const Center = () => {
   return (
     <Col
       sm={6}
+      id='market-center'
       className='bg-dark m-0 p-1'
       style={{
         minHeight: "50vh",

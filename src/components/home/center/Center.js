@@ -25,8 +25,15 @@ export const Center = () => {
         </div>
         <Bidding />
 
-        <Row className='m-0'>
-          <Funds />
+        <Row 
+          className='m-0'
+          id='open-ord-trd-hist'          
+          style={{
+            backgroundColor:'#222',
+            borderRadius:'1rem'
+          }}
+        >
+          {/* <Funds /> */}
           <OpenOrders />
           <TradeHistory />
         </Row>

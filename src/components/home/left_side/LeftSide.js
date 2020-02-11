@@ -15,7 +15,8 @@ export const LeftSide = () => {
         className="mx-0 pb-2 px-1"
         style={{
           borderRadius: "1rem",
-          backgroundColor: '#222'
+          backgroundColor: '#222',
+          
         }}
       >
         <Prices />

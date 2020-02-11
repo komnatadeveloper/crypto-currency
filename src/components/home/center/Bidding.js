@@ -38,6 +38,7 @@ export const Bidding = () => {
   return (
     <Row 
       className='mx-0 my-2'
+      id='buy-sell-bidding'
       style={{
         borderRadius: '1rem',
         backgroundColor: '#222'

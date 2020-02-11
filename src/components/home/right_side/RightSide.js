@@ -7,13 +7,23 @@ export const RightSide = () => {
   return (
     <Col
       sm={3}
-      className='bg-primary m-0 p-1'
+      id='market-right-side'
+      className=' m-0 pt-1'
       style={{
         minHeight: "50vh",
         borderRadius: "1rem"
       }}
     >
-      <Markets/>
+      <div
+        className="mx-0 pb-2 px-1"
+        style={{
+          borderRadius: "1rem",
+          backgroundColor: '#222',
+          height:'calc( 100% )'
+        }}
+      >
+        <Markets/>
+      </div>
       {/* <Row
         className='bg-danger m-0'
         style={{

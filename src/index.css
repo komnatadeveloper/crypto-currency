@@ -1,10 +1,12 @@
 :root {
 
   --market-column-height:calc( 100vh - 5rem );  /*Left, Center, Right*/
+  --tab-height: 2rem;
 
   --table-head-height: 2.20rem;
   --scrollbar-width: .4rem;
   --border-bottom-height: .9rem; /*This is because of  border radiuses which should be taken into consideration*/
+  
 
 
 }
@@ -75,7 +77,7 @@ body {
 
 /* For Home / Left Side / Prices / Tabs */
 #market-left-side nav[role='tablist'] {
-  height: 2rem;
+  height: var(--tab-height);
   display: flex;
   justify-content: center;
 }
@@ -172,21 +174,102 @@ body {
 /*-----------------------MARKET CENTER------------------------------------*/
 #market-center {
   height: var(--market-column-height);
+  --graph-height:calc(
+
+      2rem +  var(--table-head-height) +
+     (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height) /*Table Body */
+     
+     );
+
+  --buy-sell-bidding-height: 10.45rem;
+
 }
 
 #market-center #sized-graph {
   /*height: 2rem+*/
   /* height: calc( + 2rem +  var(--table-head-height) + var(--buy-table-body-height) ) !important; */
-  height: calc(
+  /* height: calc(
 
       2rem +  var(--table-head-height) +
-     (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height) /*Table Body */
+     (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height) 
      
-     ) ;
+     ) ; */
+  height: calc(var(--graph-height) );
 }
+
+#market-center #buy-sell-bidding {
+  height: var(--buy-sell-bidding-height);
+}
+
+#market-center #open-ord-trd-hist {
+  --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem);
+  height: var(--open-ord-trd-hist);     
+
+}
+
+
+/* Table For Sell and Buy */
+#market-center #open-ord-trd-hist table {
+  /* height: calc(var(--market-column-height)-(2rem +  var(--table-head-height)+(100vh - 7.75rem - 5rem )*0.5-var(--border-bottom-height) - var(--table-head-height) ) -14rem - 5px +50rem 
+  )!important;  */
+  height: calc( var(--open-ord-trd-hist) - 2rem - 5px );
+}
+
+
+#market-center #open-ord-trd-hist  table tbody {  
+  display:block;
+}
+#market-center #open-ord-trd-hist table tbody {
+  overflow-y: scroll;
+  height: 100%; 
+}
+
+#market-center #open-ord-trd-hist  table tr {
+  display:block;
+  width: 100%;
+}
+#market-center #open-ord-trd-hist  table th {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+#market-center #open-ord-trd-hist  table td {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+
+
 
 /* Graph Height */
 
 
 
 /*-----------------------End of MARKET CENTER------------------------------------*/
+
+
+/* MARKET / RIGHT SIDE */
+#market-right-side {
+  height: var(--market-column-height);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+#market-right-side #markets-section {
+
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 + var(--tab-height) );
+  border-radius: 1rem;
+  padding-bottom: .5rem;
+  background-color: blueviolet;
+}
+
+#market-right-side #markets-section .market-header {
+  display: block;
+  height: var(--tab-height);
+}
+#market-right-side #markets-section span.market-header p  {
+  display: block;
+  font-size: 1rem;
+  line-height: 1rem;
+  position: relative;
+  top: calc( var(--tab-height) - 1.5rem );  
+}
+

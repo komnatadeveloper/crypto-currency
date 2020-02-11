@@ -7,8 +7,13 @@ import { MarketItem } from "./MarketItem";
 export const Markets = () => {
 
   return (
-    <div className='d-flex flex-column d-block mx-1'>
-      <span className='d-block text-center text-light'>Markets</span>
+    <div
+      id='markets-section'
+      className='d-flex flex-column d-block mx-1'
+    >
+      <span className='market-header'>
+        <p className='d-block text-center text-light'>Markets</p> 
+      </span>
       {/* Market Table */}
       <Table size='sm' striped bordered hover variant='dark'>
         <thead>

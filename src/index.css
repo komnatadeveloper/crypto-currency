@@ -136,6 +136,12 @@ body {
   display:inline-block;
   width: calc( (100% )/3);
 }
+/*For opacities of Price Buy&Sell, lighter background IOS, Firefox, and Chrome*/
+.price-item-background2 {
+  opacity: 0.2;
+  -moz-opacity: 0.2;
+  -webkit-opacity: 0.2;
+}
 /* End of Table For Sell and Buy */
 
 #market-left-side #orders-tab #prices-explanation {

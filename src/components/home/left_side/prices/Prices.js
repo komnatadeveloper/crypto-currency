@@ -64,7 +64,9 @@ export const Prices = () => {
                   <PriceItem />
                   <PriceItem />
                   <PriceItem />
+
                   <PriceItem />
+                  
                   <PriceItem />
                   <PriceItem />
                   <PriceItem />
@@ -134,6 +136,14 @@ export const Prices = () => {
                   <PriceItem />
                   <PriceItem />
                   <PriceItem />
+                  <PriceItem />
+                  <PriceItem />
+                  <PriceItem />
+                  <PriceItem />
+                  {/* <PriceItem />
+                  <PriceItem />
+                  <PriceItem />
+                  <PriceItem /> */}
                 </tbody>
 
                 <tfoot>

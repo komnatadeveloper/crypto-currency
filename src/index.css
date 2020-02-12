@@ -1,5 +1,7 @@
 :root {
 
+  --app-container-min-height: calc( 100vh - 4rem );
+
   --market-column-height:calc( 100vh - 5rem );  /*Left, Center, Right*/
   --tab-height: 2rem;
 
@@ -352,7 +354,161 @@ body {
 }
 
 
+/* FUNDS PAGE */
+
+/* End of FUNDS PAGE */
+
+#funds-page {
+  --funds-page-min-height: calc(var(--app-container-min-height ) - 2rem);
+  --each-tab-height: calc(var(--funds-page-min-height) - 2rem - var(--tab-height));
+  min-height: var(--funds-page-min-height);  /* 2rem for bottom and top margins */
+  margin-top: 1rem !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  border-radius: 1rem;
+  width: calc(100% - 2rem) !important;
+  padding-top: 1rem;  /* Instead of margin-top of nav */
+  padding-left: 1rem;  /* Instead of margin-top of nav */
+  padding-right: 1rem;  /* Instead of margin-top of nav */
+  padding-bottom: 1rem;  /* Instead of margin-top of nav */
+}
 
 
+
+/* For Funds Page Tabs */
+#funds-page nav[role='tablist'] {
+  
+  height: var(--tab-height);
+
+  background-color: chartreuse !important;
+  display: flex;
+  padding-left: 1rem;
+  /* justify-content: center; */  
+}
+#funds-page nav[role='tablist'] a[role='tab'] {
+  position: relative;
+  bottom: -0.5rem;
+  /* width: 40%; */
+  padding:0.25rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  border-top-left-radius: .7rem !important;
+  border-top-right-radius: .7rem !important;
+  margin-right: 1rem;
+  background-color: grey;
+  color: white;
+  margin-right: .5rem !important;
+}
+#funds-page nav[role='tablist'] a[role='tab'].active {
+  background-color: blue;
+}
+#funds-page div[role='tabpanel'] { 
+  margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+}
+
+#funds-page #assets-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  
+}
+
+#funds-page #assets-tab #assets-tab-bar {
+  height: 2.5rem;
+  margin-top: 0 !important;
+  width: 100%;
+}
+#funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
+  height: 2rem;
+  width: 1rem;
+  font-size: 1rem;
+  /* margin-left: 3rem; */
+  position: relative;
+  top: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* background-color: cornsilk; */
+  z-index: 50;
+  padding-top: .5rem;
+  left: 11rem;
+} 
+
+#funds-page #assets-tab #assets-tab-bar #search-assets input {
+  font-size: 1rem;
+  height: 1.5rem;
+  width: 11rem;
+  position: relative;
+  top:0.25rem;
+  left: .5rem;
+  margin-left: 0;
+  font-size: .8rem;
+}
+#funds-page #assets-tab #assets-tab-bar #search-assets input i {
+  position: absolute;
+  left: 1rem;
+}
+
+#funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  top: 0.25rem;
+}
+
+/*checkbox*/
+#funds-page #assets-tab #assets-tab-bar #search-assets .form-check #hide-zero {
+  top:0;
+  width:1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: .9rem;
+  position: relative;
+  left: .75rem;
+}
+
+/* Table For Funds / Assets */
+#funds-page #assets-tab table {
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height)  );
+}
+#funds-page #assets-tab  thead,
+#funds-page #assets-tab  thead tr,
+#funds-page #assets-tab  thead th {
+  height: var(--table-head-height) !important; 
+}
+
+#funds-page #assets-tab  table tbody,
+#funds-page #assets-tab  table thead {  
+  display:block;
+}
+#funds-page #assets-tab tbody {
+  overflow-y: scroll;
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height) - var(--table-head-height)  );
+}
+
+#funds-page #assets-tab  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #assets-tab  table th {
+  display:inline-block;
+  width: calc( (100% )/10);
+}
+#funds-page #assets-tab  table td {
+  display:inline-block;
+  width: calc( (100% )/10);
+}
+/* End of Table For Funds / Assets */
 
 

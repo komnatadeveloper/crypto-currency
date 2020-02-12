@@ -4,7 +4,7 @@ import {
   Nav,
   NavDropdown
 } from "react-bootstrap";
-// import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const AppNavbar = () => {
 
@@ -20,6 +20,8 @@ const AppNavbar = () => {
           {/* <Link to='/'>Market</Link> */}
           <Nav.Link href='/funds'>Funds</Nav.Link>
           <Nav.Link href='/news'>News</Nav.Link>
+          {/* <Link to='/funds'>Funds</Link>
+          <Link to='/'>Home</Link> */}
           <Nav.Link className='nav-right' href='/accounts'>
             Accounts
           </Nav.Link>

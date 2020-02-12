@@ -512,3 +512,19 @@ body {
 /* End of Table For Funds / Assets */
 
 
+
+
+
+
+/*----------------------------------------MEDIA------------------------------------------------------*/
+
+
+/* Bidding Section  */
+@media (max-width: 1060px) {
+  #market-center #buy-sell-bidding .hide-when-small {
+    display: none;
+  }
+
+}
+
+

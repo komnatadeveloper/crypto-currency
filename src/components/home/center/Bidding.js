@@ -46,6 +46,7 @@ export const Bidding = () => {
     >
       {/* Title */}
       <Col
+        className='hide-when-small'
         sm={12}
         style={{
           height: "2rem",
@@ -93,7 +94,7 @@ export const Bidding = () => {
       {/* Buy Order */}
       <Col 
         sm={6} 
-        className='p-1'
+        className='p-1 hide-when-small'
         style={{
 
         }}
@@ -157,7 +158,7 @@ export const Bidding = () => {
       {/* Sell Order */}
       <Col 
         sm={6} 
-        className='p-1'
+        className='p-1 hide-when-small'
         // className='bg-success d-flex flex-column pt-1'
       >
 

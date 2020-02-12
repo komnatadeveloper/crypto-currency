@@ -252,24 +252,79 @@ body {
   padding-left: 0.2rem;
   padding-right: 0.2rem;
 }
-
-#market-right-side #markets-section {
-
-  height: calc( (100vh - 7.75rem - 5rem) * 0.5 + var(--tab-height) );
-  border-radius: 1rem;
-  padding-bottom: .5rem;
-  background-color: blueviolet;
-}
-
-#market-right-side #markets-section .market-header {
+#market-right-side  .market-header {
   display: block;
   height: var(--tab-height);
 }
-#market-right-side #markets-section span.market-header p  {
+#market-right-side  span.market-header p  {
   display: block;
   font-size: 1rem;
   line-height: 1rem;
   position: relative;
   top: calc( var(--tab-height) - 1.5rem );  
 }
+#market-right-side #markets-section {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 );
+  border-radius: 1rem;
+  padding-bottom: .5rem;  
+}
+
+/* Markets Scrollable Table */
+#market-right-side #markets-section table {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--border-bottom-height) );
+}
+#market-right-side #markets-section thead,
+#market-right-side #markets-section thead tr,
+#market-right-side #markets-section thead th {
+  height: var(--table-head-height) !important; 
+}
+#market-right-side #markets-section  table tbody,
+#market-right-side #markets-section  table thead {  
+  display:block;
+}
+
+
+#market-right-side #markets-section  table tbody {  
+  display:block;
+}
+#market-right-side #markets-section table tbody {
+  overflow-y: scroll;
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--table-head-height) - var(--border-bottom-height) );
+}
+
+#market-right-side #markets-section  table tr {
+  display:block;
+  width: 100%;
+}
+#market-right-side #markets-section  table th {
+  display:inline-block;
+  width: calc( (100% )/4);
+}
+#market-right-side #markets-section  table td {
+  display:inline-block;
+  width: calc( (100% )/4);
+}
+
+/* Funds */
+#market-right-side #funds-section {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 + 2rem );
+  justify-self: end !important;
+  background-color: chartreuse !important;
+  margin-top: 3rem;
+}
+
+#market-right-side  .funds-header {
+  display: block;
+  height: var(--tab-height);
+}
+#market-right-side  span.funds-header p  {
+  display: block;
+  font-size: 1rem;
+  line-height: 1rem;
+  position: relative;
+  top: calc( var(--tab-height) - 1.5rem );  
+}
+
+
+
 

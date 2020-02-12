@@ -1,7 +1,6 @@
 import React from 'react'
 import { Row, Col } from "react-bootstrap";
 import { Bidding } from './Bidding';
-import { Funds } from './Funds';
 import { OpenOrders } from './OpenOrders';
 import { TradeHistory } from './TradeHistory';
 import { SizedGraph } from './graph/SizedGraph.';

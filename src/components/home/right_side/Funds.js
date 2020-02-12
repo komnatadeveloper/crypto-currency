@@ -5,8 +5,16 @@ import { FundItem } from './sub/FundItem';
 
 export const Funds = () => {
   return (
-    <Col sm={4} className='p-0'>
-      <span className='d-block text-center text-light'>Funds</span>
+    <div
+      id='funds-section'
+      className='  w-100'
+      style={{
+
+      }}
+    >
+      <span className='funds-header'>
+        <p className='d-block text-center text-light'>Funds</p>
+      </span>
       <Table striped bordered hover variant='dark' size='sm'>
         <tbody>
           <FundItem />
@@ -16,6 +24,8 @@ export const Funds = () => {
           <FundItem />
         </tbody>
       </Table>
-    </Col>
+
+    </div>
+
   );
 }

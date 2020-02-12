@@ -1,6 +1,7 @@
 import React from 'react'
 import { Row, Col } from "react-bootstrap";
 import { Markets } from './markets/Markets';
+import { Funds } from './Funds';
 
 
 export const RightSide = () => {
@@ -15,7 +16,7 @@ export const RightSide = () => {
       }}
     >
       <div
-        className="mx-0 pb-2 px-1"
+        className="mx-0 pb-2 px-1 "
         style={{
           borderRadius: "1rem",
           backgroundColor: '#222',
@@ -23,6 +24,7 @@ export const RightSide = () => {
         }}
       >
         <Markets/>
+        <Funds />
       </div>
       {/* <Row
         className='bg-danger m-0'

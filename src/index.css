@@ -305,17 +305,11 @@ body {
   width: calc( (100% )/4);
 }
 
-/* Funds */
-#market-right-side #funds-section {
-  height: calc( (100vh - 7.75rem - 5rem) * 0.5 + 2rem );
-  justify-self: end !important;
-  background-color: chartreuse !important;
-  margin-top: 3rem;
-}
-
+/*    Funds     */
 #market-right-side  .funds-header {
   display: block;
   height: var(--tab-height);
+  margin-top: 3rem;
 }
 #market-right-side  span.funds-header p  {
   display: block;
@@ -324,6 +318,40 @@ body {
   position: relative;
   top: calc( var(--tab-height) - 1.5rem );  
 }
+#market-right-side #funds-section {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5  );
+  
+}
+
+/* Table For Funds */
+#market-right-side #funds-section table {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--border-bottom-height)  );
+}
+
+
+#market-right-side #funds-section  table tbody,
+#market-right-side #funds-section  table thead {  
+  display:block;
+}
+#market-right-side #funds-section table tbody {
+  overflow-y: scroll;
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--border-bottom-height)  );
+}
+
+#market-right-side #funds-section  table tr {
+  display:block;
+  width: 100%;
+}
+#market-right-side #funds-section  table th {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+#market-right-side #funds-section  table td {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+
+
 
 
 

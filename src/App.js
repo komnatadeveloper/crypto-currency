@@ -8,23 +8,30 @@ import { AppNavbar2 } from './components/layout/AppNavbar2';
 import { AppFooter } from './components/layout/AppFooter';
 import { FundsPage } from './components/funds/FundsPage';
 
+// Redux
+import { Provider} from 'react-redux'
+import store from './store';
+
+
 
 const App = () => {
   return (
-    <div className='App bg-dark' >
-      <Router>
-        <AppNavbar />
-        <div  id='app-container'>
-          <Switch>
-            <Route exact path='/' component={Home} />
-            <Route exact path='/funds' component={FundsPage} />
+    <Provider store={store}>
+      <div className='App bg-dark'>
+        <Router>
+          <AppNavbar />
+          <div id='app-container'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/funds' component={FundsPage} />
 
-            <p>This is App</p>
-          </Switch>
-        </div>
-        <AppFooter />
-      </Router>
-    </div>
+              <p>This is App</p>
+            </Switch>
+          </div>
+          <AppFooter />
+        </Router>
+      </div>
+    </Provider>
   );
 }
 

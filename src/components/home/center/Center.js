@@ -4,6 +4,9 @@ import { Bidding } from './Bidding';
 import { OpenOrders } from './OpenOrders';
 import { TradeHistory } from './TradeHistory';
 import { SizedGraph } from './graph/SizedGraph.';
+import { SizedGraphMobile } from './graph/SizedGraphMobile';
+import { Graph } from './graph/Graph';
+import { GraphMobile } from './graph/GraphMobile';
 
 
 
@@ -18,10 +21,19 @@ export const Center = () => {
         borderRadius: "1rem"
       }}
     >
+
       <div className='d-flex flex-column'>
-        <div className='m-0'>
+        {/* Hide When Small Screen */}
+        <div className='m-0 graph-wide-screen'>
           <SizedGraph/>
         </div>
+        
+        {/* Show When Small Screen */}
+        {/* <div className='m-0 graph-small-screen'>          
+          <SizedGraphMobile/>
+        </div> */}
+
+
         <Bidding />
 
         <Row 

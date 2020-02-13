@@ -198,6 +198,10 @@ body {
      ) ; */
   height: calc(var(--graph-height) );
 }
+#market-center #sized-graph-mobile {
+  /* height: calc(var(--graph-height) - var(--tab-height) ); */
+  height: calc(var(--graph-height)  );
+}
 
 #market-center #buy-sell-bidding {
   height: var(--buy-sell-bidding-height);
@@ -554,5 +558,26 @@ body {
     display: none;
   }
 }
+
+
+
+/* Bootstrap BreakPoint */
+
+/* @media (min-width: 576px) { 
+  .graph-wide-screen {
+    display:block;
+  }  
+  .graph-small-screen {
+    display:none;
+  }  
+}
+@media (max-width: 575px) { 
+  .graph-wide-screen {
+    display:none;
+  }  
+  .graph-small-screen {
+    display:block;
+  }  
+} */
 
 

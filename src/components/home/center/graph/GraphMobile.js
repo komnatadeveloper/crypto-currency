@@ -1,17 +1,17 @@
-import React, {useEffect} from "react";
+import React, { useEffect } from "react";
 import { createChart } from "lightweight-charts";
 import PropTypes from "prop-types";
 
 
-export const Graph = ({width, height}) => {
+export const GraphMobile = ({ width, height }) => {
 
   const containerId = "lightweight_chart_container"
-  let chart = null; 
-  
+  let chart = null;
+
   useEffect(() => {
     // Delete the existing graph if already exists
     let element = document.querySelector('.tv-lightweight-charts')
-    if(element) {
+    if (element) {
       element.parentNode.removeChild(element)
     }
 
@@ -61,12 +61,12 @@ export const Graph = ({width, height}) => {
     ]);
   }, [width, height]);
 
-  return <div id={containerId} className={"LightweightChart"} />;
+  return <div id={containerId} className={"Light-weight-Chart"} />;
   return <div>Hello</div>;
 }
 
 
-Graph.propTypes = {
+GraphMobile.propTypes = {
   width: PropTypes.number.isRequired,
   height: PropTypes.number.isRequired,
 };
@@ -94,7 +94,7 @@ Graph.propTypes = {
 //       width: width+200,
 //       height: height+200,
 //     }, [width, height]);
-    
+
 
 //     const lineSeries = chart.addLineSeries();
 

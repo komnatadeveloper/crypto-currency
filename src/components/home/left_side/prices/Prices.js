@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import { Tabs, Tab, Table } from "react-bootstrap";
 import { PriceItem } from './sub/PriceItem';
 
@@ -6,6 +6,11 @@ import { PriceItem } from './sub/PriceItem';
 export const Prices = () => {
 
   const [tab, setTab] = useState('orders'); // "orders" OR "depth"
+
+  useEffect( () => {
+    setTab('orders');
+    // console.log('Prices, ', Date.now())
+  }, [])
 
   return (
     <div className='d-flex flex-column d-block mx-1'>

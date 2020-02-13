@@ -16,20 +16,15 @@ const AppNavbar = () => {
       <Navbar.Collapse id='basic-navbar-nav'>
         {/* <Nav className='mr-auto'> */}
         <Nav >
-          <Nav.Link className='active' href='/'>Market</Nav.Link>
-          {/* <Link to='/'>Market</Link> */}
-          <Nav.Link href='/funds'>Funds</Nav.Link>
-          <Nav.Link href='/news'>News</Nav.Link>
-          {/* <Link to='/funds'>Funds</Link>
-          <Link to='/'>Home</Link> */}
-          <Nav.Link className='nav-right' href='/accounts'>
-            Accounts
-          </Nav.Link>
-          <NavDropdown title='Language' id='basic-nav-dropdown'>
+          <Link className='nav-link active' to='/'>Market</Link>
+          <Link className='nav-link' to='/funds'>Funds</Link>
+          <Link className='nav-link' to='/news'>News</Link>
+          <Link className='nav-link' to='/accounts'>Accounts</Link>
+          <Link className='nav-link' to='/help'>Help?</Link>
+          {/* <NavDropdown title='Language' id='basic-nav-dropdown'>
             <NavDropdown.Item href='#action/3.2'>English</NavDropdown.Item>
             <NavDropdown.Item href='#action/3.3'>Turkish</NavDropdown.Item>
-          </NavDropdown>
-          <Nav.Link href='/help'>Help ?</Nav.Link>
+          </NavDropdown> */}
         </Nav>
         {/* <Form inline>
           <FormControl type='text' placeholder='Search' className='mr-sm-2' />

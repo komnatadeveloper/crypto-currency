@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {
   Row, Col
@@ -9,6 +9,9 @@ import { RightSide } from './right_side/RightSide';
 
 
 const Home = () => {
+  useEffect( () => {
+    // console.log('Home, ', Date.now())
+  }, [])
   return (
     // <Fragment>
     //   <h4

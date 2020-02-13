@@ -14,6 +14,7 @@ export const PriceItem = () => {
         top:`calc(0* ${rowHeight})`,
       }}
     >
+      
       <span
         className="price-item-background1"
         style={{

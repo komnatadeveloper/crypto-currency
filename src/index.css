@@ -209,6 +209,30 @@ body {
 
 }
 
+/* Buy Sell Bidding Show When Small */
+#market-center #buy-sell-bidding .show-when-small nav[role='tablist'] {
+  height: var(--tab-height);
+  display: flex;
+  justify-content: center;
+}
+#market-center #buy-sell-bidding .show-when-small a[role='tab'] {
+  position: relative;
+  bottom: -0.5rem;
+  width: 40%;
+  padding:0.25rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  border-top-left-radius: .7rem !important;
+  border-top-right-radius: .7rem !important;
+  margin-right: 1rem;
+}
+
+#market-center #buy-sell-bidding .show-when-small div[role='tabpanel'] { 
+  margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+}
+/* End of Buy Sell Bidding Show When Small */
+
 
 /* Table For Sell and Buy */
 #market-center #open-ord-trd-hist table {
@@ -524,7 +548,11 @@ body {
   #market-center #buy-sell-bidding .hide-when-small {
     display: none;
   }
-
+}
+@media (min-width: 1061px) {
+  #market-center #buy-sell-bidding .show-when-small {
+    display: none;
+  }
 }
 
 

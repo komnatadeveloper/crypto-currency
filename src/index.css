@@ -146,6 +146,60 @@ body {
   display:inline-block;
   width: calc( (100% )/3);
 }
+
+/* Media For Orders Prices Tables */
+@media (min-width: 1200px) {
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 12%;
+  }
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 9%;
+  }
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 9%;
+  }
+}
+@media (max-width: 991px ) and ( min-width:768px) {
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 6%;
+  }
+}
+@media (max-width: 767px) {
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 12%;
+  }
+}
+/* End of Media For Orders Prices Tables */
+
 /*For opacities of Price Buy&Sell, lighter background IOS, Firefox, and Chrome*/
 .price-item-background2 {
   opacity: 0.2;
@@ -207,11 +261,7 @@ body {
   height: var(--buy-sell-bidding-height);
 }
 
-#market-center #open-ord-trd-hist {
-  --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem);
-  height: var(--open-ord-trd-hist);     
 
-}
 
 /* Buy Sell Bidding Show When Small */
 #market-center #buy-sell-bidding .show-when-small nav[role='tablist'] {
@@ -236,6 +286,14 @@ body {
   margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
 }
 /* End of Buy Sell Bidding Show When Small */
+
+
+#market-center #open-ord-trd-hist {
+  --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem);
+  height: var(--open-ord-trd-hist); 
+}
+
+
 
 
 /* Table For Sell and Buy */
@@ -266,6 +324,128 @@ body {
   display:inline-block;
   width: calc( (100% )/3);
 }
+
+
+/* Media For Open Orders & Trade History Tables */
+@media (min-width: 1200px) {
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 13%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 13%;
+  }
+}
+
+@media (max-width: 1199px ) and ( min-width:992px) {
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 10%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 11%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 11%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 11%;
+  }
+}
+
+@media (max-width: 991px ) and ( min-width:768px) {
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 8%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 7%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    width: 22%;
+    text-align: left;
+    padding-left: 3%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    width: 49%;
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    width: 29%;
+    text-align: right;
+    padding-right: 5%;
+  }
+}
+
+@media (max-width: 767px ) and ( min-width:576px) {
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 3%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 1.5%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    width: 20%;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    width: 51%;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    width: 29%;
+    text-align: right;
+    padding-right: 3%;
+  }
+}
+
+@media (max-width: 575px) {
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 13%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 13%;
+  }
+}
+/* Media For Open Orders & Trade History Tables */
 
 
 

@@ -49,12 +49,10 @@ export const Prices = () => {
                 // style={{height:'30vh'}}
               >
                 <thead>
-                  <tr
-                    className=''
-                  >
-                    <th>Price</th>
-                    <th>BTC</th>
-                    <th>USDT</th>
+                  <tr className=''>
+                    <th className=' pr-3'>Price</th>
+                    <th className=' pr-3'>BTC</th>
+                    <th className=' pr-3'>USDT</th>
                   </tr>
                 </thead>
                 <tbody
@@ -71,7 +69,7 @@ export const Prices = () => {
                   <PriceItem />
 
                   <PriceItem />
-                  
+
                   <PriceItem />
                   <PriceItem />
                   <PriceItem />
@@ -130,12 +128,12 @@ export const Prices = () => {
               <Table
                 size='sm'
                 striped
-                bordered
+                // bordered
                 hover
                 variant='dark'
                 className='mb-0'
               >
-                <tbody className='scrollbar' >
+                <tbody className='scrollbar'>
                   <PriceItem />
                   <PriceItem />
                   <PriceItem />
@@ -153,9 +151,9 @@ export const Prices = () => {
 
                 <tfoot>
                   <tr>
-                    <th>Price</th>
-                    <th>BTC</th>
-                    <th>USDT</th>
+                    <th className=''>Price</th>
+                    <th className=''>BTC</th>
+                    <th className=''>USDT</th>
                   </tr>
                 </tfoot>
               </Table>

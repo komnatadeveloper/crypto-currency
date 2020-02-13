@@ -6,41 +6,48 @@ export const PriceItem = () => {
   const columnFactor1= '0'
   const columnFactor2= '-1'
 
+  const tdStyle={
+    display:'inline-block', 
+    position:'relative', 
+    zIndex:'800',
+    fontWeight:'600',
+    top: `calc(${columnFactor}* ${rowHeight})`
+  }
+
   return (
     <tr
       style={{
         height: `calc(1* ${rowHeight})`,
-        position:'relative',
-        top:`calc(0* ${rowHeight})`,
+        position: "relative",
+        top: `calc(0* ${rowHeight})`
       }}
     >
-      
       <span
-        className="price-item-background1"
+        className='price-item-background1'
         style={{
-          display:'block',
-          position:'relative',
+          display: "block",
+          position: "relative",
           top: `calc(${columnFactor1}* ${rowHeight})`,
-          width:'40%',
+          width: "40%",
           height: `calc(1* ${rowHeight})`,
-          backgroundColor:'red',
-          zIndex:'0',
-          opacity:'50%'
+          backgroundColor: "red",
+          zIndex: "0",
+          opacity: "50%"
         }}
       ></span>
       <span
-        className="price-item-background2"
+        className='price-item-background2'
         style={{
-          display:'block',
-          position:'relative',
+          display: "block",
+          position: "relative",
           top: `calc(${columnFactor2}* ${rowHeight})`,
-          left:'40%',
-          width:'30%',
+          left: "40%",
+          width: "30%",
           height: `calc(1* ${rowHeight})`,
-          backgroundColor:'red',
-          zIndex:'0',
-          opacity:'20%',
-          MozOpacity:'20%',          
+          backgroundColor: "red",
+          zIndex: "0",
+          opacity: "20%",
+          MozOpacity: "20%"
         }}
       ></span>
       {/* <span
@@ -58,31 +65,15 @@ export const PriceItem = () => {
           opacity:'20%'
         }}
       ></span> */}
-      <td className='text-sm-3 ' style={{
-        display:'inline-block', 
-        position:'relative', 
-        zIndex:'800',
-        fontWeight:'600',
-        top: `calc(${columnFactor}* ${rowHeight})`
-        }}>0.0012</td>
-      <td 
-        className='text-sm-3 ' 
-        style={{ 
-          display: 'inline-block',
-          position: 'relative',
-          zIndex: '800',
-          fontWeight: '600', 
-          top: `calc(${columnFactor}* ${rowHeight})` }}
-        >4000</td>
-      <td 
-        className='text-sm-3 ' 
-        style={{ 
-          display: 'inline-block',
-          position: 'relative', 
-          zIndex: '800',
-          fontWeight: '600',
-          top: `calc(${columnFactor}* ${rowHeight})` 
-          }}>40.111</td>
+      <td className='text-sm-3 ' style={tdStyle}>
+        0.0012
+      </td>
+      <td className='text-sm-3 ' style={tdStyle}>
+        4000
+      </td>
+      <td className='text-sm-3 ' style={tdStyle}>
+        40.111
+      </td>
     </tr>
   );
 }

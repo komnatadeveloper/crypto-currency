@@ -876,6 +876,299 @@ body {
 /* End of Deposit History */
 
 
+/*-----------------------------------Funds Page Withdraw----------- */
+
+
+/* Funds Page /  Withdraw Tab */
+#funds-page #withdraw-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; 
+  padding-top: .75rem; /*instead of margin-top of #deposit-assets */
+  --withdraw-assets-height: 15.7rem;
+  
+}
+#funds-page #withdraw-tab #withdraw-assets {
+  height: var(--withdraw-assets-height);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-assets-header{
+  height: var(--table-head-height);
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-assets-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+  
+}
+#funds-page #withdraw-tab #withdraw-assets select.form-control{
+  max-width: 14rem;
+  height: 1.5rem;
+  padding-top: 0;
+  line-height: 1rem;
+  font-size: .95rem;
+  margin-left: 2rem;
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-info{
+  margin-top: .5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  /* background-color: red; */
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-explanation{
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+  
+}
+#funds-page #withdraw-tab #withdraw-assets #for-future-exp{
+  display: block;
+  height: 6.5rem;
+  /* background-color: blue; */
+  margin-bottom: 0;
+}
+#funds-page #withdraw-tab #withdraw-assets #for-future-bottom-exp {
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+}
+
+/* Withdraw History */
+#funds-page #withdraw-tab #withdraw-history {
+  height: calc( var(--each-tab-height) - var(--withdraw-assets-height) - 2.25rem );
+  margin-top: .75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: red;
+}
+#funds-page #withdraw-tab #withdraw-history #withdraw-history-header{
+  height: var(--table-head-height);
+  
+}
+#funds-page #withdraw-tab #withdraw-history #withdraw-history-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+}
+
+/* Table For Funds / Withdraw */
+#funds-page #withdraw-tab #withdraw-history  table {
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--withdraw-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)      
+  ); /* 2.25rem top+bottom margin-paddings */
+  margin-bottom: 0;
+
+  --col-to-width: 18rem;
+  --col-assets-width: 6rem;
+}
+#funds-page #withdraw-tab #withdraw-history  thead,
+#funds-page #withdraw-tab #withdraw-history  thead tr,
+#funds-page #withdraw-tab #withdraw-history  thead th {
+  height: var(--table-head-height) !important; 
+}
+#funds-page #withdraw-tab #withdraw-history  table tbody,
+#funds-page #withdraw-tab #withdraw-history  table thead {  
+  display:block;
+}
+#funds-page #withdraw-tab #withdraw-history tbody {
+  overflow-y: scroll;
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--withdraw-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)    
+    - var(--table-head-height)  
+  ) !important;
+}
+
+#funds-page #withdraw-tab #withdraw-history  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #withdraw-tab #withdraw-history  table th,
+#funds-page #withdraw-tab #withdraw-history  table td {
+  display:inline-block;  
+}
+
+#funds-page #withdraw-tab #withdraw-history  table th.col-to {  
+  width: var(--col-to-width);
+  text-align: center;
+}
+#funds-page #withdraw-tab #withdraw-history  table td.col-to {  
+  width: var(--col-to-width);
+  text-align: end;
+}
+
+#funds-page #withdraw-tab #withdraw-history  table td.col-assets,
+#funds-page #withdraw-tab #withdraw-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+}
+#funds-page #withdraw-tab #withdraw-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #withdraw-tab #withdraw-history  table td.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #withdraw-tab #withdraw-history  table td.col-others,
+#funds-page #withdraw-tab #withdraw-history  table th.col-others {  
+  width: calc( (100% - var(--col-assets-width) - var(--col-to-width))*0.25 );
+  text-align: center;
+}
+/* End of Table For Funds / Withdraw */
+
+/* End of Withdraw History */
+
+
+
+
+
+
+
+
+/*-----------------------------------Funds Page Trade History----------- */
+#funds-page #trade-history-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: rosybrown;
+  
+}
+
+#funds-page #trade-history-tab #trade-history-tab-bar {
+  height: 2.5rem;
+  margin-top: 0 !important;
+  width: 100%;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets span.icon-right {
+  height: 2rem;
+  width: 1rem;
+  font-size: 1rem;
+  /* margin-left: 3rem; */
+  position: relative;
+  top: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* background-color: cornsilk; */
+  z-index: 50;
+  padding-top: .5rem;
+  left: 11rem;
+} 
+
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
+  font-size: 1rem;
+  height: 1.5rem;
+  width: 11rem;
+  position: relative;
+  top:0.25rem;
+  left: .5rem;
+  margin-left: 0;
+  font-size: .8rem;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] i {
+  position: absolute;
+  left: 1rem;
+}
+
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets .form-check {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  top: 0.25rem;
+}
+
+/*checkbox*/
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets .form-check #hide-zero {
+  top:0;
+  width:1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets .form-check label {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: .9rem;
+  position: relative;
+  left: .75rem;
+}
+
+/* Table For Funds / Trade History */
+#funds-page #trade-history-tab table {
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height)  );
+}
+#funds-page #trade-history-tab  thead,
+#funds-page #trade-history-tab  thead tr,
+#funds-page #trade-history-tab  thead th {
+  height: var(--table-head-height) !important; 
+}
+
+#funds-page #trade-history-tab  tbody tr,
+#funds-page #trade-history-tab  tbody td {
+  height: calc( (25.59/16) * 1rem ) !important; 
+}
+
+#funds-page #trade-history-tab  table tbody,
+#funds-page #trade-history-tab  table thead {  
+  display:block;
+}
+#funds-page #trade-history-tab tbody {
+  overflow-y: scroll;
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height) - var(--table-head-height)  );
+}
+
+#funds-page #trade-history-tab  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #trade-history-tab  table th {
+  display:inline-block;
+  width: calc( (100% )/8);
+}
+#funds-page #trade-history-tab  table td {
+  display:inline-block;
+  width: calc( (100% )/8);
+}
+#funds-page #trade-history-tab  table td.text-right {
+  padding-left: 0;
+  padding-right: 4%;
+}
+#funds-page #trade-history-tab  table td button {
+  position: relative;
+  top: -0.1rem;
+  left: 35%;
+  padding: 0 .5rem;
+  line-height: .9rem;
+}
+
+
+
+
+
+
 
 
 

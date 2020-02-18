@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import {
-  Row, Col, Tabs, Tab
+  Row, Col, Tabs, Tab, Form
 } from "react-bootstrap";
 import Assets from './Assets';
 import Deposit from './Deposit';
+import TradeHistory from './TradeHistory';
+import Withdraw from './Withdraw';
 
 
 
@@ -46,11 +48,18 @@ export const FundsPage = () => {
         >          
           <Assets />
         </Tab>
+
         <Tab eventKey='deposit' title='Deposit' className='mr-2'>
           <Deposit />
         </Tab>
-        <Tab eventKey='withdraw' title='Withdraw' className='mr-2'>withdraw</Tab>
-        <Tab eventKey='trade-history' title='Trade History' className='mr-2'>trade history</Tab>
+
+        <Tab eventKey='withdraw' title='Withdraw' className='mr-2'>
+          <Withdraw />
+        </Tab>
+
+        <Tab eventKey='trade-history' title='Trade History' className='mr-2'>
+          <TradeHistory />
+        </Tab>
       </Tabs>
       {/* End of Tabs */}
 

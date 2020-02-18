@@ -728,9 +728,11 @@ body {
   height: var(--each-tab-height);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem; 
-  padding-top: 1rem; /*instead of margin-top of #deposit-assets */
+  padding-top: .75rem; /*instead of margin-top of #deposit-assets */
+  --deposit-assets-height: 15.7rem;
 }
 #funds-page #deposit-tab #deposit-assets {
+  height: var(--deposit-assets-height);
   margin-left: 1rem;
   margin-right: 1rem;
   border-top-left-radius: 1rem;
@@ -781,6 +783,7 @@ body {
 
 /* Deposit History */
 #funds-page #deposit-tab #deposit-history {
+  height: calc( var(--each-tab-height) - var(--deposit-assets-height) - 2.25rem );
   margin-top: .75rem;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -797,6 +800,79 @@ body {
   top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
   left: 2rem;
 }
+
+/* Table For Funds / Deposit */
+#funds-page #deposit-tab #deposit-history  table {
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--deposit-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)      
+  ); /* 2.25rem top+bottom margin-paddings */
+  margin-bottom: 0;
+
+  --col-from-width: 18rem;
+  --col-assets-width: 6rem;
+}
+#funds-page #deposit-tab #deposit-history  thead,
+#funds-page #deposit-tab #deposit-history  thead tr,
+#funds-page #deposit-tab #deposit-history  thead th {
+  height: var(--table-head-height) !important; 
+}
+#funds-page #deposit-tab #deposit-history  table tbody,
+#funds-page #deposit-tab #deposit-history  table thead {  
+  display:block;
+}
+#funds-page #deposit-tab #deposit-history tbody {
+  overflow-y: scroll;
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--deposit-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)    
+    - var(--table-head-height)  
+  ) !important;
+}
+
+#funds-page #deposit-tab #deposit-history  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #deposit-tab #deposit-history  table th,
+#funds-page #deposit-tab #deposit-history  table td {
+  display:inline-block;  
+}
+
+#funds-page #deposit-tab #deposit-history  table th.col-from {  
+  width: var(--col-from-width);
+  text-align: center;
+}
+#funds-page #deposit-tab #deposit-history  table td.col-from {  
+  width: var(--col-from-width);
+  text-align: end;
+}
+
+#funds-page #deposit-tab #deposit-history  table td.col-assets,
+#funds-page #deposit-tab #deposit-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+}
+#funds-page #deposit-tab #deposit-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #deposit-tab #deposit-history  table td.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #deposit-tab #deposit-history  table td.col-others,
+#funds-page #deposit-tab #deposit-history  table th.col-others {  
+  width: calc( (100% - var(--col-assets-width) - var(--col-from-width))*0.25 );
+  text-align: center;
+}
+/* End of Table For Funds / Deposit */
+
 /* End of Deposit History */
 
 

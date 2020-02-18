@@ -592,6 +592,8 @@ body {
   display: flex;
   padding-left: 1rem;
   /* justify-content: center; */  
+  /* overflow-x: scroll !important; */
+  /* width: 100%; */
 }
 #funds-page nav[role='tablist'] a[role='tab'] {
   position: relative;
@@ -607,6 +609,7 @@ body {
   background-color: grey;
   color: white;
   margin-right: .5rem !important;
+
 }
 #funds-page nav[role='tablist'] a[role='tab'].active {
   background-color: blue;
@@ -614,6 +617,9 @@ body {
 #funds-page div[role='tabpanel'] { 
   margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
 }
+
+
+
 
 
 /* Funds Page /  Assets Tab */
@@ -1209,3 +1215,51 @@ body {
 } */
 
 
+
+/*-----------------------------------------MEDIA FOR FUNDS PAGE      */
+
+/* Media For Funds Page Tabs */
+@media (min-width: 1200px) {
+
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+
+}
+@media (max-width: 991px ) and ( min-width:768px) {
+
+}
+@media (max-width: 767px) {
+
+  /* For Funds Page Tabs */
+  #funds-page nav[role='tablist'] {
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: auto;
+  }
+
+  /* Funds Page /  Assets Tab */
+  #funds-page #assets-tab #assets-tab-bar  #search-assets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
+    left: 10rem;
+  } 
+  #funds-page #assets-tab #assets-tab-bar #search-assets input {
+    left: -.5rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
+    position: static;
+    margin-left: 0;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
+    position: relative;
+    left: 1.5rem;
+    bottom:1.8rem;
+  }
+  /* End of Funds Page /  Assets Tab */
+}
+/* End of Media For Funds Page Tabs */

@@ -615,6 +615,8 @@ body {
   margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
 }
 
+
+/* Funds Page /  Assets Tab */
 #funds-page #assets-tab {
   height: var(--each-tab-height);
   border-bottom-left-radius: 1rem;
@@ -719,6 +721,83 @@ body {
 }
 /* End of Table For Funds / Assets */
 
+/* End of Funds Page /  Assets Tab */
+
+/* Funds Page /  Deposit Tab */
+#funds-page #deposit-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; 
+  padding-top: 1rem; /*instead of margin-top of #deposit-assets */
+}
+#funds-page #deposit-tab #deposit-assets {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+#funds-page #deposit-tab #deposit-assets #deposit-assets-header{
+  height: var(--table-head-height);
+}
+#funds-page #deposit-tab #deposit-assets #deposit-assets-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+}
+#funds-page #deposit-tab #deposit-assets select.form-control{
+  max-width: 14rem;
+  height: 1.5rem;
+  padding-top: 0;
+  line-height: 1rem;
+  font-size: .95rem;
+  margin-left: 2rem;
+}
+#funds-page #deposit-tab #deposit-assets #deposit-info{
+  margin-top: .5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  /* background-color: red; */
+}
+#funds-page #deposit-tab #deposit-assets #deposit-explanation{
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+}
+#funds-page #deposit-tab #deposit-assets #for-future-exp{
+  display: block;
+  height: 6.5rem;
+  /* background-color: blue; */
+  margin-bottom: 0;
+}
+#funds-page #deposit-tab #deposit-assets #for-future-bottom-exp {
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+}
+
+/* Deposit History */
+#funds-page #deposit-tab #deposit-history {
+  margin-top: .75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+#funds-page #deposit-tab #deposit-history #deposit-history-header{
+  height: var(--table-head-height);
+}
+#funds-page #deposit-tab #deposit-history #deposit-history-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+}
+/* End of Deposit History */
 
 
 

@@ -4,6 +4,7 @@ import {
   Row, Col, Tabs, Tab
 } from "react-bootstrap";
 import Assets from './Assets';
+import Deposit from './Deposit';
 
 
 
@@ -45,7 +46,9 @@ export const FundsPage = () => {
         >          
           <Assets />
         </Tab>
-        <Tab eventKey='deposit' title='Deposit' className='mr-2'>deposit</Tab>
+        <Tab eventKey='deposit' title='Deposit' className='mr-2'>
+          <Deposit />
+        </Tab>
         <Tab eventKey='withdraw' title='Withdraw' className='mr-2'>withdraw</Tab>
         <Tab eventKey='trade-history' title='Trade History' className='mr-2'>trade history</Tab>
       </Tabs>

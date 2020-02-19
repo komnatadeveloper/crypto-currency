@@ -624,6 +624,9 @@ body {
 
 
 
+
+
+
 /* Funds Page /  Assets Tab */
 #funds-page #assets-tab {
   height: var(--each-tab-height);
@@ -654,7 +657,7 @@ body {
   left: 11rem;
 } 
 
-#funds-page #assets-tab #assets-tab-bar #search-assets input {
+#funds-page #assets-tab #assets-tab-bar #search-assets input[type='search'] {
   font-size: 1rem;
   height: 1.5rem;
   width: 11rem;
@@ -664,10 +667,7 @@ body {
   margin-left: 0;
   font-size: .8rem;
 }
-#funds-page #assets-tab #assets-tab-bar #search-assets input i {
-  position: absolute;
-  left: 1rem;
-}
+
 
 #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
   margin-top: 0;
@@ -677,6 +677,31 @@ body {
   line-height: 1.5rem;
   top: 0.25rem;
 }
+#funds-page #assets-tab #assets-tab-bar #search-assets input[type='checkbox'] {
+  font-size: 1rem;
+  /* height: 1.5rem; */
+  width: 11rem;
+  position: relative;
+  top:0.25rem;
+  left: 0.5rem;
+  margin-left: 0;
+  font-size: .8rem;
+  transform: scale(calc( 23/13 ));
+  /* transform: scale(5,5);
+  transform-origin: top left;
+  -moz-transform: scale(5,5); */
+  /* -moz-appearance: none; */
+
+
+  color: rgb(73, 80, 87);  
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+}
+
 
 /*checkbox*/
 #funds-page #assets-tab #assets-tab-bar #search-assets .form-check #hide-zero {
@@ -1079,7 +1104,7 @@ body {
   /* background-color: cornsilk; */
   z-index: 50;
   padding-top: .5rem;
-  left: 11rem;
+  left: 11.3rem;
 } 
 
 #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
@@ -1097,32 +1122,150 @@ body {
   left: 1rem;
 }
 
-#funds-page #trade-history-tab #trade-history-tab-bar #search-assets .form-check {
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: 2rem;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  top: 0.25rem;
-}
-
-/*checkbox*/
-#funds-page #trade-history-tab #trade-history-tab-bar #search-assets .form-check #hide-zero {
-  top:0;
-  width:1.5rem;
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#funds-page #trade-history-tab #trade-history-tab-bar #search-assets .form-check label {
-  margin-top: 0;
-  margin-bottom: 0;
-  height: 1.5rem;
-  line-height: 1.5rem;
-  font-size: .9rem;
+/* DateTimePicker Without any Lib */
+/* #funds-page #trade-history-tab #trade-history-tab-bar .form-check {
   position: relative;
-  left: .75rem;
+  bottom: 1.8rem;
+  left: 13.5rem;
+  width: 10rem;
+  margin-right: 0 !important;
+  padding-right: 0 !important;
 }
+#funds-page #trade-history-tab #trade-history-tab-bar .form-check input[type="date"] {
+  width: 9rem;
+  color: rgb(73, 80, 87);
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: .5px;
+  padding-left: 1rem;
+  padding-right: 0;
+  padding-bottom: .5px;
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;  
+}
+#funds-page #trade-history-tab #trade-history-tab-bar .form-check input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar .form-check input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+} */
+/* End of DateTimePicker Without any Lib */
+/* DateTimePicker Without any Lib */
+
+#funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
+  position: relative;
+  left: 12.5rem;
+  top: -1.55rem;
+  width: 9rem;
+  color: rgb(73, 80, 87);
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: 5px;
+  padding-left: 1rem;
+  padding-right: 0;
+  padding-bottom: 5px;
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+
+  /* transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%); */
+}
+#funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+/* End of DateTimePicker Without any Lib */
+
+
+
+/**/
+
+
+/*-----------------------------------------------------------------------*/
+@media (max-width: 767px) and ( min-width:576px) {   
+  
+}
+
+@media (max-width: 575px)  {     
+
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets span.icon-right {
+    left: 7.3rem;
+  } 
+
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
+    width: 8rem;
+    left: -0.5rem;
+  }
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] i {
+    position: absolute;
+    left: 1rem;
+  }
+
+  #funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
+    position: relative;
+    left: 9.5rem;
+    top: -1.55rem;
+    width: 8rem;
+    color: rgb(73, 80, 87);
+    font-size: .8rem;
+    line-height: 1.2rem;
+    padding-top: .5px;
+    padding-left: 1rem;
+    padding-right: 0;
+    padding-bottom: .5px;
+    background-clip: padding-box;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(206, 212, 218) !important;
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;  
+     
+    -webkit-appearance: none; 
+    
+  }
+
+
+}
+
+/*-----------------------------------------------------------------------*/
+/* 
+[type="date"] {
+  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
+}
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+} 
+*/
+
+/* custom styles */
+
+/* label {
+  display: block;
+}
+input {
+  border: 1px solid #c4c4c4;
+  border-radius: 5px;
+  background-color: #fff;
+  padding: 3px 5px;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
+  width: 190px;
+} */
+/*-----------------------------------------------------------------------*/
+
 
 /* Table For Funds / Trade History */
 #funds-page #trade-history-tab table {
@@ -1177,7 +1320,24 @@ body {
 
 
 
+/*----------------------------BluePrint-------------------------------------*/
+@media (min-width: 1200px) {
 
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+   
+}
+@media (max-width: 991px ) and ( min-width:768px) {  
+
+}
+@media (max-width: 767px) and ( min-width:576px) {   
+  
+}
+
+@media (max-width: 575px)  {     
+
+}
+/*----------------------------End of BluePrint--------------------------------*/
 
 
 /*----------------------------------------MEDIA------------------------------------------------------*/
@@ -1292,31 +1452,17 @@ body {
     display: none;
   }
 }
+/* End of Bidding Section  */
 
 
 
-/* Bootstrap BreakPoint */
 
-/* @media (min-width: 576px) { 
-  .graph-wide-screen {
-    display:block;
-  }  
-  .graph-small-screen {
-    display:none;
-  }  
-}
-@media (max-width: 575px) { 
-  .graph-wide-screen {
-    display:none;
-  }  
-  .graph-small-screen {
-    display:block;
-  }  
-} */
+/*-----------------------------------------MEDIA FOR FUNDS PAGE--------------------------      */
 
 
 
-/*-----------------------------------------MEDIA FOR FUNDS PAGE      */
+
+/*----------------------------END OF MEDIA FOR FUNDS PAGE TABS----------------------------------------------*/
 
 /* Media For Funds Page Tabs */
 @media (min-width: 1200px) {
@@ -1328,16 +1474,29 @@ body {
 @media (max-width: 991px ) and ( min-width:768px) {
 
 }
+
 @media (max-width: 767px) {
 
-  /* For Funds Page Tabs */
-  #funds-page nav[role='tablist'] {
-    flex-wrap: nowrap;
-    overflow-y: hidden;
-    overflow-x: auto;
-  }
+  
+}
 
-  /* Funds Page /  Assets Tab */
+@media (max-width: 767px) and ( min-width:576px) {   
+
+  /* Funds Page / Tabs */
+  #funds-page nav[role='tablist'] {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0rem;
+  }
+  #funds-page nav[role='tablist'] a[role='tab'] {
+    margin-right: 0rem !important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+  } 
+  /* End of Funds Page / Tabs */ 
+
+
+  /* Funds Page / Tabs /  Assets Tab */
   #funds-page #assets-tab #assets-tab-bar  #search-assets {
     display: flex;
     flex-direction: row;
@@ -1346,20 +1505,83 @@ body {
     overflow-x: scroll;
   }
   #funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
-    left: 10rem;
+    left: 10.4rem; 
   } 
-  #funds-page #assets-tab #assets-tab-bar #search-assets input {
+  #funds-page #assets-tab #assets-tab-bar #search-assets input[type='search'] {
+    width: 11rem;
     left: -.5rem;
   }
-  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
-    position: static;
-    margin-left: 0;
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {    
+    height: 1.9rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check input[type='checkbox'] {
+    position: relative;
+    top: 0.1rem !important;
+    left: 1.5rem;
+    transform: scale( calc(20/16));
   }
   #funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
     position: relative;
-    left: 1.5rem;
-    bottom:1.8rem;
+    font-size: .8rem;
+    left: 1.4rem;
+    top: -0rem;
   }
-  /* End of Funds Page /  Assets Tab */
+  /* End of Funds Page / Tabs /  Assets Tab */
+
 }
-/* End of Media For Funds Page Tabs */
+
+
+
+@media (max-width: 575px)  {     
+
+  /* For Funds Page Tabs */
+  #funds-page nav[role='tablist'] {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0rem;
+  }
+  #funds-page nav[role='tablist'] a[role='tab'] {
+    margin-right: 0rem !important;
+    font-size: .8rem;
+  }
+
+
+  /* Funds Page / Tabs /  Assets Tab */
+  #funds-page #assets-tab #assets-tab-bar  #search-assets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
+    left: 7.4rem; 
+  } 
+  #funds-page #assets-tab #assets-tab-bar #search-assets input[type='search'] {
+    width: 8rem;
+    left: -.5rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
+    /* position: static;
+    margin-left: 0; */
+    margin: 0;
+    padding: 0;
+    left: -0.5rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {    
+    height: 1.9rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check input[type='checkbox'] {
+    position: relative;
+    top: 0.1rem !important;
+    left: 1.5rem;
+    transform: scale( calc(20/16));
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
+    position: relative;
+    font-size: .8rem;
+    left: 1.4rem;
+    top: -0rem;
+  }
+  /* End of Funds Page / Tabs /  Assets Tab */
+}

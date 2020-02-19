@@ -514,6 +514,8 @@ body {
   display:inline-block;
   width: calc( (100% )/4);
 }
+/* End of Markets Scrollable Table */
+
 
 /*    Funds     */
 #market-right-side  .funds-header {
@@ -1179,6 +1181,104 @@ body {
 
 
 /*----------------------------------------MEDIA------------------------------------------------------*/
+
+
+
+
+
+
+/* Media For Market Page Markets & Funds Table */
+@media (min-width: 1200px) {
+  /* Markets Scrollable Table */  
+  #market-right-side #markets-section  table thead th.col-price,
+  #market-right-side #markets-section  table tbody td.col-price {
+    width: calc( (100% ) * 0.3);
+  }
+  #market-right-side #markets-section  table thead th.col-others,
+  #market-right-side #markets-section  table thead th.col-change,
+  #market-right-side #markets-section  table tbody td.col-others,
+  #market-right-side #markets-section  table tbody td.col-change {
+    width: calc( ((100% ) * 0.7) / 3 );
+  }
+  #market-right-side #markets-section  table tbody td.col-change {
+    padding-right: 6%;
+  }
+  #market-right-side #markets-section  table tbody td.col-price {
+    padding-right: 7.5%;
+  }
+  /* End of Markets Scrollable Table */
+
+  /* Table For Funds */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 10%;
+  }
+  /* End of Table For Funds */  
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+  /* Markets Scrollable Table */  
+  #market-right-side #markets-section  table thead th.col-price,
+  #market-right-side #markets-section  table tbody td.col-price {
+    width: calc( 5.1rem );
+  }
+  #market-right-side #markets-section  table thead th.col-others,
+  #market-right-side #markets-section  table thead th.col-change,
+  #market-right-side #markets-section  table tbody td.col-others,
+  #market-right-side #markets-section  table tbody td.col-change {
+    width: calc( ((100% ) - 5.1rem ) / 3 );
+  }
+  #market-right-side #markets-section  table tbody td.col-change {
+    padding-right: 5%;
+  }
+  #market-right-side #markets-section  table tbody td.col-price {
+    padding-right: 1.25rem;
+  }
+  /* End of Markets Scrollable Table */
+
+  /* Table For Funds */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 7%;
+  }
+  /* End of Table For Funds */  
+}
+@media (max-width: 991px ) and ( min-width:768px) {
+  /* Markets Scrollable Table */  
+  #market-right-side #markets-section  table thead th.col-price,
+  #market-right-side #markets-section  table tbody td.col-price {
+    width: calc( 4.9rem );
+  }
+  #market-right-side #markets-section  table thead th.col-others,
+  #market-right-side #markets-section  table thead th.col-change,
+  #market-right-side #markets-section  table tbody td.col-others,
+  #market-right-side #markets-section  table tbody td.col-change {
+    width: calc( ((100% ) - 4.9rem ) / 3 );
+  }
+  #market-right-side #markets-section  table tbody td.col-change {
+    padding-right: 5%;
+  }
+  #market-right-side #markets-section  table tbody td.col-price {
+    padding-right: 1.25rem;
+  }
+  /* End of Markets Scrollable Table */
+
+  /* Table For Funds */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 6%;
+  }
+  /* End of Table For Funds */ 
+
+}
+@media (max-width: 767px) {   
+
+  /* Table For Funds */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 4%;
+  }
+  /* End of Table For Funds */ 
+}
+/* Media For Market Page Markets & Funds Table */
+
+
+
 
 
 /* Bidding Section  */

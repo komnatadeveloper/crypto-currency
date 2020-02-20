@@ -9,11 +9,9 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
       {/* Title */}
       <div
         className='show-when-small'
-        
         style={{
-          width:'100%',
-          height: "2rem",
-
+          width: "100%",
+          height: "2rem"
         }}
       >
         <Tabs
@@ -33,18 +31,11 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
             }}
           >
             {/* Buy Order */}
-            <div
-              
-              className='p-1 show-when-small w-100'
-              style={{
-
-              }}
-            >
+            <div className='px-1 pb-2 show-when-small w-100' style={{}}>
               <div
                 className='bg-dark d-flex flex-column pt-1 px-1'
                 style={{
-                  borderBottomLeftRadius: "1rem",
-
+                  borderBottomLeftRadius: "1rem"
                 }}
               >
                 {/* Price Row */}
@@ -84,10 +75,17 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
                 </div>
                 {/* Button Row */}
                 <div className='d-flex flex-row justify-content-between mt-1 mb-2'>
-                  <span className='text-warning text-sm-3' style={definitionStyle}>
+                  <span
+                    className='text-warning text-sm-3'
+                    style={definitionStyle}
+                  >
                     Balance USDT: 0.00000000
                   </span>
-                  <Button variant='success' className='text-sm-2' style={buttonStyle}>
+                  <Button
+                    variant='success'
+                    className='text-sm-2'
+                    style={buttonStyle}
+                  >
                     Buy BTC
                   </Button>
                 </div>
@@ -105,14 +103,13 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
           >
             {/* Sell Order */}
             <div
-              className='p-1 show-when-small w-100'
-            // className='bg-success d-flex flex-column pt-1'
+              className='px-1 pb-2 show-when-small w-100'
+              // className='bg-success d-flex flex-column pt-1'
             >
-
               <div
                 className='bg-dark d-flex flex-column pt-1 px-1'
                 style={{
-                  borderBottomRightRadius: "1rem",
+                  borderBottomRightRadius: "1rem"
                 }}
               >
                 {/* Price Row */}
@@ -152,10 +149,17 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
                 </div>
                 {/* Button Row */}
                 <div className='d-flex flex-row justify-content-between mt-1 mb-2'>
-                  <span className='text-warning text-sm-3' style={definitionStyle}>
+                  <span
+                    className='text-warning text-sm-3'
+                    style={definitionStyle}
+                  >
                     Balance USDT: 0.00000000
                   </span>
-                  <Button variant='danger' className='text-sm-2' style={buttonStyle}>
+                  <Button
+                    variant='danger'
+                    className='text-sm-2'
+                    style={buttonStyle}
+                  >
                     Sell BTC
                   </Button>
                 </div>
@@ -164,14 +168,9 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
             {/* End of Sell Order */}
           </Tab>
         </Tabs>
-
       </div>
-
-      
-
-      
     </Fragment>
-  )
+  );
 }
 
 BiddingMobile.propTypes = {

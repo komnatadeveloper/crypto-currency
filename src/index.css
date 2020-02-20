@@ -82,6 +82,7 @@ body {
   height: var(--tab-height);
   display: flex;
   justify-content: center;
+  border-bottom: none;
 }
 #market-left-side a[role='tab'] {
   position: relative;
@@ -98,6 +99,7 @@ body {
 
 #market-left-side div[role='tabpanel'] { 
   margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+  
 }
 
 #market-left-side #orders-tab {
@@ -472,6 +474,7 @@ body {
   background-color: chartreuse !important;
   display: flex;
   padding-left: 1rem;
+  border-bottom: none;
   /* justify-content: center; */  
   /* overflow-x: scroll !important; */
   /* width: 100%; */
@@ -1347,14 +1350,17 @@ body {
 
 
 /* Media - Markets Page / Center / Bidding Section */
+@media (min-width: 1061px) {
+  #market-center #buy-sell-bidding .show-when-small {
+    display: none;
+  }
+}
 @media (max-width: 1060px) {
   #market-center #buy-sell-bidding .hide-when-small {
     display: none;
   }
-}
-@media (min-width: 1061px) {
-  #market-center #buy-sell-bidding .show-when-small {
-    display: none;
+  #market-center #buy-sell-bidding .show-when-small nav[role='tablist'] {
+    border-bottom: none;
   }
 }
 /* End of Media - Markets Page / Center / Bidding Section */
@@ -1437,9 +1443,7 @@ body {
   /* End of Funds Page / Tabs /  Assets Tab */
 
 
-
-
-}
+}  /* End of (max-width: 767px) and ( min-width:576px) */
 
 
 
@@ -1532,4 +1536,6 @@ body {
     -webkit-appearance: none;     
   }
   /* End of Funds Page / Tabs / Trade History Tab Search and Date Input */
-}
+
+
+} /* End of (max-width: 575px) */

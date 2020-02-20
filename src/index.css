@@ -566,8 +566,6 @@ body {
 
 /* FUNDS PAGE */
 
-/* End of FUNDS PAGE */
-
 #funds-page {
   --funds-page-min-height: calc(var(--app-container-min-height ) - 2rem);
   --each-tab-height: calc(var(--funds-page-min-height) - 2rem - var(--tab-height));
@@ -585,7 +583,7 @@ body {
 
 
 
-/* For Funds Page Tabs */
+/* Funds Page / Page Tabs */
 #funds-page nav[role='tablist'] {
   
   height: var(--tab-height);
@@ -619,11 +617,7 @@ body {
 #funds-page div[role='tabpanel'] { 
   margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
 }
-
-
-
-
-
+/* End of Funds Page / Page Tabs */
 
 
 
@@ -631,8 +625,7 @@ body {
 #funds-page #assets-tab {
   height: var(--each-tab-height);
   border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-  
+  border-bottom-right-radius: 1rem;  
 }
 
 #funds-page #assets-tab #assets-tab-bar {
@@ -973,7 +966,7 @@ body {
   margin-bottom: .75rem;
 }
 
-/* Withdraw History */
+/* Funds Page / Withdraw Tab / Withdraw History */
 #funds-page #withdraw-tab #withdraw-history {
   height: calc( var(--each-tab-height) - var(--withdraw-assets-height) - 2.25rem );
   margin-top: .75rem;
@@ -1067,11 +1060,9 @@ body {
 }
 /* End of Table For Funds / Withdraw */
 
-/* End of Withdraw History */
+/* End of Funds Page / Withdraw Tab / Withdraw History */
 
-
-
-
+/* End of Funds Page /  Withdraw Tab */
 
 
 
@@ -1081,8 +1072,7 @@ body {
   height: var(--each-tab-height);
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  background-color: rosybrown;
-  
+  background-color: rosybrown;  
 }
 
 #funds-page #trade-history-tab #trade-history-tab-bar {
@@ -1122,59 +1112,24 @@ body {
   left: 1rem;
 }
 
-/* DateTimePicker Without any Lib */
-/* #funds-page #trade-history-tab #trade-history-tab-bar .form-check {
-  position: relative;
-  bottom: 1.8rem;
-  left: 13.5rem;
-  width: 10rem;
-  margin-right: 0 !important;
-  padding-right: 0 !important;
-}
-#funds-page #trade-history-tab #trade-history-tab-bar .form-check input[type="date"] {
-  width: 9rem;
-  color: rgb(73, 80, 87);
-  font-size: .8rem;
-  line-height: 1.2rem;
-  padding-top: .5px;
-  padding-left: 1rem;
-  padding-right: 0;
-  padding-bottom: .5px;
-  background-clip: padding-box;
-  background-color: rgb(255, 255, 255);
-  border-color: rgb(206, 212, 218) !important;
-  border-radius: 0.25rem;
-  border-style: solid;
-  border-width: 1px;  
-}
-#funds-page #trade-history-tab #trade-history-tab-bar .form-check input[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-#funds-page #trade-history-tab #trade-history-tab-bar .form-check input[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-} */
-/* End of DateTimePicker Without any Lib */
-/* DateTimePicker Without any Lib */
-
 #funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
   position: relative;
-  left: 12.5rem;
-  top: -1.55rem;
+  left: 15rem;
+  top: -1.57rem;
   width: 9rem;
   color: rgb(73, 80, 87);
   font-size: .8rem;
   line-height: 1.2rem;
-  padding-top: 5px;
+  padding-top: 0.5px;
   padding-left: 1rem;
   padding-right: 0;
-  padding-bottom: 5px;
+  padding-bottom: 0.5px;
   background-clip: padding-box;
   background-color: rgb(255, 255, 255);
   border-color: rgb(206, 212, 218) !important;
   border-radius: 0.25rem;
   border-style: solid;
   border-width: 1px;
-
   /* transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -webkit-transform: translateY(-50%); */
@@ -1186,85 +1141,6 @@ body {
   opacity: 0;
 }
 /* End of DateTimePicker Without any Lib */
-
-
-
-/**/
-
-
-/*-----------------------------------------------------------------------*/
-@media (max-width: 767px) and ( min-width:576px) {   
-  
-}
-
-@media (max-width: 575px)  {     
-
-  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets span.icon-right {
-    left: 7.3rem;
-  } 
-
-  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
-    width: 8rem;
-    left: -0.5rem;
-  }
-  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] i {
-    position: absolute;
-    left: 1rem;
-  }
-
-  #funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
-    position: relative;
-    left: 9.5rem;
-    top: -1.55rem;
-    width: 8rem;
-    color: rgb(73, 80, 87);
-    font-size: .8rem;
-    line-height: 1.2rem;
-    padding-top: .5px;
-    padding-left: 1rem;
-    padding-right: 0;
-    padding-bottom: .5px;
-    background-clip: padding-box;
-    background-color: rgb(255, 255, 255);
-    border-color: rgb(206, 212, 218) !important;
-    border-radius: 0.25rem;
-    border-style: solid;
-    border-width: 1px;  
-     
-    -webkit-appearance: none; 
-    
-  }
-
-
-}
-
-/*-----------------------------------------------------------------------*/
-/* 
-[type="date"] {
-  background:#fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png)  97% 50% no-repeat ;
-}
-[type="date"]::-webkit-inner-spin-button {
-  display: none;
-}
-[type="date"]::-webkit-calendar-picker-indicator {
-  opacity: 0;
-} 
-*/
-
-/* custom styles */
-
-/* label {
-  display: block;
-}
-input {
-  border: 1px solid #c4c4c4;
-  border-radius: 5px;
-  background-color: #fff;
-  padding: 3px 5px;
-  box-shadow: inset 0 3px 6px rgba(0,0,0,0.1);
-  width: 190px;
-} */
-/*-----------------------------------------------------------------------*/
 
 
 /* Table For Funds / Trade History */
@@ -1314,6 +1190,8 @@ input {
   padding: 0 .5rem;
   line-height: .9rem;
 }
+
+/* End of FUNDS PAGE */
 
 
 
@@ -1470,8 +1348,11 @@ input {
 }
 @media (max-width: 1199px ) and ( min-width:992px) {
 
+
 }
 @media (max-width: 991px ) and ( min-width:768px) {
+
+
 
 }
 
@@ -1527,6 +1408,9 @@ input {
     top: -0rem;
   }
   /* End of Funds Page / Tabs /  Assets Tab */
+
+
+
 
 }
 
@@ -1584,4 +1468,41 @@ input {
     top: -0rem;
   }
   /* End of Funds Page / Tabs /  Assets Tab */
+
+
+
+  /* Funds Page / Tabs / Trade History Tab Search and Date Input */
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets span.icon-right {
+    left: 7.3rem;
+  } 
+
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
+    width: 8rem;
+    left: -0.5rem;
+  }
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] i {
+    position: absolute;
+    left: 1rem;
+  }
+  #funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
+    position: relative;
+    left: 9.5rem;
+    top: -1.55rem;
+    width: 7.5rem;
+    color: rgb(73, 80, 87);
+    font-size: .8rem;
+    line-height: 1.2rem;
+    padding-top: .5px;
+    padding-left: .5rem;
+    padding-right: 0;
+    padding-bottom: .5px;
+    background-clip: padding-box;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(206, 212, 218) !important;
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-appearance: none;     
+  }
+  /* End of Funds Page / Tabs / Trade History Tab Search and Date Input */
 }

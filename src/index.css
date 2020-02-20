@@ -326,126 +326,7 @@ body {
 }
 
 
-/* Media For Open Orders & Trade History Tables */
-@media (min-width: 1200px) {
-  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
-    padding-left: 14%;
-  }
-  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
-    padding-left: 0;
-    padding-right: 13%;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
-    text-align: left;
-    padding-left: 14%;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
-    text-align: center;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
-    text-align: right;
-    padding-right: 13%;
-  }
-}
 
-@media (max-width: 1199px ) and ( min-width:992px) {
-  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
-    padding-left: 10%;
-  }
-  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
-    padding-left: 0;
-    padding-right: 11%;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
-    text-align: left;
-    padding-left: 11%;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
-    text-align: center;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
-    text-align: right;
-    padding-right: 11%;
-  }
-}
-
-@media (max-width: 991px ) and ( min-width:768px) {
-  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
-    padding-left: 8%;
-    padding-right: 0;
-  }
-  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
-    padding-left: 0;
-    padding-right: 7%;
-  }
-
-  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
-    width: 22%;
-    text-align: left;
-    padding-left: 3%;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
-    width: 49%;
-    text-align: center;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
-    width: 29%;
-    text-align: right;
-    padding-right: 5%;
-  }
-}
-
-@media (max-width: 767px ) and ( min-width:576px) {
-  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
-    padding-left: 3%;
-    padding-right: 0;
-  }
-  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
-    padding-left: 0;
-    padding-right: 1.5%;
-  }
-
-  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
-    width: 20%;
-    text-align: left;
-    padding-left: 1%;
-    padding-right: 0;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
-    width: 51%;
-    text-align: center;
-    padding-right: 0;
-    padding-left: 0;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
-    width: 29%;
-    text-align: right;
-    padding-right: 3%;
-  }
-}
-
-@media (max-width: 575px) {
-  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
-    padding-left: 14%;
-  }
-  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
-    padding-left: 0;
-    padding-right: 13%;
-  }
-
-  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
-    text-align: left;
-    padding-left: 14%;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
-    text-align: center;
-  }
-  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
-    text-align: right;
-    padding-right: 13%;
-  }
-}
-/* Media For Open Orders & Trade History Tables */
 
 
 
@@ -1225,9 +1106,38 @@ body {
 
 
 
-/* Media For Market Page Markets & Funds Table */
+
+
+
+
+
+
+
+/* ---------------- MEDIA FOR MARKETS PAGE--------------- */
 @media (min-width: 1200px) {
-  /* Markets Scrollable Table */  
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 13%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 13%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+  /* Media - Markets Page / Right Side / Markets Table */  
   #market-right-side #markets-section  table thead th.col-price,
   #market-right-side #markets-section  table tbody td.col-price {
     width: calc( (100% ) * 0.3);
@@ -1244,16 +1154,40 @@ body {
   #market-right-side #markets-section  table tbody td.col-price {
     padding-right: 7.5%;
   }
-  /* End of Markets Scrollable Table */
+  /* End of Media - Markets Page / Right Side / Markets Table */
 
-  /* Table For Funds */  
+  /* Media - Markets Page / Right Side / Funds Table */  
   #market-right-side #funds-section  table td.text-right {
     padding-right: 10%;
   }
-  /* End of Table For Funds */  
+  /* End of Media - Markets Page / Right Side / Funds Table */  
 }
+
+
 @media (max-width: 1199px ) and ( min-width:992px) {
-  /* Markets Scrollable Table */  
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */  
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 10%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 11%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 11%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 11%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+  /* Media - Markets Page / Right Side / Markets Table */  
   #market-right-side #markets-section  table thead th.col-price,
   #market-right-side #markets-section  table tbody td.col-price {
     width: calc( 5.1rem );
@@ -1270,16 +1204,46 @@ body {
   #market-right-side #markets-section  table tbody td.col-price {
     padding-right: 1.25rem;
   }
-  /* End of Markets Scrollable Table */
+  /* End of Media - Markets Page / Right Side / Markets Table */  
 
-  /* Table For Funds */  
+  /* Media - Markets Page / Right Side / Funds Section  */  
   #market-right-side #funds-section  table td.text-right {
     padding-right: 7%;
   }
-  /* End of Table For Funds */  
-}
+  /* End of Media - Markets Page / Right Side / Funds Section  */ 
+
+} /* End of (max-width: 1199px ) and ( min-width:992px) */
+
+
 @media (max-width: 991px ) and ( min-width:768px) {
-  /* Markets Scrollable Table */  
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 8%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 7%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    width: 22%;
+    text-align: left;
+    padding-left: 3%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    width: 49%;
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    width: 29%;
+    text-align: right;
+    padding-right: 5%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+  /* Media - Markets Page / Right Side / Markets Table */   
   #market-right-side #markets-section  table thead th.col-price,
   #market-right-side #markets-section  table tbody td.col-price {
     width: calc( 4.9rem );
@@ -1296,30 +1260,93 @@ body {
   #market-right-side #markets-section  table tbody td.col-price {
     padding-right: 1.25rem;
   }
-  /* End of Markets Scrollable Table */
+  /* End of Media - Markets Page / Right Side / Markets Table */ 
 
-  /* Table For Funds */  
+  /* Media - Markets Page / Right Side / Funds Section  */ 
   #market-right-side #funds-section  table td.text-right {
     padding-right: 6%;
   }
-  /* End of Table For Funds */ 
+  /* End of Media - Markets Page / Right Side / Funds Section  */ 
 
-}
+}  /* End of (max-width: 991px ) and ( min-width:768px) */
+
+
 @media (max-width: 767px) {   
 
-  /* Table For Funds */  
+  /* Media - Markets Page / Right Side / Funds Section  */  
   #market-right-side #funds-section  table td.text-right {
     padding-right: 4%;
   }
-  /* End of Table For Funds */ 
-}
-/* Media For Market Page Markets & Funds Table */
+  /* End of Media - Markets Page / Right Side / Funds Section  */ 
+
+} /* End of (max-width: 767px) */
+
+
+@media (max-width: 767px ) and ( min-width:576px) {
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 3%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 1.5%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    width: 20%;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    width: 51%;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    width: 29%;
+    text-align: right;
+    padding-right: 3%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+} /* End of (max-width: 767px ) and ( min-width:576px) */
+
+
+@media (max-width: 575px) {
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 13%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 13%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+} /* End of (max-width: 575px) */
 
 
 
 
 
-/* Bidding Section  */
+/* Media - Markets Page / Center / Bidding Section */
 @media (max-width: 1060px) {
   #market-center #buy-sell-bidding .hide-when-small {
     display: none;
@@ -1330,7 +1357,10 @@ body {
     display: none;
   }
 }
-/* End of Bidding Section  */
+/* End of Media - Markets Page / Center / Bidding Section */
+
+
+/* ---------------- MEDIA FOR MARKETS PAGE--------------- */
 
 
 
@@ -1338,9 +1368,6 @@ body {
 /*-----------------------------------------MEDIA FOR FUNDS PAGE--------------------------      */
 
 
-
-
-/*----------------------------END OF MEDIA FOR FUNDS PAGE TABS----------------------------------------------*/
 
 /* Media For Funds Page Tabs */
 @media (min-width: 1200px) {

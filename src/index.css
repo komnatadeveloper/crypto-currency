@@ -52,7 +52,10 @@ body {
 }
 
 /* Navbar */
-.navbar-collapse {
+#app-navbar {
+  margin-bottom: 0.5rem;
+}
+#app-navbar .navbar-collapse {
   justify-content: flex-end !important;
 }
 /* End of Navbar */
@@ -68,6 +71,49 @@ body {
   padding: 0;
 }
 /* End of App Container */
+
+/* Markets Page / Markets Mobile Select */
+
+#markets-mobile {
+  width: 100%;
+  /* background-color: 0; */
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  
+}
+#markets-mobile .div-for-bg {
+  background-color: #222;
+  margin-left: "rem" !important;
+  margin-right: "2rem";
+  padding:0.5rem;
+  border-radius: 1rem;
+}
+#markets-mobile .div-for-bg select {
+  position: static !important;
+  padding: 0;
+  /* margin:0; */
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  width: 100%;
+
+  font-size: 0.9rem;
+  line-height: 1rem;
+  height: 1.5rem;
+}
+
+#markets-mobile .div-for-bg  .test-time {
+  font-size: 0.9rem !important;
+  line-height: 1rem !important;
+  height: 1rem !important;
+  padding-bottom: 0;
+}
+
+/* Media - Markets Page / Mobile Markets Section */
+
+/* End of Media - Markets Page / Mobile Markets Section */
+
+/* End of Markets Page / Markets Mobile Select */
+
 
 
 /* MARKET / LEFT SIDE */
@@ -149,58 +195,7 @@ body {
   width: calc( (100% )/3);
 }
 
-/* Media For Orders Prices Tables */
-@media (min-width: 1200px) {
-  #market-left-side #orders-tab thead th,
-  #market-left-side #orders-tab tfoot th {
-    text-align: center !important;
-  }
-  #market-left-side #orders-tab  td {
-    text-align: right !important;
-    padding-right: 12%;
-  }
-}
-@media (max-width: 1199px ) and ( min-width:992px) {
-  #market-left-side #orders-tab thead th,
-  #market-left-side #orders-tab tfoot th {
-    text-align: center !important;
-  }
-  #market-left-side #orders-tab  td {
-    text-align: right !important;
-    padding-right: 9%;
-  }
-}
-@media (max-width: 1199px ) and ( min-width:992px) {
-  #market-left-side #orders-tab thead th,
-  #market-left-side #orders-tab tfoot th {
-    text-align: center !important;
-  }
-  #market-left-side #orders-tab  td {
-    text-align: right !important;
-    padding-right: 9%;
-  }
-}
-@media (max-width: 991px ) and ( min-width:768px) {
-  #market-left-side #orders-tab thead th,
-  #market-left-side #orders-tab tfoot th {
-    text-align: center !important;
-  }
-  #market-left-side #orders-tab  td {
-    text-align: right !important;
-    padding-right: 6%;
-  }
-}
-@media (max-width: 767px) {
-  #market-left-side #orders-tab thead th,
-  #market-left-side #orders-tab tfoot th {
-    text-align: center !important;
-  }
-  #market-left-side #orders-tab  td {
-    text-align: right !important;
-    padding-right: 12%;
-  }
-}
-/* End of Media For Orders Prices Tables */
+
 
 /*For opacities of Price Buy&Sell, lighter background IOS, Firefox, and Chrome*/
 .price-item-background2 {
@@ -1106,6 +1101,17 @@ body {
 
 
 
+/* ---------------- MEDIA FOR LAYOUT--------------- */
+@media (max-width: 575px)  {    
+  #app-navbar {
+    margin-bottom: 0.25rem;
+  }
+
+}
+
+/* ---------------- END OF MEDIA FOR LAYOUT--------------- */
+
+
 
 
 
@@ -1118,6 +1124,17 @@ body {
 
 /* ---------------- MEDIA FOR MARKETS PAGE--------------- */
 @media (min-width: 1200px) {
+
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 12%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
 
   /* Media - Markets Page / Center / Orders & Trade History Tables */
   #market-center #open-ord-trd-hist .open-orders-item td.text-left {
@@ -1169,6 +1186,17 @@ body {
 
 @media (max-width: 1199px ) and ( min-width:992px) {
 
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 9%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
+
   /* Media - Markets Page / Center / Orders & Trade History Tables */  
   #market-center #open-ord-trd-hist .open-orders-item td.text-left {
     padding-left: 10%;
@@ -1219,6 +1247,17 @@ body {
 
 
 @media (max-width: 991px ) and ( min-width:768px) {
+
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 6%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
 
   /* Media - Markets Page / Center / Orders & Trade History Tables */
   #market-center #open-ord-trd-hist .open-orders-item td.text-left {
@@ -1276,6 +1315,18 @@ body {
 
 @media (max-width: 767px) {   
 
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 12%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
+
+
   /* Media - Markets Page / Right Side / Funds Section  */  
   #market-right-side #funds-section  table td.text-right {
     padding-right: 4%;
@@ -1318,8 +1369,147 @@ body {
 
 } /* End of (max-width: 767px ) and ( min-width:576px) */
 
+@media (min-width: 576px) { 
+
+  /* Media - Markets Page / Mobile / Markets Select @Top */
+  #markets-mobile {
+    display: none;
+  }
+  /* End of Media - Markets Page / Mobile / Markets Select @Top */
+
+  
+  #market-center #orders-depth-mobile {
+    display: none !important;
+  }
+
+
+
+}
+
+
 
 @media (max-width: 575px) {
+
+  #market-center {
+    height: auto !important;
+  }
+
+
+
+  /*---------------------------------Order-Depth-Mobile--------------------------------------------*/
+  /* For Home / Left Side / Prices / Tabs */
+  #market-center #orders-depth-mobile nav[role='tablist'] {
+    height: var(--tab-height);
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+  }
+  #market-center #orders-depth-mobile a[role='tab'] {
+    position: relative;
+    bottom: -0.5rem;
+    width: 40%;
+    padding:0.25rem;
+    line-height: 1rem;
+    height: 1.5rem;
+    text-align: center;
+    border-top-left-radius: .7rem !important;
+    border-top-right-radius: .7rem !important;
+    margin-right: 1rem;
+  }
+
+  #market-center #orders-depth-mobile div[role='tabpanel'] { 
+    margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+    
+  }
+
+  #market-center #orders-depth-mobile #orders-mobile-tab {
+    height: calc( 100vh - 7.75rem  ) /*  100vh - 5rem:left side -2rem:tab buttons -.75rem: top+bottom padding of left side   */
+  }
+
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell {
+    height: calc( (100vh - 7.75rem - 5rem) /2  ); /* 5rem for price explanation */
+    border-radius: 1rem;
+    padding-bottom: .5rem;
+  }
+  /* Table For Sell and Buy */
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell table {
+    height: calc( (100vh - 7.75rem - 5rem)*0.5 - var(--border-bottom-height)  ); 
+  }
+  #market-left-side #orders-mobile-tab #mobile-prices-buy table {
+    height: calc( (100vh - 7.75rem - 5rem)*0.5 - 2*var(--border-bottom-height)  ); 
+  }
+
+  #market-center #orders-depth-mobile #orders-mobile-tab  thead,
+  #market-center #orders-depth-mobile #orders-mobile-tab  thead tr,
+  #market-center #orders-depth-mobile #orders-mobile-tab  thead th {
+    height: var(--table-head-height) !important; 
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table tbody,
+  #market-center #orders-depth-mobile #orders-mobile-tab  table thead {  
+    display:block;
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell table tbody {
+    overflow-y: scroll;
+    height: calc( (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height)   ); 
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-buy table tbody {
+    overflow-y: scroll;
+    height: calc( (100vh - 7.75rem - 5rem )*0.5 - 2*var(--border-bottom-height) - var(--table-head-height) ) ; 
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table tr {
+    display:block;
+    width: 100%;
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table th {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table td {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+
+
+
+  /*For opacities of Price Buy&Sell, lighter background IOS, Firefox, and Chrome*/
+  .price-item-background2 {
+    opacity: 0.2;
+    -moz-opacity: 0.2;
+    -webkit-opacity: 0.2;
+  }
+  /* End of Table For Sell and Buy */
+
+  #market-center #orders-depth-mobile #orders-mobile-tab #prices-explanation {
+    /* And 3 rem its height */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab #prices-buy {
+    /* height: XXX; Calculated at left side */
+    padding-top: var(--border-bottom-height);
+    border-radius: 1rem;
+    display:flex ;
+    flex-direction: row ;
+    align-items: flex-end;
+    padding-bottom: var(--border-bottom-height);
+  }
+/* End of For Home / Left Side / Prices / Tabs */
+
+/* End of MARKET / LEFT SIDE */
+  /*---------------------------------End of Order-Depth-Mobile--------------------------------------------*/
+
+
+
+
+
+
+
+
+  /* Media - Markets Page / Left Side */
+  #market-left-side {
+    display: none;
+  }
+  /* End of Media - Markets Page / Left Side */
 
   /* Media - Markets Page / Center / Orders & Trade History Tables */
   #market-center #open-ord-trd-hist .open-orders-item td.text-left {

@@ -35,7 +35,8 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
               <div
                 className='bg-dark d-flex flex-column pt-1 px-1'
                 style={{
-                  borderBottomLeftRadius: "1rem"
+                  borderBottomLeftRadius: "1rem",
+                  borderBottomRightRadius: "1rem"
                 }}
               >
                 {/* Price Row */}
@@ -109,6 +110,7 @@ const BiddingMobile = ({inputStyle, definitionStyle, buttonStyle}) => {
               <div
                 className='bg-dark d-flex flex-column pt-1 px-1'
                 style={{
+                  borderBottomLeftRadius: "1rem",
                   borderBottomRightRadius: "1rem"
                 }}
               >

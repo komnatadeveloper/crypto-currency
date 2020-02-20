@@ -7,6 +7,7 @@ import { SizedGraph } from './graph/SizedGraph.';
 import { SizedGraphMobile } from './graph/SizedGraphMobile';
 import { Graph } from './graph/Graph';
 import { GraphMobile } from './graph/GraphMobile';
+import { OrdersDepthMobile } from './OrdersDepthMobile';
 
 
 
@@ -35,6 +36,7 @@ export const Center = () => {
 
 
         <Bidding />
+        <OrdersDepthMobile />
 
         <Row 
           className='m-0'

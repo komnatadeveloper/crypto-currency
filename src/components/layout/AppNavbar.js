@@ -9,7 +9,13 @@ import { Link } from 'react-router-dom'
 const AppNavbar = () => {
 
   return (
-    <Navbar style={{backgroundColor:'#222'}} className='mb-2' variant='dark' expand='lg'>
+    <Navbar
+      id='app-navbar'
+      style={{backgroundColor:'#222'}} 
+      className='' 
+      variant='dark' 
+      expand='lg'
+    >
       <Navbar.Brand href='#home'>LoGoHeRe</Navbar.Brand>
 
       <Navbar.Toggle aria-controls='basic-navbar-nav' />

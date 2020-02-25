@@ -1398,6 +1398,12 @@ body {
 
   /*---------------------------------Order-Depth-Mobile--------------------------------------------*/
   /* For Home / Left Side / Prices / Tabs */
+    #market-center #orders-depth-mobile  {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
   #market-center #orders-depth-mobile nav[role='tablist'] {
     height: var(--tab-height);
     display: flex;
@@ -1423,7 +1429,8 @@ body {
   }
 
   #market-center #orders-depth-mobile #orders-mobile-tab {
-    height: calc( 100vh - 7.75rem  ) /*  100vh - 5rem:left side -2rem:tab buttons -.75rem: top+bottom padding of left side   */
+    max-height: calc( 100vh - 7.75rem - 0rem  )  ; /*  100vh - 5rem:left side -2rem:tab buttons -.75rem: top+bottom padding of left side 0.75rem for better look @mobile   */
+    margin-bottom: 0.75rem !important;
   }
 
   #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell {
@@ -1499,7 +1506,10 @@ body {
   /*---------------------------------End of Order-Depth-Mobile--------------------------------------------*/
 
 
-
+  #market-center #open-ord-trd-hist {
+    /* --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem); */
+    height: calc( 2 * var(--open-ord-trd-hist)) ; 
+  }
 
 
 

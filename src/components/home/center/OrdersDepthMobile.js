@@ -13,7 +13,10 @@ export const OrdersDepthMobile = () => {
   return (
     <Row 
       id='orders-depth-mobile'
-      className='d-flex flex-column d-block mx-1'
+      className='d-flex flex-column d-block mx-0'
+      style={{
+        backgroundColor:'#222'
+      }}
     >
       {/* Tabs */}
       <Tabs

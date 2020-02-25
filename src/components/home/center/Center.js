@@ -8,6 +8,7 @@ import { SizedGraphMobile } from './graph/SizedGraphMobile';
 import { Graph } from './graph/Graph';
 import { GraphMobile } from './graph/GraphMobile';
 import { OrdersDepthMobile } from './OrdersDepthMobile';
+import OpenOrdersTradeHistoryFundsMobile from './OpenOrdersTradeHistoryFundsMobile';
 
 
 
@@ -49,7 +50,10 @@ export const Center = () => {
           {/* <Funds /> */}
           <OpenOrders />
           <TradeHistory />
+
+          
         </Row>
+        <OpenOrdersTradeHistoryFundsMobile />
       </div>
     </Col>
   );

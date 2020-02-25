@@ -1382,6 +1382,10 @@ body {
     display: none !important;
   }
 
+  #open-ord-trd-hist-mobile {
+    display: none;
+  }
+
 
 
 }
@@ -1390,14 +1394,22 @@ body {
 
 @media (max-width: 575px) {
 
+
+  /* Media - Markets Page / Left Side */
+  #market-left-side {
+    display: none;
+  }
+  /* End of Media - Markets Page / Left Side */
+
+  /* Media - Market Page / Center */
   #market-center {
     height: auto !important;
+    margin-bottom: 0.5rem !important;
   }
 
 
 
-  /*---------------------------------Order-Depth-Mobile--------------------------------------------*/
-  /* For Home / Left Side / Prices / Tabs */
+  /* Media - Market Page / Center / Order-Depth-Mobile */
     #market-center #orders-depth-mobile  {
     padding-left: 0.5rem;
     padding-right: 0.5rem;
@@ -1438,7 +1450,8 @@ body {
     border-radius: 1rem;
     padding-bottom: .5rem;
   }
-  /* Table For Sell and Buy */
+
+  /* Media - Market Page / Center / Order-Depth-Mobile / Table Buy&Sell */
   #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell table {
     height: calc( (100vh - 7.75rem - 5rem)*0.5 - var(--border-bottom-height)  ); 
   }
@@ -1484,7 +1497,7 @@ body {
     -moz-opacity: 0.2;
     -webkit-opacity: 0.2;
   }
-  /* End of Table For Sell and Buy */
+  /* End of Media - Market Page / Center / Order-Depth-Mobile / Table Buy&Sell */
 
   #market-center #orders-depth-mobile #orders-mobile-tab #prices-explanation {
     /* And 3 rem its height */
@@ -1500,26 +1513,139 @@ body {
     align-items: flex-end;
     padding-bottom: var(--border-bottom-height);
   }
-/* End of For Home / Left Side / Prices / Tabs */
-
-/* End of MARKET / LEFT SIDE */
-  /*---------------------------------End of Order-Depth-Mobile--------------------------------------------*/
+  /* End of Media - Market Page / Center / Order-Depth-Mobile */
 
 
   #market-center #open-ord-trd-hist {
-    /* --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem); */
-    height: calc( 2 * var(--open-ord-trd-hist)) ; 
-  }
-
-
-
-
-
-  /* Media - Markets Page / Left Side */
-  #market-left-side {
     display: none;
   }
-  /* End of Media - Markets Page / Left Side */
+
+  
+  /* Media - Markets Page / Open Orders&Trade History&Funds Mobile */
+  #market-center #open-ord-trd-hist-mobile {
+    --each-tab-height-mobile: 50vh;
+
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  #market-center #open-ord-trd-hist-mobile nav[role='tablist'] {
+    height: var(--tab-height);
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: none;
+  }
+  #market-center #open-ord-trd-hist-mobile a[role='tab'] {
+    position: relative;
+    bottom: -0.5rem;
+    padding: 0.25rem 0.5rem;
+    line-height: 1rem;
+    height: 1.5rem;
+    text-align: center;
+    border-top-left-radius: .7rem !important;
+    border-top-right-radius: .7rem !important;
+  }
+  #market-center #open-ord-trd-hist-mobile div[role='tabpanel'] { 
+    margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */    
+  }
+
+  /* Containers for Tables */
+  #market-center #open-ord-trd-hist-mobile .secondary-div,
+  #market-center #open-ord-trd-hist-mobile #funds-section {
+    height: calc( var( --each-tab-height-mobile)   ); 
+    margin: 0 !important;
+    padding-bottom: var(--border-bottom-height ) !important;
+  }
+  
+  /* Media - Markets Page / Open Orders&Trade History&Funds Mobile / Headers */
+  /* Hide Some Headers, which are necessary for wide-screen devices  */
+  #market-center #open-ord-trd-hist-mobile #trade-history-header {
+    display: none !important;
+  }
+  #market-center #open-ord-trd-hist-mobile .funds-header {
+    display: none;
+  }
+  #market-center #open-ord-trd-hist-mobile .funds-header {
+    display: none;
+  }
+  #market-center #open-ord-trd-hist-mobile #open-orders #open-orders-header {
+    display: none !important;
+  }
+  /* End of Media - Markets Page / Open Orders&Trade History&Funds Mobile / Headers */
+  
+  
+  
+  /* Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs */
+  #market-center #open-ord-trd-hist-mobile #trade-history,
+  #market-center #open-ord-trd-hist-mobile #open-orders,
+  #market-center #open-ord-trd-hist-mobile #funds-tab {
+    height: var( --each-tab-height-mobile)  ; 
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs / Tables */
+  #market-center #open-ord-trd-hist-mobile table {
+    height: calc( var( --each-tab-height-mobile) - var(--border-bottom-height)  ); 
+  }
+  #market-center #open-ord-trd-hist-mobile  table tbody {  
+    display:block;
+    overflow-y: scroll;
+    height: calc( var( --each-tab-height-mobile) - var(--border-bottom-height) ); 
+  }
+  #market-center #open-ord-trd-hist-mobile  table tr {
+    display:block;
+    width: 100%;
+  }
+  #market-center #open-ord-trd-hist-mobile  table th {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+  #market-center #open-ord-trd-hist-mobile  table td {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+
+  #market-center #open-ord-trd-hist-mobile .trade-history-item td.text-shorter,
+  #market-center #open-ord-trd-hist-mobile .trade-history-item td.text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist-mobile .trade-history-item td.text-middle {
+    text-align: right;
+    padding-right: calc( ( (100% / 3 ) - 2.5rem ) / 2 );   
+  }
+
+  #market-center #open-ord-trd-hist-mobile .markets-page-funds-item td.text-right {
+    padding-left: 0;
+    padding-right: calc( ( (100% / 3 ) - 2.5rem ) / 2 );    
+  }
+  #market-center #open-ord-trd-hist-mobile  .open-orders-item td.text-left {
+    text-align: center !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist-mobile  .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: calc( ( (100% / 3 ) - 2.5rem ) / 2 );
+  }
+
+
+  /* End of Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs / Tables */
+  /* Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs */
+  /* End of Media - Markets Page / Open Orders&Trade History&Funds Mobile */
+
+
+
+  #market-center #open-ord-trd-hist-mobile {
+    /* --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem); */
+    /* height: calc( 2 * var(--open-ord-trd-hist)) ;  */
+    /* display: none; */
+  }
+
+
+
+
+
+
 
   /* Media - Markets Page / Center / Orders & Trade History Tables */
   #market-center #open-ord-trd-hist .open-orders-item td.text-left {
@@ -1542,6 +1668,12 @@ body {
     padding-right: 13%;
   }
   /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+  /* End of Media - Market Page / Center */
+
+
+  #market-right-side {
+    display: none ;
+  }
 
 } /* End of (max-width: 575px) */
 

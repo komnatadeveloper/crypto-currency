@@ -7,7 +7,7 @@ import Assets from './Assets';
 import Deposit from './Deposit';
 import TradeHistory from './TradeHistory';
 import Withdraw from './Withdraw';
-
+import Helmet from "react-helmet";
 
 
 
@@ -22,12 +22,15 @@ export const FundsPage = () => {
     //   </h4>
     <div
       id='funds-page'
-      className="m-0 w-100"
+      className='m-0 w-100'
       style={{
         // minHeight: '70vh'
-        backgroundColor:'#222'
+        backgroundColor: "#222"
       }}
     >
+      <Helmet>
+        <title>Funds</title>
+      </Helmet>
 
       {/* Tabs */}
       <Tabs
@@ -45,7 +48,7 @@ export const FundsPage = () => {
           style={{
             borderTopLeftRadius: "10px"
           }}
-        >          
+        >
           <Assets />
         </Tab>
 
@@ -62,8 +65,6 @@ export const FundsPage = () => {
         </Tab>
       </Tabs>
       {/* End of Tabs */}
-
-
     </div>
     // </Fragment>
   );

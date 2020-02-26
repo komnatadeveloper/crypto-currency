@@ -7,6 +7,7 @@ import { LeftSide } from './left_side/LeftSide';
 import { Center } from './center/Center';
 import { RightSide } from './right_side/RightSide';
 import MarketsMobile from './mobile/MarketsMobile';
+import Helmet from 'react-helmet'
 
 
 const Home = () => {
@@ -26,6 +27,10 @@ const Home = () => {
         minHeight:'70vh'
       }}
     >
+      <Helmet>
+        <title>Markets</title>
+      </Helmet>
+
       <MarketsMobile />
 
       <LeftSide />

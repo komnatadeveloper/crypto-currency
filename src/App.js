@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useEffect} from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Container } from "react-bootstrap";
 import './App.css';
+import AppNavbar from './components/layout/AppNavbar';
+import Home from './components/home/Home';
+import { AppNavbar2 } from './components/layout/AppNavbar2';
+import { AppFooter } from './components/layout/AppFooter';
+import { FundsPage } from './components/funds/FundsPage';
 
-function App() {
+// Redux
+import { Provider} from 'react-redux'
+import store from './store';
+
+
+
+const App = () => {
+  useEffect( () => {
+    console.log('App.js useEffect')
+  }, [])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className='App bg-dark'>
+        <Router>
+          <AppNavbar />
+          <div id='app-container'>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route exact path='/funds' component={FundsPage} />
+
+              <p>This is App</p>
+            </Switch>
+          </div>
+          <AppFooter />
+        </Router>
+      </div>
+    </Provider>
   );
 }
 

@@ -1,0 +1,15 @@
+*.js text eol=lf
+*.jsx text eol=lf
+*.ts text eol=lf
+*.tsx text eol=lf
+*.css text eol=lf
+*.scss text eol=lf
+*.html text eol=lf
+*.txt text eol=lf
+*.md text eol=lf
+*.markdown text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.in text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf

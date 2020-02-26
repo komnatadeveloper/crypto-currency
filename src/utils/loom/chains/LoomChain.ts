@@ -81,7 +81,7 @@ class LoomChain implements Chain {
     public getERC20AssetsAsync = async (): Promise<ERC20Asset[]> => {
         const tokens:any = await this.getERC20Registry().getRegisteredTokens();
         return tokens.map(
-            token =>
+            (token:any) =>
                 new ERC20Asset(
                     token.name,
                     token.symbol,

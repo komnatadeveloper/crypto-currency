@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import './App.css';
@@ -15,6 +15,9 @@ import store from './store';
 
 
 const App = () => {
+  useEffect( () => {
+    console.log('App.js useEffect')
+  }, [])
   return (
     <Provider store={store}>
       <div className='App bg-dark'>

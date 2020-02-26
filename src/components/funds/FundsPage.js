@@ -8,11 +8,16 @@ import Deposit from './Deposit';
 import TradeHistory from './TradeHistory';
 import Withdraw from './Withdraw';
 import Helmet from "react-helmet";
-
+// const BN = require('bn.js')
+import  BN from 'bn.js'
 
 
 export const FundsPage = () => {
   const [tab, setTab] = useState('assets'); // "orders" OR "depth"
+
+  const a = new BN('deaddsfeFGGsdfswefsdffedsaadasc assasdsssd ', 16)
+  console.log(typeof(a))
+  console.log(a)
   return (
     // <Fragment>
     //   <h4
@@ -49,6 +54,7 @@ export const FundsPage = () => {
             borderTopLeftRadius: "10px"
           }}
         >
+          <p className='text-white'>{a.toString()}</p>
           <Assets />
         </Tab>
 

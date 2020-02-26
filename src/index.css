@@ -1,0 +1,1873 @@
+:root {
+
+  --app-container-min-height: calc( 100vh - 4rem );
+
+  --market-column-height:calc( 100vh - 5rem );  /*Left, Center, Right*/
+  --tab-height: 2rem;
+
+  --table-head-height: 2.20rem;
+  --scrollbar-width: .4rem;
+  --border-bottom-height: .9rem; /*This is because of  border radiuses which should be taken into consideration*/
+  
+
+
+}
+
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;  
+  /* background-color: #222; */
+}
+
+.text-sm-1 {
+  font-size: .9rem;
+}
+.text-sm-2 {
+  font-size: .75rem;
+}
+.text-sm-3 {
+  font-size: .6rem;
+}
+
+.h-0 {
+  height: 0 !important;
+  font-size: 0 !important;
+}
+
+.scrollbar {
+  /* position: relative; */
+  /* height: 30vh !important; ON Components */
+  overflow-y: scroll !important;
+  /* display: inline-block; */
+}
+.scrollbar::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  background-color: #eee;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgb(78, 226, 219);
+}
+
+/* Navbar */
+#app-navbar {
+  margin-bottom: 0.5rem;
+}
+#app-navbar .navbar-collapse {
+  justify-content: flex-end !important;
+}
+/* End of Navbar */
+
+
+/* App Container */
+#app-container {
+  /* width: 100vw !important; */
+  display:block;
+  width: calc( 100vw - 1rem) ;
+  min-height: calc( 100vh - 4rem );  /* Navbar 3.5rem footer: ~1.25rem */
+  margin: auto;
+  padding: 0;
+}
+/* End of App Container */
+
+/* Markets Page / Markets Mobile Select */
+
+#markets-mobile {
+  width: 100%;
+  /* background-color: 0; */
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  
+}
+#markets-mobile .div-for-bg {
+  background-color: #222;
+  margin-left: "rem" !important;
+  margin-right: "2rem";
+  padding:0.5rem;
+  border-radius: 1rem;
+}
+#markets-mobile .div-for-bg select {
+  position: static !important;
+  padding: 0;
+  /* margin:0; */
+  margin-top:0.5rem;
+  margin-bottom:0.5rem;
+  width: 100%;
+
+  font-size: 0.9rem;
+  line-height: 1rem;
+  height: 1.5rem;
+}
+
+#markets-mobile .div-for-bg  .test-time {
+  font-size: 0.9rem !important;
+  line-height: 1rem !important;
+  height: 1rem !important;
+  padding-bottom: 0;
+}
+
+/* Media - Markets Page / Mobile Markets Section */
+
+/* End of Media - Markets Page / Mobile Markets Section */
+
+/* End of Markets Page / Markets Mobile Select */
+
+
+
+/* MARKET / LEFT SIDE */
+#market-left-side {
+  height: var(--market-column-height);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+
+/* For Home / Left Side / Prices / Tabs */
+#market-left-side nav[role='tablist'] {
+  height: var(--tab-height);
+  display: flex;
+  justify-content: center;
+  border-bottom: none;
+}
+#market-left-side a[role='tab'] {
+  position: relative;
+  bottom: -0.5rem;
+  width: 40%;
+  padding:0.25rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  border-top-left-radius: .7rem !important;
+  border-top-right-radius: .7rem !important;
+  margin-right: 1rem;
+}
+
+#market-left-side div[role='tabpanel'] { 
+  margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+  
+}
+
+#market-left-side #orders-tab {
+  height: calc( 100vh - 7.75rem  ) /*  100vh - 5rem:left side -2rem:tab buttons -.75rem: top+bottom padding of left side   */
+}
+
+#market-left-side #orders-tab #prices-sell {
+  height: calc( (100vh - 7.75rem - 5rem) /2  ); /* 5rem for price explanation */
+  border-radius: 1rem;
+  padding-bottom: .5rem;
+}
+/* Table For Sell and Buy */
+#market-left-side #orders-tab #prices-sell table {
+  height: calc( (100vh - 7.75rem - 5rem)*0.5 - var(--border-bottom-height)  ); 
+}
+#market-left-side #orders-tab #prices-buy table {
+  height: calc( (100vh - 7.75rem - 5rem)*0.5 - 2*var(--border-bottom-height)  ); 
+}
+
+#market-left-side #orders-tab  thead,
+#market-left-side #orders-tab  thead tr,
+#market-left-side #orders-tab  thead th {
+  height: var(--table-head-height) !important; 
+}
+#market-left-side #orders-tab  table tbody,
+#market-left-side #orders-tab  table thead {  
+  display:block;
+}
+#market-left-side #orders-tab #prices-sell table tbody {
+  overflow-y: scroll;
+  height: calc( (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height)   ); 
+}
+#market-left-side #orders-tab #prices-buy table tbody {
+  overflow-y: scroll;
+  height: calc( (100vh - 7.75rem - 5rem )*0.5 - 2*var(--border-bottom-height) - var(--table-head-height) ) ; 
+}
+#market-left-side #orders-tab  table tr {
+  display:block;
+  width: 100%;
+}
+#market-left-side #orders-tab  table th {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+#market-left-side #orders-tab  table td {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+
+
+
+/*For opacities of Price Buy&Sell, lighter background IOS, Firefox, and Chrome*/
+.price-item-background2 {
+  opacity: 0.2;
+  -moz-opacity: 0.2;
+  -webkit-opacity: 0.2;
+}
+/* End of Table For Sell and Buy */
+
+#market-left-side #orders-tab #prices-explanation {
+  /* And 3 rem its height */
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#market-left-side #orders-tab #prices-buy {
+  /* height: XXX; Calculated at left side */
+  padding-top: var(--border-bottom-height);
+  border-radius: 1rem;
+  display:flex ;
+  flex-direction: row ;
+  align-items: flex-end;
+  padding-bottom: var(--border-bottom-height);
+}
+/* End of For Home / Left Side / Prices / Tabs */
+
+/* End of MARKET / LEFT SIDE */
+
+
+/*-----------------------MARKET CENTER------------------------------------*/
+#market-center {
+  height: var(--market-column-height);
+  --graph-height:calc(
+
+      2rem +  var(--table-head-height) +
+     (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height) /*Table Body */
+     
+     );
+
+  --buy-sell-bidding-height: 10.45rem;
+
+}
+
+#market-center #sized-graph {
+  /*height: 2rem+*/
+  /* height: calc( + 2rem +  var(--table-head-height) + var(--buy-table-body-height) ) !important; */
+  /* height: calc(
+
+      2rem +  var(--table-head-height) +
+     (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height) 
+     
+     ) ; */
+  height: calc(var(--graph-height) );
+}
+#market-center #sized-graph-mobile {
+  /* height: calc(var(--graph-height) - var(--tab-height) ); */
+  height: calc(var(--graph-height)  );
+}
+
+#market-center #buy-sell-bidding {
+  height: var(--buy-sell-bidding-height);
+}
+
+
+
+/* Buy Sell Bidding Show When Small */
+#market-center #buy-sell-bidding .show-when-small nav[role='tablist'] {
+  height: var(--tab-height);
+  display: flex;
+  justify-content: center;
+}
+#market-center #buy-sell-bidding .show-when-small a[role='tab'] {
+  position: relative;
+  bottom: -0.5rem;
+  width: 40%;
+  padding:0.25rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  border-top-left-radius: .7rem !important;
+  border-top-right-radius: .7rem !important;
+  margin-right: 1rem;
+}
+
+#market-center #buy-sell-bidding .show-when-small div[role='tabpanel'] { 
+  margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+}
+/* End of Buy Sell Bidding Show When Small */
+
+
+#market-center #open-ord-trd-hist {
+  --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem);
+  height: var(--open-ord-trd-hist); 
+}
+
+
+
+
+/* Table For Sell and Buy */
+#market-center #open-ord-trd-hist table {
+  /* height: calc(var(--market-column-height)-(2rem +  var(--table-head-height)+(100vh - 7.75rem - 5rem )*0.5-var(--border-bottom-height) - var(--table-head-height) ) -14rem - 5px +50rem 
+  )!important;  */
+  height: calc( var(--open-ord-trd-hist) - 2rem - 5px );
+}
+
+
+#market-center #open-ord-trd-hist  table tbody {  
+  display:block;
+}
+#market-center #open-ord-trd-hist table tbody {
+  overflow-y: scroll;
+  height: 100%; 
+}
+
+#market-center #open-ord-trd-hist  table tr {
+  display:block;
+  width: 100%;
+}
+#market-center #open-ord-trd-hist  table th {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+#market-center #open-ord-trd-hist  table td {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+
+
+
+
+
+
+/* Graph Height */
+
+
+
+/*-----------------------End of MARKET CENTER------------------------------------*/
+
+
+/* MARKET / RIGHT SIDE */
+#market-right-side {
+  height: var(--market-column-height);
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+}
+#market-right-side  .market-header {
+  display: block;
+  height: var(--tab-height);
+}
+#market-right-side  span.market-header p  {
+  display: block;
+  font-size: 1rem;
+  line-height: 1rem;
+  position: relative;
+  top: calc( var(--tab-height) - 1.5rem );  
+}
+#market-right-side #markets-section {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 );
+  border-radius: 1rem;
+  padding-bottom: .5rem;  
+}
+
+/* Markets Scrollable Table */
+#market-right-side #markets-section table {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--border-bottom-height) );
+}
+#market-right-side #markets-section thead,
+#market-right-side #markets-section thead tr,
+#market-right-side #markets-section thead th {
+  height: var(--table-head-height) !important; 
+}
+#market-right-side #markets-section  table tbody,
+#market-right-side #markets-section  table thead {  
+  display:block;
+}
+
+
+#market-right-side #markets-section  table tbody {  
+  display:block;
+}
+#market-right-side #markets-section table tbody {
+  overflow-y: scroll;
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--table-head-height) - var(--border-bottom-height) );
+}
+
+#market-right-side #markets-section  table tr {
+  display:block;
+  width: 100%;
+}
+#market-right-side #markets-section  table th {
+  display:inline-block;
+  width: calc( (100% )/4);
+}
+#market-right-side #markets-section  table td {
+  display:inline-block;
+  width: calc( (100% )/4);
+}
+/* End of Markets Scrollable Table */
+
+
+/*    Funds     */
+#market-right-side  .funds-header {
+  display: block;
+  height: var(--tab-height);
+  margin-top: 3rem;
+}
+#market-right-side  span.funds-header p  {
+  display: block;
+  font-size: 1rem;
+  line-height: 1rem;
+  position: relative;
+  top: calc( var(--tab-height) - 1.5rem );  
+}
+#market-right-side #funds-section {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5  );
+  
+}
+
+/* Table For Funds */
+#market-right-side #funds-section table {
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--border-bottom-height)  );
+}
+
+
+#market-right-side #funds-section  table tbody,
+#market-right-side #funds-section  table thead {  
+  display:block;
+}
+#market-right-side #funds-section table tbody {
+  overflow-y: scroll;
+  height: calc( (100vh - 7.75rem - 5rem) * 0.5 - var(--border-bottom-height)  );
+}
+
+#market-right-side #funds-section  table tr {
+  display:block;
+  width: 100%;
+}
+#market-right-side #funds-section  table th {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+#market-right-side #funds-section  table td {
+  display:inline-block;
+  width: calc( (100% )/3);
+}
+
+
+/* FUNDS PAGE */
+
+#funds-page {
+  --funds-page-min-height: calc(var(--app-container-min-height ) - 2rem);
+  --each-tab-height: calc(var(--funds-page-min-height) - 2rem - var(--tab-height));
+  min-height: var(--funds-page-min-height);  /* 2rem for bottom and top margins */
+  margin-top: 1rem !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  border-radius: 1rem;
+  width: calc(100% - 2rem) !important;
+  padding-top: 1rem;  /* Instead of margin-top of nav */
+  padding-left: 1rem;  /* Instead of margin-top of nav */
+  padding-right: 1rem;  /* Instead of margin-top of nav */
+  padding-bottom: 1rem;  /* Instead of margin-top of nav */
+}
+
+
+
+/* Funds Page / Page Tabs */
+#funds-page nav[role='tablist'] {
+  
+  height: var(--tab-height);
+
+  background-color: chartreuse !important;
+  display: flex;
+  padding-left: 1rem;
+  border-bottom: none;
+  /* justify-content: center; */  
+  /* overflow-x: scroll !important; */
+  /* width: 100%; */
+}
+#funds-page nav[role='tablist'] a[role='tab'] {
+  position: relative;
+  bottom: -0.5rem;
+  /* width: 40%; */
+  padding:0.25rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  border-top-left-radius: .7rem !important;
+  border-top-right-radius: .7rem !important;
+  margin-right: 1rem;
+  background-color: grey;
+  color: white;
+  margin-right: .5rem !important;
+
+}
+#funds-page nav[role='tablist'] a[role='tab'].active {
+  background-color: blue;
+}
+#funds-page div[role='tabpanel'] { 
+  margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+}
+/* End of Funds Page / Page Tabs */
+
+
+
+/* Funds Page /  Assets Tab */
+#funds-page #assets-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;  
+}
+
+#funds-page #assets-tab #assets-tab-bar {
+  height: 2.5rem;
+  margin-top: 0 !important;
+  width: 100%;
+}
+#funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
+  height: 2rem;
+  width: 1rem;
+  font-size: 1rem;
+  /* margin-left: 3rem; */
+  position: relative;
+  top: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* background-color: cornsilk; */
+  z-index: 50;
+  padding-top: .5rem;
+  left: 11rem;
+} 
+
+#funds-page #assets-tab #assets-tab-bar #search-assets input[type='search'] {
+  font-size: 1rem;
+  height: 1.5rem;
+  width: 11rem;
+  position: relative;
+  top:0.25rem;
+  left: .5rem;
+  margin-left: 0;
+  font-size: .8rem;
+}
+
+
+#funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 2rem;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  top: 0.25rem;
+}
+#funds-page #assets-tab #assets-tab-bar #search-assets input[type='checkbox'] {
+  font-size: 1rem;
+  /* height: 1.5rem; */
+  width: 11rem;
+  position: relative;
+  top:0.25rem;
+  left: 0.5rem;
+  margin-left: 0;
+  font-size: .8rem;
+  transform: scale(calc( 23/13 ));
+  /* transform: scale(5,5);
+  transform-origin: top left;
+  -moz-transform: scale(5,5); */
+  /* -moz-appearance: none; */
+
+
+  color: rgb(73, 80, 87);  
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+}
+
+
+/*checkbox*/
+#funds-page #assets-tab #assets-tab-bar #search-assets .form-check #hide-zero {
+  top:0;
+  width:1.5rem;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: .9rem;
+  position: relative;
+  left: .75rem;
+}
+
+/* Table For Funds / Assets */
+#funds-page #assets-tab table {
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height)  );
+}
+#funds-page #assets-tab  thead,
+#funds-page #assets-tab  thead tr,
+#funds-page #assets-tab  thead th {
+  height: var(--table-head-height) !important; 
+}
+
+#funds-page #assets-tab  table tbody,
+#funds-page #assets-tab  table thead {  
+  display:block;
+}
+#funds-page #assets-tab tbody {
+  overflow-y: scroll;
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height) - var(--table-head-height)  );
+}
+
+#funds-page #assets-tab  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #assets-tab  table th {
+  display:inline-block;
+  width: calc( (100% )/10);
+}
+#funds-page #assets-tab  table td {
+  display:inline-block;
+  width: calc( (100% )/10);
+}
+/* End of Table For Funds / Assets */
+
+/* End of Funds Page /  Assets Tab */
+
+/* Funds Page /  Deposit Tab */
+#funds-page #deposit-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; 
+  padding-top: .75rem; /*instead of margin-top of #deposit-assets */
+  --deposit-assets-height: 15.7rem;
+}
+#funds-page #deposit-tab #deposit-assets {
+  height: var(--deposit-assets-height);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+#funds-page #deposit-tab #deposit-assets #deposit-assets-header{
+  height: var(--table-head-height);
+}
+#funds-page #deposit-tab #deposit-assets #deposit-assets-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+}
+#funds-page #deposit-tab #deposit-assets select.form-control{
+  max-width: 14rem;
+  height: 1.5rem;
+  padding-top: 0;
+  line-height: 1rem;
+  font-size: .95rem;
+  margin-left: 2rem;
+}
+#funds-page #deposit-tab #deposit-assets #deposit-info{
+  margin-top: .5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  /* background-color: red; */
+}
+#funds-page #deposit-tab #deposit-assets #deposit-explanation{
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+}
+#funds-page #deposit-tab #deposit-assets #for-future-exp{
+  display: block;
+  height: 6.5rem;
+  /* background-color: blue; */
+  margin-bottom: 0;
+}
+#funds-page #deposit-tab #deposit-assets #for-future-bottom-exp {
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+}
+
+/* Deposit History */
+#funds-page #deposit-tab #deposit-history {
+  height: calc( var(--each-tab-height) - var(--deposit-assets-height) - 2.25rem );
+  margin-top: .75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+#funds-page #deposit-tab #deposit-history #deposit-history-header{
+  height: var(--table-head-height);
+}
+#funds-page #deposit-tab #deposit-history #deposit-history-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+}
+
+/* Table For Funds / Deposit */
+#funds-page #deposit-tab #deposit-history  table {
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--deposit-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)      
+  ); /* 2.25rem top+bottom margin-paddings */
+  margin-bottom: 0;
+
+  --col-from-width: 18rem;
+  --col-assets-width: 6rem;
+}
+#funds-page #deposit-tab #deposit-history  thead,
+#funds-page #deposit-tab #deposit-history  thead tr,
+#funds-page #deposit-tab #deposit-history  thead th {
+  height: var(--table-head-height) !important; 
+}
+#funds-page #deposit-tab #deposit-history  table tbody,
+#funds-page #deposit-tab #deposit-history  table thead {  
+  display:block;
+}
+#funds-page #deposit-tab #deposit-history tbody {
+  overflow-y: scroll;
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--deposit-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)    
+    - var(--table-head-height)  
+  ) !important;
+}
+
+#funds-page #deposit-tab #deposit-history  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #deposit-tab #deposit-history  table th,
+#funds-page #deposit-tab #deposit-history  table td {
+  display:inline-block;  
+}
+
+#funds-page #deposit-tab #deposit-history  table th.col-from {  
+  width: var(--col-from-width);
+  text-align: center;
+}
+#funds-page #deposit-tab #deposit-history  table td.col-from {  
+  width: var(--col-from-width);
+  text-align: end;
+}
+
+#funds-page #deposit-tab #deposit-history  table td.col-assets,
+#funds-page #deposit-tab #deposit-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+}
+#funds-page #deposit-tab #deposit-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #deposit-tab #deposit-history  table td.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #deposit-tab #deposit-history  table td.col-others,
+#funds-page #deposit-tab #deposit-history  table th.col-others {  
+  width: calc( (100% - var(--col-assets-width) - var(--col-from-width))*0.25 );
+  text-align: center;
+}
+/* End of Table For Funds / Deposit */
+
+/* End of Deposit History */
+
+
+/*-----------------------------------Funds Page Withdraw----------- */
+
+
+/* Funds Page /  Withdraw Tab */
+#funds-page #withdraw-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem; 
+  padding-top: .75rem; /*instead of margin-top of #deposit-assets */
+  --withdraw-assets-height: 15.7rem;
+  
+}
+#funds-page #withdraw-tab #withdraw-assets {
+  height: var(--withdraw-assets-height);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-assets-header{
+  height: var(--table-head-height);
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-assets-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+  
+}
+#funds-page #withdraw-tab #withdraw-assets select.form-control{
+  max-width: 14rem;
+  height: 1.5rem;
+  padding-top: 0;
+  line-height: 1rem;
+  font-size: .95rem;
+  margin-left: 2rem;
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-info{
+  margin-top: .5rem;
+  margin-left: 3rem;
+  margin-right: 3rem;
+  /* background-color: red; */
+}
+#funds-page #withdraw-tab #withdraw-assets #withdraw-explanation{
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+  
+}
+#funds-page #withdraw-tab #withdraw-assets #for-future-exp{
+  display: block;
+  height: 6.5rem;
+  /* background-color: blue; */
+  margin-bottom: 0;
+}
+#funds-page #withdraw-tab #withdraw-assets #for-future-bottom-exp {
+  margin-top: .5rem;
+  margin-left:4rem;
+  margin-right:4rem;
+  margin-bottom: .75rem;
+}
+
+/* Funds Page / Withdraw Tab / Withdraw History */
+#funds-page #withdraw-tab #withdraw-history {
+  height: calc( var(--each-tab-height) - var(--withdraw-assets-height) - 2.25rem );
+  margin-top: .75rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: red;
+}
+#funds-page #withdraw-tab #withdraw-history #withdraw-history-header{
+  height: var(--table-head-height);
+  
+}
+#funds-page #withdraw-tab #withdraw-history #withdraw-history-header .header-text{
+  position: relative;
+  font-size: 1rem;
+  line-height: 1rem;
+  top: calc( (var(--table-head-height) - 1.5rem) *0.5 ); 
+  left: 2rem;
+}
+
+/* Table For Funds / Withdraw */
+#funds-page #withdraw-tab #withdraw-history  table {
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--withdraw-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)      
+  ); /* 2.25rem top+bottom margin-paddings */
+  margin-bottom: 0;
+
+  --col-to-width: 18rem;
+  --col-assets-width: 6rem;
+}
+#funds-page #withdraw-tab #withdraw-history  thead,
+#funds-page #withdraw-tab #withdraw-history  thead tr,
+#funds-page #withdraw-tab #withdraw-history  thead th {
+  height: var(--table-head-height) !important; 
+}
+#funds-page #withdraw-tab #withdraw-history  table tbody,
+#funds-page #withdraw-tab #withdraw-history  table thead {  
+  display:block;
+}
+#funds-page #withdraw-tab #withdraw-history tbody {
+  overflow-y: scroll;
+  height: calc( 
+    var(--each-tab-height) 
+    -  var(--withdraw-assets-height) 
+    - 2.25rem 
+    - var(--table-head-height) 
+    - var(--border-bottom-height)    
+    - var(--table-head-height)  
+  ) !important;
+}
+
+#funds-page #withdraw-tab #withdraw-history  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #withdraw-tab #withdraw-history  table th,
+#funds-page #withdraw-tab #withdraw-history  table td {
+  display:inline-block;  
+}
+
+#funds-page #withdraw-tab #withdraw-history  table th.col-to {  
+  width: var(--col-to-width);
+  text-align: center;
+}
+#funds-page #withdraw-tab #withdraw-history  table td.col-to {  
+  width: var(--col-to-width);
+  text-align: end;
+}
+
+#funds-page #withdraw-tab #withdraw-history  table td.col-assets,
+#funds-page #withdraw-tab #withdraw-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+}
+#funds-page #withdraw-tab #withdraw-history  table th.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #withdraw-tab #withdraw-history  table td.col-assets {  
+  width: var(--col-assets-width);  
+  text-align: left;
+}
+#funds-page #withdraw-tab #withdraw-history  table td.col-others,
+#funds-page #withdraw-tab #withdraw-history  table th.col-others {  
+  width: calc( (100% - var(--col-assets-width) - var(--col-to-width))*0.25 );
+  text-align: center;
+}
+/* End of Table For Funds / Withdraw */
+
+/* End of Funds Page / Withdraw Tab / Withdraw History */
+
+/* End of Funds Page /  Withdraw Tab */
+
+
+
+
+/*-----------------------------------Funds Page Trade History----------- */
+#funds-page #trade-history-tab {
+  height: var(--each-tab-height);
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  background-color: rosybrown;  
+}
+
+#funds-page #trade-history-tab #trade-history-tab-bar {
+  height: 2.5rem;
+  margin-top: 0 !important;
+  width: 100%;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets span.icon-right {
+  height: 2rem;
+  width: 1rem;
+  font-size: 1rem;
+  /* margin-left: 3rem; */
+  position: relative;
+  top: 0.25rem;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  /* background-color: cornsilk; */
+  z-index: 50;
+  padding-top: .5rem;
+  left: 11.3rem;
+} 
+
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
+  font-size: 1rem;
+  height: 1.5rem;
+  width: 11rem;
+  position: relative;
+  top:0.25rem;
+  left: .5rem;
+  margin-left: 0;
+  font-size: .8rem;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] i {
+  position: absolute;
+  left: 1rem;
+}
+
+#funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
+  position: relative;
+  left: 15rem;
+  top: -1.57rem;
+  width: 9rem;
+  color: rgb(73, 80, 87);
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: 0.5px;
+  padding-left: 1rem;
+  padding-right: 0;
+  padding-bottom: 0.5px;
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  /* transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%); */
+}
+#funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+#funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+/* End of DateTimePicker Without any Lib */
+
+
+/* Table For Funds / Trade History */
+#funds-page #trade-history-tab table {
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height)  );
+}
+#funds-page #trade-history-tab  thead,
+#funds-page #trade-history-tab  thead tr,
+#funds-page #trade-history-tab  thead th {
+  height: var(--table-head-height) !important; 
+}
+
+#funds-page #trade-history-tab  tbody tr,
+#funds-page #trade-history-tab  tbody td {
+  height: calc( (25.59/16) * 1rem ) !important; 
+}
+
+#funds-page #trade-history-tab  table tbody,
+#funds-page #trade-history-tab  table thead {  
+  display:block;
+}
+#funds-page #trade-history-tab tbody {
+  overflow-y: scroll;
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height) - var(--table-head-height)  );
+}
+
+#funds-page #trade-history-tab  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #trade-history-tab  table th {
+  display:inline-block;
+  width: calc( (100% )/8);
+}
+#funds-page #trade-history-tab  table td {
+  display:inline-block;
+  width: calc( (100% )/8);
+}
+#funds-page #trade-history-tab  table td.text-right {
+  padding-left: 0;
+  padding-right: 4%;
+}
+#funds-page #trade-history-tab  table td button {
+  position: relative;
+  top: -0.1rem;
+  left: 35%;
+  padding: 0 .5rem;
+  line-height: .9rem;
+}
+
+/* End of FUNDS PAGE */
+
+
+
+
+
+
+/*----------------------------BluePrint-------------------------------------*/
+@media (min-width: 1200px) {
+
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+   
+}
+@media (max-width: 991px ) and ( min-width:768px) {  
+
+}
+@media (max-width: 767px) and ( min-width:576px) {   
+  
+}
+
+@media (max-width: 575px)  {     
+
+}
+/*----------------------------End of BluePrint--------------------------------*/
+
+
+/*----------------------------------------MEDIA------------------------------------------------------*/
+
+
+
+/* ---------------- MEDIA FOR LAYOUT--------------- */
+@media (max-width: 575px)  {    
+  #app-navbar {
+    margin-bottom: 0.25rem;
+  }
+
+}
+
+/* ---------------- END OF MEDIA FOR LAYOUT--------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+/* ---------------- MEDIA FOR MARKETS PAGE--------------- */
+@media (min-width: 1200px) {
+
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 12%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 13%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 13%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+  /* Media - Markets Page / Right Side / Markets Table */  
+  #market-right-side #markets-section  table thead th.col-price,
+  #market-right-side #markets-section  table tbody td.col-price {
+    width: calc( (100% ) * 0.3);
+  }
+  #market-right-side #markets-section  table thead th.col-others,
+  #market-right-side #markets-section  table thead th.col-change,
+  #market-right-side #markets-section  table tbody td.col-others,
+  #market-right-side #markets-section  table tbody td.col-change {
+    width: calc( ((100% ) * 0.7) / 3 );
+  }
+  #market-right-side #markets-section  table tbody td.col-change {
+    padding-right: 6%;
+  }
+  #market-right-side #markets-section  table tbody td.col-price {
+    padding-right: 7.5%;
+  }
+  /* End of Media - Markets Page / Right Side / Markets Table */
+
+  /* Media - Markets Page / Right Side / Funds Table */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 10%;
+  }
+  /* End of Media - Markets Page / Right Side / Funds Table */  
+}
+
+
+@media (max-width: 1199px ) and ( min-width:992px) {
+
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 9%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */  
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 10%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 11%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 11%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 11%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+  /* Media - Markets Page / Right Side / Markets Table */  
+  #market-right-side #markets-section  table thead th.col-price,
+  #market-right-side #markets-section  table tbody td.col-price {
+    width: calc( 5.1rem );
+  }
+  #market-right-side #markets-section  table thead th.col-others,
+  #market-right-side #markets-section  table thead th.col-change,
+  #market-right-side #markets-section  table tbody td.col-others,
+  #market-right-side #markets-section  table tbody td.col-change {
+    width: calc( ((100% ) - 5.1rem ) / 3 );
+  }
+  #market-right-side #markets-section  table tbody td.col-change {
+    padding-right: 5%;
+  }
+  #market-right-side #markets-section  table tbody td.col-price {
+    padding-right: 1.25rem;
+  }
+  /* End of Media - Markets Page / Right Side / Markets Table */  
+
+  /* Media - Markets Page / Right Side / Funds Section  */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 7%;
+  }
+  /* End of Media - Markets Page / Right Side / Funds Section  */ 
+
+} /* End of (max-width: 1199px ) and ( min-width:992px) */
+
+
+@media (max-width: 991px ) and ( min-width:768px) {
+
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 6%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 8%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 7%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    width: 22%;
+    text-align: left;
+    padding-left: 3%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    width: 49%;
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    width: 29%;
+    text-align: right;
+    padding-right: 5%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+  /* Media - Markets Page / Right Side / Markets Table */   
+  #market-right-side #markets-section  table thead th.col-price,
+  #market-right-side #markets-section  table tbody td.col-price {
+    width: calc( 4.9rem );
+  }
+  #market-right-side #markets-section  table thead th.col-others,
+  #market-right-side #markets-section  table thead th.col-change,
+  #market-right-side #markets-section  table tbody td.col-others,
+  #market-right-side #markets-section  table tbody td.col-change {
+    width: calc( ((100% ) - 4.9rem ) / 3 );
+  }
+  #market-right-side #markets-section  table tbody td.col-change {
+    padding-right: 5%;
+  }
+  #market-right-side #markets-section  table tbody td.col-price {
+    padding-right: 1.25rem;
+  }
+  /* End of Media - Markets Page / Right Side / Markets Table */ 
+
+  /* Media - Markets Page / Right Side / Funds Section  */ 
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 6%;
+  }
+  /* End of Media - Markets Page / Right Side / Funds Section  */ 
+
+}  /* End of (max-width: 991px ) and ( min-width:768px) */
+
+
+@media (max-width: 767px) {   
+
+  /* Media - Markets Page / Left Side / Tables */
+  #market-left-side #orders-tab thead th,
+  #market-left-side #orders-tab tfoot th {
+    text-align: center !important;
+  }
+  #market-left-side #orders-tab  td {
+    text-align: right !important;
+    padding-right: 12%;
+  }
+  /* End of Media - Markets Page / Left Side / Tables */
+
+
+  /* Media - Markets Page / Right Side / Funds Section  */  
+  #market-right-side #funds-section  table td.text-right {
+    padding-right: 4%;
+  }
+  /* End of Media - Markets Page / Right Side / Funds Section  */ 
+
+} /* End of (max-width: 767px) */
+
+
+@media (max-width: 767px ) and ( min-width:576px) {
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 3%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 1.5%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    width: 20%;
+    text-align: left;
+    padding-left: 1%;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    width: 51%;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    width: 29%;
+    text-align: right;
+    padding-right: 3%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+
+} /* End of (max-width: 767px ) and ( min-width:576px) */
+
+@media (min-width: 576px) { 
+
+  /* Media - Markets Page / Mobile / Markets Select @Top */
+  #markets-mobile {
+    display: none;
+  }
+  /* End of Media - Markets Page / Mobile / Markets Select @Top */
+
+  
+  #market-center #orders-depth-mobile {
+    display: none !important;
+  }
+
+  #open-ord-trd-hist-mobile {
+    display: none;
+  }
+
+
+
+}
+
+
+
+@media (max-width: 575px) {
+
+
+  /* Media - Markets Page / Left Side */
+  #market-left-side {
+    display: none;
+  }
+  /* End of Media - Markets Page / Left Side */
+
+  /* Media - Market Page / Center */
+  #market-center {
+    height: auto !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+
+
+  /* Media - Market Page / Center / Order-Depth-Mobile */
+    #market-center #orders-depth-mobile  {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  #market-center #orders-depth-mobile nav[role='tablist'] {
+    height: var(--tab-height);
+    display: flex;
+    justify-content: center;
+    border-bottom: none;
+  }
+  #market-center #orders-depth-mobile a[role='tab'] {
+    position: relative;
+    bottom: -0.5rem;
+    width: 40%;
+    padding:0.25rem;
+    line-height: 1rem;
+    height: 1.5rem;
+    text-align: center;
+    border-top-left-radius: .7rem !important;
+    border-top-right-radius: .7rem !important;
+    margin-right: 1rem;
+  }
+
+  #market-center #orders-depth-mobile div[role='tabpanel'] { 
+    margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+    
+  }
+
+  #market-center #orders-depth-mobile #orders-mobile-tab {
+    max-height: calc( 100vh - 7.75rem - 0rem  )  ; /*  100vh - 5rem:left side -2rem:tab buttons -.75rem: top+bottom padding of left side 0.75rem for better look @mobile   */
+    margin-bottom: 0.75rem !important;
+  }
+
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell {
+    height: calc( (100vh - 7.75rem - 5rem) /2  ); /* 5rem for price explanation */
+    border-radius: 1rem;
+    padding-bottom: .5rem;
+  }
+
+  /* Media - Market Page / Center / Order-Depth-Mobile / Table Buy&Sell */
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell table {
+    height: calc( (100vh - 7.75rem - 5rem)*0.5 - var(--border-bottom-height)  ); 
+  }
+  #market-left-side #orders-mobile-tab #mobile-prices-buy table {
+    height: calc( (100vh - 7.75rem - 5rem)*0.5 - 2*var(--border-bottom-height)  ); 
+  }
+
+  #market-center #orders-depth-mobile #orders-mobile-tab  thead,
+  #market-center #orders-depth-mobile #orders-mobile-tab  thead tr,
+  #market-center #orders-depth-mobile #orders-mobile-tab  thead th {
+    height: var(--table-head-height) !important; 
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table tbody,
+  #market-center #orders-depth-mobile #orders-mobile-tab  table thead {  
+    display:block;
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-sell table tbody {
+    overflow-y: scroll;
+    height: calc( (100vh - 7.75rem - 5rem )*0.5 - var(--border-bottom-height) - var(--table-head-height)   ); 
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab #mobile-prices-buy table tbody {
+    overflow-y: scroll;
+    height: calc( (100vh - 7.75rem - 5rem )*0.5 - 2*var(--border-bottom-height) - var(--table-head-height) ) ; 
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table tr {
+    display:block;
+    width: 100%;
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table th {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab  table td {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+
+
+
+  /*For opacities of Price Buy&Sell, lighter background IOS, Firefox, and Chrome*/
+  .price-item-background2 {
+    opacity: 0.2;
+    -moz-opacity: 0.2;
+    -webkit-opacity: 0.2;
+  }
+  /* End of Media - Market Page / Center / Order-Depth-Mobile / Table Buy&Sell */
+
+  #market-center #orders-depth-mobile #orders-mobile-tab #prices-explanation {
+    /* And 3 rem its height */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  #market-center #orders-depth-mobile #orders-mobile-tab #prices-buy {
+    /* height: XXX; Calculated at left side */
+    padding-top: var(--border-bottom-height);
+    border-radius: 1rem;
+    display:flex ;
+    flex-direction: row ;
+    align-items: flex-end;
+    padding-bottom: var(--border-bottom-height);
+  }
+  /* End of Media - Market Page / Center / Order-Depth-Mobile */
+
+
+  #market-center #open-ord-trd-hist {
+    display: none;
+  }
+
+  
+  /* Media - Markets Page / Open Orders&Trade History&Funds Mobile */
+  #market-center #open-ord-trd-hist-mobile {
+    --each-tab-height-mobile: 50vh;
+
+    border-radius: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  #market-center #open-ord-trd-hist-mobile nav[role='tablist'] {
+    height: var(--tab-height);
+    display: flex;
+    justify-content: space-evenly;
+    border-bottom: none;
+  }
+  #market-center #open-ord-trd-hist-mobile a[role='tab'] {
+    position: relative;
+    bottom: -0.5rem;
+    padding: 0.25rem 0.5rem;
+    line-height: 1rem;
+    height: 1.5rem;
+    text-align: center;
+    border-top-left-radius: .7rem !important;
+    border-top-right-radius: .7rem !important;
+  }
+  #market-center #open-ord-trd-hist-mobile div[role='tabpanel'] { 
+    margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */    
+  }
+
+  /* Containers for Tables */
+  #market-center #open-ord-trd-hist-mobile .secondary-div,
+  #market-center #open-ord-trd-hist-mobile #funds-section {
+    height: calc( var( --each-tab-height-mobile)   ); 
+    margin: 0 !important;
+    padding-bottom: var(--border-bottom-height ) !important;
+  }
+  
+  /* Media - Markets Page / Open Orders&Trade History&Funds Mobile / Headers */
+  /* Hide Some Headers, which are necessary for wide-screen devices  */
+  #market-center #open-ord-trd-hist-mobile #trade-history-header {
+    display: none !important;
+  }
+  #market-center #open-ord-trd-hist-mobile .funds-header {
+    display: none;
+  }
+  #market-center #open-ord-trd-hist-mobile .funds-header {
+    display: none;
+  }
+  #market-center #open-ord-trd-hist-mobile #open-orders #open-orders-header {
+    display: none !important;
+  }
+  /* End of Media - Markets Page / Open Orders&Trade History&Funds Mobile / Headers */
+  
+  
+  
+  /* Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs */
+  #market-center #open-ord-trd-hist-mobile #trade-history,
+  #market-center #open-ord-trd-hist-mobile #open-orders,
+  #market-center #open-ord-trd-hist-mobile #funds-tab {
+    height: var( --each-tab-height-mobile)  ; 
+    margin-bottom: 0.75rem !important;
+  }
+
+  /* Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs / Tables */
+  #market-center #open-ord-trd-hist-mobile table {
+    height: calc( var( --each-tab-height-mobile) - var(--border-bottom-height)  ); 
+  }
+  #market-center #open-ord-trd-hist-mobile  table tbody {  
+    display:block;
+    overflow-y: scroll;
+    height: calc( var( --each-tab-height-mobile) - var(--border-bottom-height) ); 
+  }
+  #market-center #open-ord-trd-hist-mobile  table tr {
+    display:block;
+    width: 100%;
+  }
+  #market-center #open-ord-trd-hist-mobile  table th {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+  #market-center #open-ord-trd-hist-mobile  table td {
+    display:inline-block;
+    width: calc( (100% )/3);
+  }
+
+  #market-center #open-ord-trd-hist-mobile .trade-history-item td.text-shorter,
+  #market-center #open-ord-trd-hist-mobile .trade-history-item td.text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist-mobile .trade-history-item td.text-middle {
+    text-align: right;
+    padding-right: calc( ( (100% / 3 ) - 2.5rem ) / 2 );   
+  }
+
+  #market-center #open-ord-trd-hist-mobile .markets-page-funds-item td.text-right {
+    padding-left: 0;
+    padding-right: calc( ( (100% / 3 ) - 2.5rem ) / 2 );    
+  }
+  #market-center #open-ord-trd-hist-mobile  .open-orders-item td.text-left {
+    text-align: center !important;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  #market-center #open-ord-trd-hist-mobile  .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: calc( ( (100% / 3 ) - 2.5rem ) / 2 );
+  }
+
+
+  /* End of Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs / Tables */
+  /* Media - Market Page / Center / Open Orders&Trade History&Funds Mobile / Tabs */
+  /* End of Media - Markets Page / Open Orders&Trade History&Funds Mobile */
+
+
+
+  #market-center #open-ord-trd-hist-mobile {
+    /* --open-ord-trd-hist: calc(  var( --market-column-height) - var(--graph-height) - var(--buy-sell-bidding-height) - 1.25rem); */
+    /* height: calc( 2 * var(--open-ord-trd-hist)) ;  */
+    /* display: none; */
+  }
+
+
+
+
+
+
+
+  /* Media - Markets Page / Center / Orders & Trade History Tables */
+  #market-center #open-ord-trd-hist .open-orders-item td.text-left {
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .open-orders-item td.text-right {
+    padding-left: 0;
+    padding-right: 13%;
+  }
+
+  #market-center #open-ord-trd-hist .trade-history-item  .text-shorter {
+    text-align: left;
+    padding-left: 14%;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-longer {
+    text-align: center;
+  }
+  #market-center #open-ord-trd-hist .trade-history-item  .text-middle {
+    text-align: right;
+    padding-right: 13%;
+  }
+  /* End of Media - Markets Page / Center / Orders & Trade History Tables */
+  /* End of Media - Market Page / Center */
+
+
+  #market-right-side {
+    display: none ;
+  }
+
+} /* End of (max-width: 575px) */
+
+
+
+
+
+/* Media - Markets Page / Center / Bidding Section */
+@media (min-width: 1061px) {
+  #market-center #buy-sell-bidding .show-when-small {
+    display: none;
+  }
+}
+@media (max-width: 1060px) {
+  #market-center #buy-sell-bidding .hide-when-small {
+    display: none;
+  }
+  #market-center #buy-sell-bidding .show-when-small nav[role='tablist'] {
+    border-bottom: none;
+  }
+}
+/* End of Media - Markets Page / Center / Bidding Section */
+
+
+/* ---------------- MEDIA FOR MARKETS PAGE--------------- */
+
+
+
+
+/*-----------------------------------------MEDIA FOR FUNDS PAGE--------------------------      */
+
+
+
+/* Media For Funds Page Tabs */
+@media (min-width: 1200px) {
+
+}
+@media (max-width: 1199px ) and ( min-width:992px) {
+
+
+}
+@media (max-width: 991px ) and ( min-width:768px) {
+
+
+
+}
+
+@media (max-width: 767px) {
+
+  
+}
+
+@media (max-width: 767px) and ( min-width:576px) {   
+
+  /* Funds Page / Tabs */
+  #funds-page nav[role='tablist'] {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0rem;
+  }
+  #funds-page nav[role='tablist'] a[role='tab'] {
+    margin-right: 0rem !important;
+    padding-left: .5rem !important;
+    padding-right: .5rem !important;
+  } 
+  /* End of Funds Page / Tabs */ 
+
+
+  /* Funds Page / Tabs /  Assets Tab */
+  #funds-page #assets-tab #assets-tab-bar  #search-assets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
+    left: 10.4rem; 
+  } 
+  #funds-page #assets-tab #assets-tab-bar #search-assets input[type='search'] {
+    width: 11rem;
+    left: -.5rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {    
+    height: 1.9rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check input[type='checkbox'] {
+    position: relative;
+    top: 0.1rem !important;
+    left: 1.5rem;
+    transform: scale( calc(20/16));
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
+    position: relative;
+    font-size: .8rem;
+    left: 1.4rem;
+    top: -0rem;
+  }
+  /* End of Funds Page / Tabs /  Assets Tab */
+
+
+}  /* End of (max-width: 767px) and ( min-width:576px) */
+
+
+
+@media (max-width: 575px)  {     
+
+  /* For Funds Page Tabs */
+  #funds-page nav[role='tablist'] {
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 0rem;
+  }
+  #funds-page nav[role='tablist'] a[role='tab'] {
+    margin-right: 0rem !important;
+    font-size: .8rem;
+  }
+
+
+  /* Funds Page / Tabs /  Assets Tab */
+  #funds-page #assets-tab #assets-tab-bar  #search-assets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets span.icon-right {
+    left: 7.4rem; 
+  } 
+  #funds-page #assets-tab #assets-tab-bar #search-assets input[type='search'] {
+    width: 8rem;
+    left: -.5rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {
+    /* position: static;
+    margin-left: 0; */
+    margin: 0;
+    padding: 0;
+    left: -0.5rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check {    
+    height: 1.9rem;
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check input[type='checkbox'] {
+    position: relative;
+    top: 0.1rem !important;
+    left: 1.5rem;
+    transform: scale( calc(20/16));
+  }
+  #funds-page #assets-tab #assets-tab-bar #search-assets .form-check label {
+    position: relative;
+    font-size: .8rem;
+    left: 1.4rem;
+    top: -0rem;
+  }
+  /* End of Funds Page / Tabs /  Assets Tab */
+
+
+
+  /* Funds Page / Tabs / Trade History Tab Search and Date Input */
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets span.icon-right {
+    left: 7.3rem;
+  } 
+
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] {
+    width: 8rem;
+    left: -0.5rem;
+  }
+  #funds-page #trade-history-tab #trade-history-tab-bar #search-assets input[type='search'] i {
+    position: absolute;
+    left: 1rem;
+  }
+  #funds-page #trade-history-tab #trade-history-tab-bar  input[type="date"] {
+    position: relative;
+    left: 9.5rem;
+    top: -1.55rem;
+    width: 7.5rem;
+    color: rgb(73, 80, 87);
+    font-size: .8rem;
+    line-height: 1.2rem;
+    padding-top: .5px;
+    padding-left: .5rem;
+    padding-right: 0;
+    padding-bottom: .5px;
+    background-clip: padding-box;
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(206, 212, 218) !important;
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-appearance: none;     
+  }
+  /* End of Funds Page / Tabs / Trade History Tab Search and Date Input */
+
+
+} /* End of (max-width: 575px) */

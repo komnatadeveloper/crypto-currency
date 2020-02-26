@@ -1,0 +1,43 @@
+# https://editorconfig.org/
+
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+end_of_line = lf
+charset = utf-8
+max_line_length = 120
+
+# Use 2 spaces for the HTML and CSS files
+[*.{html,css,scss}]
+indent_size = 2
+
+[*.{css,scss}]
+max_line_length = 79
+
+# The JSON files contain newlines inconsistently
+[*.{json,yml}]
+indent_size = 2
+insert_final_newline = false
+
+# Minified JavaScript files shouldn't be changed
+[*.min.js]
+insert_final_newline = false
+
+# Minified CSS files shouldn't be changed
+[*.min.css]
+insert_final_newline = false
+
+# Makefiles always use tabs for indentation
+[Makefile]
+indent_style = tab
+
+# Batch files use tabs for indentation
+[*.bat]
+indent_style = tab
+
+[*.{txt,sh}]
+max_line_length = 79

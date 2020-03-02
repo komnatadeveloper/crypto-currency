@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 
 import Address from "../Address";
 import ERC20Asset from "../ERC20Asset";

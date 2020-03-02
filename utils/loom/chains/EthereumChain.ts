@@ -1,4 +1,4 @@
-import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 
 import Address from "../Address";
 import EthereumConfig from "../config/EthereumConfig";
@@ -10,6 +10,7 @@ import { toBigNumber } from "../utils/big-number-utils";
 import { getLogs } from "../utils/ethers-utils";
 
 import Chain from "./Chain";
+import { Provider } from "ethers-alice/providers";
 
 export interface ETHReceived {
     log: ethers.providers.Log;
@@ -305,7 +306,7 @@ class EthereumChain implements Chain {
     };
 
     private getTokenWithdrawnLogsAsync = async (assetAddress: Address, fromBlock: number = 0, toBlock: number = 0) => {
-        const provider = this.getProvider();
+        const provider  = this.getProvider();
         const gateway = this.getGateway();
         if (fromBlock === 0) {
             const transaction = await provider.getTransaction(this.config.gateway.transactionHash);

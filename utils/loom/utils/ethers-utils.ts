@@ -1,6 +1,9 @@
-import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 
-export const getLogs = async (provider: ethers.providers.Provider, filter: ethers.providers.Filter) => {
+export const getLogs = async (
+    provider: ethers.providers.Provider | ethers.providers.JsonRpcProvider, // 2020.02.27 komnataDeveloper
+    filter: ethers.providers.Filter
+    ) => {
     if (filter.fromBlock && filter.toBlock) {
         const blocksPerPage = 100000;
         let from = Number(filter.fromBlock);

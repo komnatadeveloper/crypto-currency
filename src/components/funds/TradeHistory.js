@@ -2,8 +2,8 @@ import React, {useState} from 'react'
 import PropTypes from 'prop-types'
 import { Form, Table } from "react-bootstrap";
 import TradeHistoryItem from './sub/TradeHistoryItem';
-import 'react-datepicker/dist/react-datepicker.css'
-import DatePicker from 'react-datepicker';
+// import 'react-datepicker/dist/react-datepicker.css'
+// import DatePicker from 'react-datepicker';
 
 
 const TradeHistory = () => {

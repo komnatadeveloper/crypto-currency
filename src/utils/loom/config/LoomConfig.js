@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var LoomConfig = /** @class */ (function () {
     function LoomConfig(_a) {
         var chainId = _a.chainId, networkName = _a.networkName, endpoint = _a.endpoint;
@@ -25,4 +23,5 @@ var LoomConfig = /** @class */ (function () {
     };
     return LoomConfig;
 }());
-exports.default = LoomConfig;
+export default LoomConfig;
+//# sourceMappingURL=LoomConfig.js.map

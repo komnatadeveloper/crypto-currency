@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,16 +11,15 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-var dist_1 = require("loom-js/dist");
-var constants_1 = require("./constants");
+import { Address as LoomAddress, LocalAddress } from "loom-js/dist";
+import { ZERO_ADDRESS } from "./constants";
 var Address = /** @class */ (function (_super) {
     __extends(Address, _super);
     function Address() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
         _this.toLocalAddressString = function () { return _this.local.toChecksumString(); };
         _this.toString = function () { return _this.chainId + ":" + _this.toLocalAddressString(); };
-        _this.isZero = function () { return _this.local.toString() === constants_1.ZERO_ADDRESS; };
+        _this.isZero = function () { return _this.local.toString() === ZERO_ADDRESS; };
         return _this;
     }
     Address.setLoomNetworkName = function (networkName) {
@@ -35,23 +33,24 @@ var Address = /** @class */ (function (_super) {
         if (parts.length !== 2) {
             throw new Error("Invalid address string");
         }
-        return new Address(parts[0], dist_1.LocalAddress.fromHexString(parts[1]));
+        return new Address(parts[0], LocalAddress.fromHexString(parts[1]));
     };
     /**
      * @param address Hex address
      * @returns an `Address` of chainId "eth"
      */
     Address.createEthereumAddress = function (address) {
-        return new Address("eth", dist_1.LocalAddress.fromHexString(address));
+        return new Address("eth", LocalAddress.fromHexString(address));
     };
     /**
      * @param address Hex address
      * @returns an `Address` of chainId "default"
      */
     Address.createLoomAddress = function (address) {
-        return new Address(this.networkName, dist_1.LocalAddress.fromHexString(address));
+        return new Address(this.networkName, LocalAddress.fromHexString(address));
     };
     Address.networkName = "default";
     return Address;
-}(dist_1.Address));
-exports.default = Address;
+}(LoomAddress));
+export default Address;
+//# sourceMappingURL=Address.js.map

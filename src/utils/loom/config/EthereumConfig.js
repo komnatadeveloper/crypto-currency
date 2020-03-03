@@ -1,5 +1,3 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
 var EthereumConfig = /** @class */ (function () {
     function EthereumConfig(_a) {
         var chainId = _a.chainId, networkName = _a.networkName;
@@ -15,4 +13,5 @@ var EthereumConfig = /** @class */ (function () {
     EthereumConfig.mainnet = { chainId: "1", networkName: "mainnet" };
     return EthereumConfig;
 }());
-exports.default = EthereumConfig;
+export default EthereumConfig;
+//# sourceMappingURL=EthereumConfig.js.map

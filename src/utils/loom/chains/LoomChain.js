@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,23 +34,19 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var bn_js_1 = __importDefault(require("bn.js"));
-var ethers_alice_1 = require("ethers-alice");
-var dist_1 = require("loom-js/dist");
-var contracts_1 = require("loom-js/dist/contracts");
-var crypto_utils_1 = require("loom-js/dist/crypto-utils");
-var transfer_gateway_pb_1 = require("loom-js/dist/proto/transfer_gateway_pb");
-var Address_1 = __importDefault(require("../Address"));
-var LoomConfig_1 = __importDefault(require("../config/LoomConfig"));
-var ERC20_1 = __importDefault(require("../contracts/ERC20"));
-var ERC20Registry_1 = __importDefault(require("../contracts/ERC20Registry"));
-var MoneyMarket_1 = __importDefault(require("../contracts/MoneyMarket"));
-var ERC20Asset_1 = __importDefault(require("../ERC20Asset"));
-var big_number_utils_1 = require("../utils/big-number-utils");
+import BN from "bn.js";
+import { ethers } from "ethers-alice";
+import { CachedNonceTxMiddleware, Client, CryptoUtils, LocalAddress, LoomProvider, SignedTxMiddleware } from "loom-js/dist";
+import { EthCoin, TransferGateway } from "loom-js/dist/contracts";
+import { B64ToUint8Array, bytesToHexAddr, publicKeyFromPrivateKey } from "loom-js/dist/crypto-utils";
+import { TransferGatewayTokenKind } from "loom-js/dist/proto/transfer_gateway_pb";
+import Address from "../Address";
+import LoomConfig from "../config/LoomConfig";
+import ERC20 from "../contracts/ERC20";
+import ERC20Registry from "../contracts/ERC20Registry";
+import MoneyMarket from "../contracts/MoneyMarket";
+import ERC20Asset from "../ERC20Asset";
+import { toBigNumber } from "../utils/big-number-utils";
 var LoomChain = /** @class */ (function () {
     function LoomChain(privateKey, testnet) {
         var _this = this;
@@ -64,7 +59,7 @@ var LoomChain = /** @class */ (function () {
         this.getETHAsync = function () {
             return _this.eth
                 ? Promise.resolve(_this.eth)
-                : contracts_1.EthCoin.createAsync(_this.client, _this.address).then(function (eth) {
+                : EthCoin.createAsync(_this.client, _this.address).then(function (eth) {
                     _this.eth = eth;
                     return eth;
                 });
@@ -72,19 +67,19 @@ var LoomChain = /** @class */ (function () {
         this.getTransferGatewayAsync = function () {
             return _this.gateway
                 ? Promise.resolve(_this.gateway)
-                : contracts_1.TransferGateway.createAsync(_this.client, _this.address).then(function (gateway) {
+                : TransferGateway.createAsync(_this.client, _this.address).then(function (gateway) {
                     _this.gateway = gateway;
                     return gateway;
                 });
         };
         this.getERC20Registry = function () {
-            return new ERC20Registry_1.default(_this.config.erc20Registry.address, _this.getSigner());
+            return new ERC20Registry(_this.config.erc20Registry.address, _this.getSigner());
         };
         this.getMoneyMarket = function () {
-            return new MoneyMarket_1.default(_this.config.moneyMarket.address, _this.getSigner());
+            return new MoneyMarket(_this.config.moneyMarket.address, _this.getSigner());
         };
         this.createERC20 = function (asset) {
-            return new ERC20_1.default(asset.loomAddress.toLocalAddressString(), _this.getSigner());
+            return new ERC20(asset.loomAddress.toLocalAddressString(), _this.getSigner());
         };
         this.getERC20AssetsAsync = function () { return __awaiter(_this, void 0, void 0, function () {
             var tokens;
@@ -94,7 +89,7 @@ var LoomChain = /** @class */ (function () {
                     case 1:
                         tokens = _a.sent();
                         return [2 /*return*/, tokens.map(function (token) {
-                                return new ERC20Asset_1.default(token.name, token.symbol, token.decimals, Address_1.default.createLoomAddress(token.localAddress), Address_1.default.createEthereumAddress(token.ethAddress));
+                                return new ERC20Asset(token.name, token.symbol, token.decimals, Address.createLoomAddress(token.localAddress), Address.createEthereumAddress(token.ethAddress));
                             })];
                 }
             });
@@ -114,7 +109,7 @@ var LoomChain = /** @class */ (function () {
                     case 0: return [4 /*yield*/, this.getETHAsync()];
                     case 1:
                         eth = _b.sent();
-                        _a = big_number_utils_1.toBigNumber;
+                        _a = toBigNumber;
                         return [4 /*yield*/, eth.getBalanceOfAsync(this.address)];
                     case 2: return [2 /*return*/, _a.apply(void 0, [_b.sent()])];
                 }
@@ -128,13 +123,13 @@ var LoomChain = /** @class */ (function () {
                     from: _this.address.toLocalAddressString(),
                     confirmations: 0,
                     nonce: 0,
-                    gasLimit: big_number_utils_1.toBigNumber(0),
-                    gasPrice: big_number_utils_1.toBigNumber(0),
+                    gasLimit: toBigNumber(0),
+                    gasPrice: toBigNumber(0),
                     data: "0x",
                     value: amount,
                     chainId: Number(_this.config.chainId),
                     wait: function () {
-                        return eth.transferAsync(Address_1.default.createLoomAddress(to), new bn_js_1.default(amount.toString())).then(function () {
+                        return eth.transferAsync(Address.createLoomAddress(to), new BN(amount.toString())).then(function () {
                             return { byzantium: true };
                         });
                     }
@@ -151,13 +146,13 @@ var LoomChain = /** @class */ (function () {
                             from: _this.address.toLocalAddressString(),
                             confirmations: 0,
                             nonce: 0,
-                            gasLimit: big_number_utils_1.toBigNumber(0),
-                            gasPrice: big_number_utils_1.toBigNumber(0),
+                            gasLimit: toBigNumber(0),
+                            gasPrice: toBigNumber(0),
                             data: "0x",
-                            value: big_number_utils_1.toBigNumber(0),
+                            value: toBigNumber(0),
                             chainId: Number(_this.config.chainId),
                             wait: function () {
-                                return eth.approveAsync(Address_1.default.createLoomAddress(spender), new bn_js_1.default(amount.toString())).then(function () {
+                                return eth.approveAsync(Address.createLoomAddress(spender), new BN(amount.toString())).then(function () {
                                     return { byzantium: true };
                                 });
                             }
@@ -170,11 +165,11 @@ var LoomChain = /** @class */ (function () {
             return erc20.transfer(to, amount, { gasLimit: 0 });
         };
         this.balanceOfERC20Async = function (asset) {
-            var erc20 = new ERC20_1.default(asset.loomAddress.toLocalAddressString(), _this.getSigner());
+            var erc20 = new ERC20(asset.loomAddress.toLocalAddressString(), _this.getSigner());
             return erc20.balanceOf(_this.address.toLocalAddressString());
         };
         this.approveERC20Async = function (asset, spender, amount) {
-            var erc20 = new ERC20_1.default(asset.loomAddress.toLocalAddressString(), _this.getSigner());
+            var erc20 = new ERC20(asset.loomAddress.toLocalAddressString(), _this.getSigner());
             return erc20.approve(spender, amount, { gasLimit: 0 });
         };
         /**
@@ -193,14 +188,14 @@ var LoomChain = /** @class */ (function () {
                     from: _this.address.toLocalAddressString(),
                     confirmations: 0,
                     nonce: 0,
-                    gasLimit: big_number_utils_1.toBigNumber(0),
-                    gasPrice: big_number_utils_1.toBigNumber(0),
+                    gasLimit: toBigNumber(0),
+                    gasPrice: toBigNumber(0),
                     data: "0x",
-                    value: big_number_utils_1.toBigNumber(0),
+                    value: toBigNumber(0),
                     chainId: Number(_this.config.chainId),
                     wait: function () {
                         return gateway
-                            .withdrawETHAsync(new bn_js_1.default(amount.toString()), Address_1.default.createEthereumAddress(ethereumGateway))
+                            .withdrawETHAsync(new BN(amount.toString()), Address.createEthereumAddress(ethereumGateway))
                             .then(function () {
                             return { byzantium: true };
                         });
@@ -224,13 +219,13 @@ var LoomChain = /** @class */ (function () {
                     from: _this.address.toLocalAddressString(),
                     confirmations: 0,
                     nonce: 0,
-                    gasLimit: big_number_utils_1.toBigNumber(0),
-                    gasPrice: big_number_utils_1.toBigNumber(0),
+                    gasLimit: toBigNumber(0),
+                    gasPrice: toBigNumber(0),
                     data: "0x",
-                    value: big_number_utils_1.toBigNumber(0),
+                    value: toBigNumber(0),
                     chainId: Number(_this.config.chainId),
                     wait: function () {
-                        return gateway.withdrawERC20Async(new bn_js_1.default(amount.toString()), asset.loomAddress).then(function () {
+                        return gateway.withdrawERC20Async(new BN(amount.toString()), asset.loomAddress).then(function () {
                             return { byzantium: true };
                         });
                     }
@@ -249,12 +244,12 @@ var LoomChain = /** @class */ (function () {
             return new Promise(function (resolve, reject) {
                 _this.getTransferGatewayAsync().then(function (gateway) {
                     var timer = setTimeout(function () { return reject(new Error("Timeout while waiting for withdrawal to be signed")); }, 120000);
-                    gateway.on(contracts_1.TransferGateway.EVENT_TOKEN_WITHDRAWAL, function (event) {
-                        if (event.tokenContract.equals(Address_1.default.createEthereumAddress(assetAddress)) &&
-                            event.tokenOwner.equals(Address_1.default.createEthereumAddress(ownerAddress))) {
+                    gateway.on(TransferGateway.EVENT_TOKEN_WITHDRAWAL, function (event) {
+                        if (event.tokenContract.equals(Address.createEthereumAddress(assetAddress)) &&
+                            event.tokenOwner.equals(Address.createEthereumAddress(ownerAddress))) {
                             clearTimeout(timer);
-                            gateway.removeAllListeners(contracts_1.TransferGateway.EVENT_TOKEN_WITHDRAWAL);
-                            resolve(crypto_utils_1.bytesToHexAddr(event.sig));
+                            gateway.removeAllListeners(TransferGateway.EVENT_TOKEN_WITHDRAWAL);
+                            resolve(bytesToHexAddr(event.sig));
                         }
                     });
                 });
@@ -276,9 +271,9 @@ var LoomChain = /** @class */ (function () {
                         return [4 /*yield*/, gateway.withdrawalReceiptAsync(this.getAddress())];
                     case 2:
                         receipt = _a.sent();
-                        if (receipt && receipt.tokenKind === transfer_gateway_pb_1.TransferGatewayTokenKind.ETH) {
+                        if (receipt && receipt.tokenKind === TransferGatewayTokenKind.ETH) {
                             loomNonce = receipt.withdrawalNonce.toString();
-                            if (big_number_utils_1.toBigNumber(ethereumNonce).eq(big_number_utils_1.toBigNumber(loomNonce))) {
+                            if (toBigNumber(ethereumNonce).eq(toBigNumber(loomNonce))) {
                                 return [2 /*return*/, receipt];
                             }
                         }
@@ -302,9 +297,9 @@ var LoomChain = /** @class */ (function () {
                         return [4 /*yield*/, gateway.withdrawalReceiptAsync(this.getAddress())];
                     case 2:
                         receipt = _a.sent();
-                        if (receipt && receipt.tokenKind === transfer_gateway_pb_1.TransferGatewayTokenKind.ERC20) {
+                        if (receipt && receipt.tokenKind === TransferGatewayTokenKind.ERC20) {
                             loomNonce = receipt.withdrawalNonce.toString();
-                            if (big_number_utils_1.toBigNumber(ethereumNonce).eq(big_number_utils_1.toBigNumber(loomNonce))) {
+                            if (toBigNumber(ethereumNonce).eq(toBigNumber(loomNonce))) {
                                 return [2 /*return*/, receipt];
                             }
                         }
@@ -313,22 +308,23 @@ var LoomChain = /** @class */ (function () {
             });
         }); };
         this.init = function (privateKey) {
-            var publicKey = crypto_utils_1.publicKeyFromPrivateKey(privateKey);
-            _this.address = Address_1.default.createLoomAddress(dist_1.LocalAddress.fromPublicKey(dist_1.CryptoUtils.publicKeyFromPrivateKey(privateKey)).toChecksumString());
-            _this.client = new dist_1.Client(_this.config.networkName, _this.config.endpoint + "/websocket", _this.config.endpoint + "/queryws");
+            var publicKey = publicKeyFromPrivateKey(privateKey);
+            _this.address = Address.createLoomAddress(LocalAddress.fromPublicKey(CryptoUtils.publicKeyFromPrivateKey(privateKey)).toChecksumString());
+            _this.client = new Client(_this.config.networkName, _this.config.endpoint + "/websocket", _this.config.endpoint + "/queryws");
             _this.client.txMiddleware = [
-                new dist_1.CachedNonceTxMiddleware(publicKey, _this.client),
-                new dist_1.SignedTxMiddleware(privateKey)
+                new CachedNonceTxMiddleware(publicKey, _this.client),
+                new SignedTxMiddleware(privateKey)
             ];
             _this.client.on("end", function () { return _this.init(privateKey); });
             _this.client.on("error", function () { });
-            _this.provider = new ethers_alice_1.ethers.providers.Web3Provider(new dist_1.LoomProvider(_this.client, privateKey, function () { return _this.client.txMiddleware; }));
+            _this.provider = new ethers.providers.Web3Provider(new LoomProvider(_this.client, privateKey, function () { return _this.client.txMiddleware; }));
         };
-        this.config = LoomConfig_1.default.create(testnet);
+        this.config = LoomConfig.create(testnet);
         this.privateKey = privateKey;
-        Address_1.default.setLoomNetworkName(this.config.networkName);
-        this.init(crypto_utils_1.B64ToUint8Array(privateKey));
+        Address.setLoomNetworkName(this.config.networkName);
+        this.init(B64ToUint8Array(privateKey));
     }
     return LoomChain;
 }());
-exports.default = LoomChain;
+export default LoomChain;
+//# sourceMappingURL=LoomChain.js.map

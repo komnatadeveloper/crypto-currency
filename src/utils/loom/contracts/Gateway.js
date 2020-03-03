@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,13 +11,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-var ethers_1 = require("ethers");
+// import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 var Gateway = /** @class */ (function (_super) {
     __extends(Gateway, _super);
     function Gateway(address, signerOrProvider) {
         return _super.call(this, address, require("./abis/Gateway.json"), signerOrProvider) || this;
     }
     return Gateway;
-}(ethers_1.ethers.Contract));
-exports.default = Gateway;
+}(ethers.Contract));
+export default Gateway;
+//# sourceMappingURL=Gateway.js.map

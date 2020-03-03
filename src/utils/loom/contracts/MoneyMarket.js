@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -23,8 +22,8 @@ var __assign = (this && this.__assign) || function () {
     };
     return __assign.apply(this, arguments);
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-var ethers_1 = require("ethers");
+// import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 var toSavingsRecord = function (record) { return ({
     id: record[0],
     interestRate: record[2],
@@ -183,5 +182,6 @@ var MoneyMarket = /** @class */ (function (_super) {
         return this.functions.getExpectedSavingsAPR(amount);
     };
     return MoneyMarket;
-}(ethers_1.ethers.Contract));
-exports.default = MoneyMarket;
+}(ethers.Contract));
+export default MoneyMarket;
+//# sourceMappingURL=MoneyMarket.js.map

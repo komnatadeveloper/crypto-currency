@@ -1,19 +1,14 @@
 // import { Wallet } from "ethers";
 import { Wallet } from "ethers-alice";
-// import { mnemonicToSeed } from "ethers/utils/hdnode";
-import { mnemonicToSeed } from "ethers-alice/utils/hdnode";
 import HDKey from "hdkey";
 import { CryptoUtils } from "loom-js/dist";
-
-export const createEthereumPrivateKey = () => {
+export var createEthereumPrivateKey = function () {
     return Wallet.createRandom().privateKey;
 };
-
-export const createLoomPrivateKey = () => {
+export var createLoomPrivateKey = function () {
     return CryptoUtils.Uint8ArrayToB64(CryptoUtils.generatePrivateKey());
 };
-
-export const ethereumPrivateKeyFromMnemonic = (mnemonic: string) => {
+export var ethereumPrivateKeyFromMnemonic = function (mnemonic) {
     return Wallet.fromMnemonic(mnemonic).privateKey;
 };
 // Commented by komnataDeveloper @2020/02/27 due to compilation error
@@ -22,9 +17,10 @@ export const ethereumPrivateKeyFromMnemonic = (mnemonic: string) => {
 //     const hdkey = HDKey.fromMasterSeed(seed ).derive("m/44'/148'/0'");
 //     return CryptoUtils.Uint8ArrayToB64(CryptoUtils.generatePrivateKeyFromSeed(hdkey.privateKey));
 // };
-export const loomPrivateKeyFromMnemonic = (mnemonic: string) => {
+export var loomPrivateKeyFromMnemonic = function (mnemonic) {
     // const seed = mnemonicToSeed(mnemonic);
-    let  seed:any;
-    const hdkey = HDKey.fromMasterSeed(seed ).derive("m/44'/148'/0'");
+    var seed;
+    var hdkey = HDKey.fromMasterSeed(seed).derive("m/44'/148'/0'");
     return CryptoUtils.Uint8ArrayToB64(CryptoUtils.generatePrivateKeyFromSeed(hdkey.privateKey));
 };
+//# sourceMappingURL=crypto-utils.js.map

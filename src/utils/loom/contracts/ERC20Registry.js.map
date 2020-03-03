@@ -1,0 +1,1 @@
+{"version":3,"file":"ERC20Registry.js","sourceRoot":"","sources":["../../../../utils/loom/contracts/ERC20Registry.ts"],"names":[],"mappings":";;;;;;;;;;;;;AAAA,mCAAmC;AACnC,OAAO,EAAE,MAAM,EAAE,MAAM,cAAc,CAAC;AAEtC;IAA2C,iCAAe;IACtD,uBAAY,OAAe,EAAE,gBAA2D;eACpF,kBAAM,OAAO,EAAE,OAAO,CAAC,sDAAsD,CAAC,EAAE,gBAAgB,CAAC;IACrG,CAAC;IACL,oBAAC;AAAD,CAAC,AAJD,CAA2C,MAAM,CAAC,QAAQ,GAIzD"}

@@ -1,4 +1,3 @@
-"use strict";
 var __assign = (this && this.__assign) || function () {
     __assign = Object.assign || function(t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
@@ -46,18 +45,14 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var ethers_alice_1 = require("ethers-alice");
-var Address_1 = __importDefault(require("../Address"));
-var EthereumConfig_1 = __importDefault(require("../config/EthereumConfig"));
-var constants_1 = require("../constants");
-var ERC20_1 = __importDefault(require("../contracts/ERC20"));
-var Gateway_1 = __importDefault(require("../contracts/Gateway"));
-var big_number_utils_1 = require("../utils/big-number-utils");
-var ethers_utils_1 = require("../utils/ethers-utils");
+import { ethers } from "ethers-alice";
+import Address from "../Address";
+import EthereumConfig from "../config/EthereumConfig";
+import { ZERO_ADDRESS } from "../constants";
+import ERC20 from "../contracts/ERC20";
+import Gateway from "../contracts/Gateway";
+import { toBigNumber } from "../utils/big-number-utils";
+import { getLogs } from "../utils/ethers-utils";
 var EthereumChain = /** @class */ (function () {
     function EthereumChain(privateKey, testnet) {
         var _this = this;
@@ -67,10 +62,10 @@ var EthereumChain = /** @class */ (function () {
         this.getAddress = function () { return _this.address; };
         this.getSigner = function () { return _this.wallet; };
         this.getGateway = function () {
-            return new Gateway_1.default(_this.config.gateway.address, _this.getSigner());
+            return new Gateway(_this.config.gateway.address, _this.getSigner());
         };
         this.createERC20 = function (asset) {
-            return new ERC20_1.default(asset.ethereumAddress.toLocalAddressString(), _this.getSigner());
+            return new ERC20(asset.ethereumAddress.toLocalAddressString(), _this.getSigner());
         };
         this.updateAssetBalancesAsync = function (assets, updateBalance) {
             return Promise.all(assets.map(function (asset) {
@@ -92,14 +87,14 @@ var EthereumChain = /** @class */ (function () {
         };
         this.approveETHAsync = function (spender, amount) {
             return Promise.resolve({
-                to: constants_1.ZERO_ADDRESS,
+                to: ZERO_ADDRESS,
                 from: _this.address.toLocalAddressString(),
                 confirmations: 0,
                 nonce: 0,
-                gasLimit: big_number_utils_1.toBigNumber(0),
-                gasPrice: big_number_utils_1.toBigNumber(0),
+                gasLimit: toBigNumber(0),
+                gasPrice: toBigNumber(0),
                 data: "0x",
-                value: big_number_utils_1.toBigNumber(0),
+                value: toBigNumber(0),
                 chainId: Number(_this.config.chainId),
                 wait: function () {
                     return Promise.resolve({
@@ -198,7 +193,7 @@ var EthereumChain = /** @class */ (function () {
                             _a.label = 4;
                         case 4:
                             event = gateway.interface.events.ETHReceived;
-                            return [4 /*yield*/, ethers_utils_1.getLogs(provider, {
+                            return [4 /*yield*/, getLogs(provider, {
                                     address: this.config.gateway.address,
                                     topics: [event.topic],
                                     fromBlock: fromBlock,
@@ -209,7 +204,7 @@ var EthereumChain = /** @class */ (function () {
                             return [2 /*return*/, logs
                                     .sort(function (l1, l2) { return (l2.blockNumber || 0) - (l1.blockNumber || 0); })
                                     .map(function (log) { return (__assign({ log: log }, event.decode(log.data))); })
-                                    .filter(function (data) { return Address_1.default.createEthereumAddress(data.from || constants_1.ZERO_ADDRESS).equals(_this.getAddress()); })];
+                                    .filter(function (data) { return Address.createEthereumAddress(data.from || ZERO_ADDRESS).equals(_this.getAddress()); })];
                     }
                 });
             });
@@ -248,7 +243,7 @@ var EthereumChain = /** @class */ (function () {
                             _a.label = 4;
                         case 4:
                             event = gateway.interface.events.ERC20Received;
-                            return [4 /*yield*/, ethers_utils_1.getLogs(provider, {
+                            return [4 /*yield*/, getLogs(provider, {
                                     address: this.config.gateway.address,
                                     topics: [event.topic],
                                     fromBlock: fromBlock,
@@ -260,8 +255,8 @@ var EthereumChain = /** @class */ (function () {
                                     .sort(function (l1, l2) { return (l2.blockNumber || 0) - (l1.blockNumber || 0); })
                                     .map(function (log) { return (__assign({ log: log }, event.decode(log.data))); })
                                     .filter(function (data) {
-                                    return Address_1.default.createEthereumAddress(data.from || constants_1.ZERO_ADDRESS).equals(_this.getAddress()) &&
-                                        Address_1.default.createEthereumAddress(data.contractAddress || constants_1.ZERO_ADDRESS).equals(asset.ethereumAddress);
+                                    return Address.createEthereumAddress(data.from || ZERO_ADDRESS).equals(_this.getAddress()) &&
+                                        Address.createEthereumAddress(data.contractAddress || ZERO_ADDRESS).equals(asset.ethereumAddress);
                                 })];
                     }
                 });
@@ -276,7 +271,7 @@ var EthereumChain = /** @class */ (function () {
         this.getETHWithdrawnLogsAsync = function (fromBlock, toBlock) {
             if (fromBlock === void 0) { fromBlock = 0; }
             if (toBlock === void 0) { toBlock = 0; }
-            return _this.getTokenWithdrawnLogsAsync(Address_1.default.createEthereumAddress(constants_1.ZERO_ADDRESS), fromBlock, toBlock);
+            return _this.getTokenWithdrawnLogsAsync(Address.createEthereumAddress(ZERO_ADDRESS), fromBlock, toBlock);
         };
         /**
          * Get a list of `ERC20Withdrawn` logs.
@@ -328,7 +323,7 @@ var EthereumChain = /** @class */ (function () {
                             _a.label = 4;
                         case 4:
                             event = gateway.interface.events.TokenWithdrawn;
-                            return [4 /*yield*/, ethers_utils_1.getLogs(provider, {
+                            return [4 /*yield*/, getLogs(provider, {
                                     address: this.config.gateway.address,
                                     topics: [event.topic, event.encodeTopics([this.getAddress().toLocalAddressString()])],
                                     fromBlock: fromBlock,
@@ -339,23 +334,24 @@ var EthereumChain = /** @class */ (function () {
                             return [2 /*return*/, logs
                                     .sort(function (l1, l2) { return (l2.blockNumber || 0) - (l1.blockNumber || 0); })
                                     .map(function (log) { return (__assign({ log: log }, event.decode(log.data))); })
-                                    .filter(function (data) { return Address_1.default.createEthereumAddress(data.contractAddress).equals(assetAddress); })];
+                                    .filter(function (data) { return Address.createEthereumAddress(data.contractAddress).equals(assetAddress); })];
                     }
                 });
             });
         };
-        this.config = EthereumConfig_1.default.create(testnet);
+        this.config = EthereumConfig.create(testnet);
         this.privateKey = privateKey;
         this.init(privateKey);
     }
     EthereumChain.prototype.init = function (privateKey) {
         var _this = this;
-        this.provider = new ethers_alice_1.ethers.providers.InfuraProvider(this.config.networkName);
+        this.provider = new ethers.providers.InfuraProvider(this.config.networkName);
         this.provider.on("end", function () { return _this.init(privateKey); });
         this.provider.on("error", function () { });
-        this.wallet = new ethers_alice_1.ethers.Wallet(privateKey, this.provider);
-        this.address = Address_1.default.createEthereumAddress(this.wallet.address);
+        this.wallet = new ethers.Wallet(privateKey, this.provider);
+        this.address = Address.createEthereumAddress(this.wallet.address);
     };
     return EthereumChain;
 }());
-exports.default = EthereumChain;
+export default EthereumChain;
+//# sourceMappingURL=EthereumChain.js.map

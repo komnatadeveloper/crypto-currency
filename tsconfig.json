@@ -10,16 +10,22 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": true,
+    "allowJs": false,  // not necessary to compile js
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react"
+    "noEmit": false,  // It was preventing to emit compiled files
+    "jsx": "react",
+    "outDir": "src/utils/loom",
+    "rootDir": "utils/loom",
+    "sourceMap": true
   },
   "include": [
+    "utils/loom"
+  ],
+  "exclude": [
     "src"
   ]
 }

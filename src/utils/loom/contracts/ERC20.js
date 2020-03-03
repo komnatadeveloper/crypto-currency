@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -12,13 +11,14 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-Object.defineProperty(exports, "__esModule", { value: true });
-var ethers_1 = require("ethers");
+// import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 var ERC20 = /** @class */ (function (_super) {
     __extends(ERC20, _super);
     function ERC20(address, signerOrProvider) {
         return _super.call(this, address, require("loom-js/dist/mainnet-contracts/ERC20.json"), signerOrProvider) || this;
     }
     return ERC20;
-}(ethers_1.ethers.Contract));
-exports.default = ERC20;
+}(ethers.Contract));
+export default ERC20;
+//# sourceMappingURL=ERC20.js.map

@@ -1,4 +1,3 @@
-"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -35,15 +34,11 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-var dist_1 = require("loom-js/dist");
-var contracts_1 = require("loom-js/dist/contracts");
-var EthereumChain_1 = __importDefault(require("./chains/EthereumChain"));
-var LoomChain_1 = __importDefault(require("./chains/LoomChain"));
-var crypto_utils_1 = require("./utils/crypto-utils");
+import { EthersSigner } from "loom-js/dist";
+import { AddressMapper } from "loom-js/dist/contracts";
+import EthereumChain from "./chains/EthereumChain";
+import LoomChain from "./chains/LoomChain";
+import { ethereumPrivateKeyFromMnemonic, loomPrivateKeyFromMnemonic } from "./utils/crypto-utils";
 var Alice = /** @class */ (function () {
     /**
      * @param ethereumPrivateKey - Ethereum Private Key (hex)
@@ -62,7 +57,7 @@ var Alice = /** @class */ (function () {
             var addressMapper;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, contracts_1.AddressMapper.createAsync(this.loomChain.getClient(), this.loomChain.getAddress())];
+                    case 0: return [4 /*yield*/, AddressMapper.createAsync(this.loomChain.getClient(), this.loomChain.getAddress())];
                     case 1:
                         addressMapper = _a.sent();
                         return [4 /*yield*/, addressMapper.hasMappingAsync(this.ethereumChain.getAddress())];
@@ -77,10 +72,10 @@ var Alice = /** @class */ (function () {
             var addressMapper, signer;
             return __generator(this, function (_a) {
                 switch (_a.label) {
-                    case 0: return [4 /*yield*/, contracts_1.AddressMapper.createAsync(this.loomChain.getClient(), this.loomChain.getAddress())];
+                    case 0: return [4 /*yield*/, AddressMapper.createAsync(this.loomChain.getClient(), this.loomChain.getAddress())];
                     case 1:
                         addressMapper = _a.sent();
-                        signer = new dist_1.EthersSigner(this.ethereumChain.getSigner());
+                        signer = new EthersSigner(this.ethereumChain.getSigner());
                         return [4 /*yield*/, addressMapper.addIdentityMappingAsync(this.ethereumChain.getAddress(), this.loomChain.getAddress(), signer)];
                     case 2:
                         _a.sent();
@@ -88,13 +83,14 @@ var Alice = /** @class */ (function () {
                 }
             });
         }); };
-        this.ethereumChain = new EthereumChain_1.default(ethereumPrivateKey, testnet);
-        this.loomChain = new LoomChain_1.default(loomPrivateKey, testnet);
+        this.ethereumChain = new EthereumChain(ethereumPrivateKey, testnet);
+        this.loomChain = new LoomChain(loomPrivateKey, testnet);
     }
     Alice.fromMnemonic = function (mnemonic, testnet) {
         if (testnet === void 0) { testnet = false; }
-        return new Alice(crypto_utils_1.ethereumPrivateKeyFromMnemonic(mnemonic), crypto_utils_1.loomPrivateKeyFromMnemonic(mnemonic), testnet);
+        return new Alice(ethereumPrivateKeyFromMnemonic(mnemonic), loomPrivateKeyFromMnemonic(mnemonic), testnet);
     };
     return Alice;
 }());
-exports.default = Alice;
+export default Alice;
+//# sourceMappingURL=Alice.js.map

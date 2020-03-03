@@ -11,6 +11,7 @@ import { FundsPage } from './components/funds/FundsPage';
 // Redux
 import { Provider} from 'react-redux'
 import store from './store';
+import  TestPage  from './components/test-page/TestPage';
 
 
 
@@ -27,6 +28,7 @@ const App = () => {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/funds' component={FundsPage} />
+              <Route exact path='/test-page' component={TestPage} />
 
               <p>This is App</p>
             </Switch>

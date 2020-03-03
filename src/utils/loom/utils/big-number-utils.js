@@ -1,7 +1,7 @@
 import BN from "bn.js";
 // import { ethers } from "ethers";
 import { ethers } from "ethers-alice";
-export var toBigNumber = function (value) {
+export const toBigNumber = (value) => {
     if (BN.isBN(value)) {
         return new ethers.utils.BigNumber(value.toString());
     }

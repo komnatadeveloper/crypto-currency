@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "ES2015",
     "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
@@ -10,13 +10,13 @@
       "dom.iterable",
       "esnext"
     ],
-    "allowJs": false,  // not necessary to compile js
+    "allowJs": false,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": false,  // It was preventing to emit compiled files
+    "noEmit": true,
     "jsx": "react",
     "outDir": "src/utils/loom",
     "rootDir": "utils/loom",

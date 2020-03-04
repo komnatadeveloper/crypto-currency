@@ -307,6 +307,7 @@ body {
 #market-center #open-ord-trd-hist table tbody {
   overflow-y: scroll;
   height: 100%; 
+  height: calc( var(--open-ord-trd-hist) - 2rem - 5px  );
 }
 
 #market-center #open-ord-trd-hist  table tr {
@@ -1071,6 +1072,61 @@ body {
 }
 
 /* End of FUNDS PAGE */
+
+
+/*-----------------------------CreateAccount Page-------------------------------------*/
+#create-account-page h1{
+  text-align: center;
+}
+
+
+#create-account-page .selections {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#create-account-page .selections .selection-box {
+  height: 30rem;
+  width: 22rem;
+  border-radius: 1rem;
+}
+
+#create-account-page .selections .selection-box img {
+  position: relative;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+
+#create-account-page .selections .selection-box .relative-container {
+  position: relative;
+  top: -50px;
+  /* width: 100%; */
+}
+
+#create-account-page .selections  #wallet-model {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+#create-account-page .selections  #wallet-model .bg-colored-text {
+  padding: .25rem 1rem;
+}
+#create-account-page .selections  #wallet-model .b-bottom-underlined {
+  border-bottom: 1px solid;
+  padding-bottom: 1rem;
+  width: 65%;
+}
+#create-account-page .selections button {
+  padding: .25rem 1rem;
+  border-radius: 2rem;
+}
+
+.tooltip {
+  opacity: 0.7 !important;
+}
+
+
+/*-------------------------End of CreateAccount Page----------------------------------*/
 
 
 

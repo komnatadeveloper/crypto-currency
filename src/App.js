@@ -2,16 +2,19 @@ import React, {useEffect} from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import './App.css';
+
 import AppNavbar from './components/layout/AppNavbar';
 import Home from './components/home/Home';
-import { AppNavbar2 } from './components/layout/AppNavbar2';
 import { AppFooter } from './components/layout/AppFooter';
 import { FundsPage } from './components/funds/FundsPage';
+import  TestPage  from './components/test-page/TestPage';
+import LoginPage from './components/login/LoginPage';
+import CreateAccount from './components/login/CreateAccount';
+
 
 // Redux
 import { Provider} from 'react-redux'
 import store from './store';
-import  TestPage  from './components/test-page/TestPage';
 
 
 
@@ -29,6 +32,8 @@ const App = () => {
               <Route exact path='/' component={Home} />
               <Route exact path='/funds' component={FundsPage} />
               <Route exact path='/test-page' component={TestPage} />
+              <Route exact path='/login' component={LoginPage} />
+              <Route exact path='/create-account' component={CreateAccount} />
 
               <p>This is App</p>
             </Switch>

@@ -1136,39 +1136,46 @@ body {
 
 /*----------------CreateAccount by Password Page--------------------------------*/
 
-#cr-acc-pwd-page {
+#cr-acc-pwd-page,
+#cr-acc-wallet-page {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
 
-#cr-acc-pwd-page  .page-container{
-  width: 52rem;
+#cr-acc-pwd-page  .page-container,
+#cr-acc-wallet-page  .page-container{
+  width: 56rem;
   /* background-color: blue; */
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
 
-#cr-acc-pwd-page  .page-container img {
+#cr-acc-pwd-page  .page-container img,
+#cr-acc-wallet-page  .page-container img {
   padding-left: 1rem;
   padding-right: 1rem;
   /* background-color: yellow; */
   opacity: 0.2;
 
 }
-#cr-acc-pwd-page #form-section .form-row {
+#cr-acc-pwd-page #form-section .form-row,
+#cr-acc-wallet-page #form-section .form-row {
   height: 5.5rem;
   width: 100%;
   display: block;
 }
-#cr-acc-pwd-page #form-section .form-row input {
+
+#cr-acc-pwd-page #form-section .form-row input,
+#cr-acc-wallet-page #form-section .form-row input {
   width: 70%;
   max-width: 27rem;
 }
 
-#cr-acc-pwd-page #form-section  button {
+#cr-acc-pwd-page #form-section  button,
+#cr-acc-wallet-page #form-section  button {
   padding: .25rem 1rem;
   border-radius: 2rem;
 }

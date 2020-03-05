@@ -11,6 +11,7 @@ import  TestPage  from './components/test-page/TestPage';
 import LoginPage from './components/login/LoginPage';
 import CreateAccount from './components/login/CreateAccount';
 import { CreateAccountByPasswordPage } from './components/login/CreateAccountByPasswordPage';
+import { CreateAccountByWallet } from './components/login/CreateAccountByWallet';
 
 
 // Redux
@@ -39,6 +40,11 @@ const App = () => {
                 exact
                 path='/create-account/password'
                 component={CreateAccountByPasswordPage}
+              />
+              <Route
+                exact
+                path='/create-account/wallet'
+                component={CreateAccountByWallet}
               />
 
               <p>This is App</p>

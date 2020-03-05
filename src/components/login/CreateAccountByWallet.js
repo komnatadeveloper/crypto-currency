@@ -1,23 +1,24 @@
 import React from 'react'
-import { OverlayTrigger, Tooltip,  Form, Button } from "react-bootstrap";
+import { OverlayTrigger, Tooltip, Form, Button } from "react-bootstrap";
 
-import UserBiggerImage from "../../images/registration/account.svg";
+import FlashBiggerImage from "../../images/registration/flesh-drive.svg";
 
-export const CreateAccountByPasswordPage = () => {
+export const CreateAccountByWallet = () => {
   return (
-    <div id='cr-acc-pwd-page'>
+    <div id='cr-acc-wallet-page'>
       <div className='page-container'>
         {/* Left Side (Img) */}
         <div className='d-flex flex-row justify-content-center '>
-          <img src={UserBiggerImage} alt='' />
+          <img src={FlashBiggerImage} alt='' />
         </div>
 
         {/* Right Side (Form) */}
         <div id='form-section'>
-          <h4 className='text-white'>Create Account by Name and Password</h4>
+          <h4 className='text-white'>Create Account by Bin-file</h4>
           <p className='text-muted text-sm-1'>
-            Please keep your password in a safe place. Don't share it with any
-            third-parties or send it online
+            A bin-file will be automatically created. Please download it and
+            keep in a safe place. You’ll need to upload this file to login to
+            your account in the future.
           </p>
 
           {/* Account Name & ToolTip */}

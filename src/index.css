@@ -1079,7 +1079,6 @@ body {
   text-align: center;
 }
 
-
 #create-account-page .selections {
   margin-top: 2rem;
   display: grid;
@@ -1090,17 +1089,18 @@ body {
   width: 22rem;
   border-radius: 1rem;
 }
-
 #create-account-page .selections .selection-box img {
   position: relative;
   top: -50px;
   left: calc(50% - 50px);
 }
-
 #create-account-page .selections .selection-box .relative-container {
   position: relative;
   top: -50px;
   /* width: 100%; */
+}
+#create-account-page .selections .selection-box .header-section {
+  height: 6.25rem;
 }
 
 #create-account-page .selections  #wallet-model {
@@ -1108,10 +1108,14 @@ body {
   flex-direction: row;
   justify-content: end;
 }
+#create-account-page .selections h4 {
+  font-size: 1.375rem;
+}
 #create-account-page .selections  #wallet-model .bg-colored-text {
   padding: .25rem 1rem;
 }
-#create-account-page .selections  #wallet-model .b-bottom-underlined {
+#create-account-page .selections  #wallet-model .b-bottom-underlined,
+#create-account-page .selections  #account-model .b-bottom-underlined {
   border-bottom: 1px solid;
   padding-bottom: 1rem;
   width: 65%;
@@ -1122,11 +1126,38 @@ body {
 }
 
 .tooltip {
-  opacity: 0.7 !important;
+  opacity: 0.8 !important;
+  font-size: 0.75rem ;
+  line-height: .95rem ;
+}
+/*-------------------------End of CreateAccount Page----------------------------------*/
+
+
+
+/*----------------CreateAccount by Password Page--------------------------------*/
+#cr-acc-pwd-page {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+#cr-acc-pwd-page #form-section .form-row {
+  height: 5.5rem;
+  width: 100%;
+  display: block;
+}
+#cr-acc-pwd-page #form-section .form-row input {
+  width: 70%;
+  max-width: 27rem;
+}
+
+#cr-acc-pwd-page #form-section  button {
+  padding: .25rem 1rem;
+  border-radius: 2rem;
 }
 
 
-/*-------------------------End of CreateAccount Page----------------------------------*/
+
+/*----------------End of CreateAccount by Password Page--------------------------------*/
 
 
 

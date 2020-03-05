@@ -19,29 +19,31 @@ const CreateAccount = () => {
           >
             <img className='' src={UsbImage} alt='' />
             <div className='relative-container'>
-              <h4 className='text-white text-center mt-2 p-0 mb-0'>
-                By bin-file
-              </h4>
+              <div className='header-section'>
+                <h4 className='text-white text-center mt-2 p-0 mb-0'>
+                  By bin-file
+                </h4>
 
-              {/* Tooltip Line */}
-              <div className='d-flex flex-row justify-content-center'>
-                <span className='text-light'>Wallet Model</span>
-                <span>
-                  <OverlayTrigger
-                    key='top'
-                    placement='top'
-                    overlay={<Tooltip id={`wallet-tooltip`}>Wallet</Tooltip>}
-                  >
-                    <i className='far fa-question-circle ml-2 text-light'></i>
-                  </OverlayTrigger>
-                </span>
-              </div>
+                {/* Tooltip Line */}
+                <div className='d-flex flex-row justify-content-center'>
+                  <span className='text-light'>Wallet Model</span>
+                  <span>
+                    <OverlayTrigger
+                      key='top'
+                      placement='top'
+                      overlay={<Tooltip id={`wallet-tooltip`}>Wallet</Tooltip>}
+                    >
+                      <i className='far fa-question-circle ml-2 text-light'></i>
+                    </OverlayTrigger>
+                  </span>
+                </div>
 
-              {/* Recommended Text */}
-              <div className='d-flex flex-row justify-content-center mt-2 mb-2'>
-                <span className='bg-colored-text bg-success text-sm-1'>
-                  recommended
-                </span>
+                {/* Recommended Text */}
+                <div className='d-flex flex-row justify-content-center mt-2 mb-2'>
+                  <span className='bg-colored-text bg-success text-sm-1'>
+                    recommended
+                  </span>
+                </div>
               </div>
 
               <p className=' font-weight-bold text-muted d-block text-center m-0 p-0'>
@@ -90,34 +92,37 @@ const CreateAccount = () => {
         </div>
 
         {/* Right  Side */}
-        <div className=' ' id='acc-name-pwd'>
-          <div className='selection-box bg-warning'>
+        <div className=' ' id='account-model'>
+          <div className='selection-box '
+            style={{
+              backgroundColor:'#223'
+            }}
+          >
             <img src={UserImage} alt='' />
             <div className='relative-container'>
-              <h4 className='text-white text-center mt-2 p-0 mb-0'>
-                By bin-file
-              </h4>
+              {/* Header Section */}
+              <div className='header-section'>
+                <h4 className='text-white text-center mt-2 p-0 mb-0'>
+                  By Account Name and Password
+                </h4>
 
-              {/* Tooltip Line */}
-              <div className='d-flex flex-row justify-content-center'>
-                <span className='text-light'>Wallet Model</span>
-                <span>
-                  <OverlayTrigger
-                    key='top'
-                    placement='top'
-                    overlay={<Tooltip id={`wallet-tooltip`}>Wallet</Tooltip>}
-                  >
-                    <i className='far fa-question-circle ml-2 text-light'></i>
-                  </OverlayTrigger>
-                </span>
+                {/* Tooltip Line */}
+                <div className='d-flex flex-row justify-content-center'>
+                  <span className='text-light'>Account Model</span>
+                  <span>
+                    <OverlayTrigger
+                      key='top'
+                      placement='top'
+                      overlay={<Tooltip id={`wallet-tooltip`}>
+                        The account model lets you login to your wallet from anywehere using pnşy your account name and password, but your password is vulnerable to brute-force attacks which means it is important to use a very long password, ideally 20+ characters!
+                      </Tooltip>}
+                    >
+                      <i className='far fa-question-circle ml-2 text-light'></i>
+                    </OverlayTrigger>
+                  </span>
+                </div>
               </div>
-
-              {/* Recommended Text */}
-              <div className='d-flex flex-row justify-content-center mt-2 mb-2'>
-                <span className='bg-colored-text bg-success text-sm-1'>
-                  recommended
-                </span>
-              </div>
+              {/* End of Header Section */}
 
               <p className=' font-weight-bold text-muted d-block text-center m-0 p-0'>
                 Security
@@ -125,12 +130,12 @@ const CreateAccount = () => {
               {/* High Text */}
               <div className='d-flex flex-row justify-content-center'>
                 <p
-                  className=' font-weight-bold text-success d-inline-block text-center b-bottom-underlined'
+                  className=' font-weight-bold text-warning d-inline-block text-center b-bottom-underlined'
                   style={{
                     borderColor: "#555"
                   }}
                 >
-                  High
+                  Medium
                 </p>
               </div>
               {/* End of High Text */}
@@ -140,20 +145,20 @@ const CreateAccount = () => {
               {/* Bin-file+Password Text */}
               <div className='d-flex flex-row justify-content-center'>
                 <p
-                  className=' font-weight-bold text-success d-inline-block text-center b-bottom-underlined'
+                  className=' font-weight-bold text-danger d-inline-block text-center b-bottom-underlined'
                   style={{
                     borderColor: "#555"
                   }}
                 >
-                  Bin-file + Password
+                  Account name + Password
                 </p>
               </div>
               {/* End of Bin-file+Password Text */}
               <p className=' font-weight-bold text-muted d-block text-center m-0 p-0'>
                 Back up and restore account
               </p>
-              <p className=' font-weight-bold text-success d-block text-center m-0 p-0'>
-                Yes
+              <p className=' font-weight-bold text-danger d-block text-center m-0 p-0'>
+                No
               </p>
             </div>
             {/* End of Relative Container */}

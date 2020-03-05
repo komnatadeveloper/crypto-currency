@@ -10,6 +10,7 @@ import { FundsPage } from './components/funds/FundsPage';
 import  TestPage  from './components/test-page/TestPage';
 import LoginPage from './components/login/LoginPage';
 import CreateAccount from './components/login/CreateAccount';
+import { CreateAccountByPasswordPage } from './components/login/CreateAccountByPasswordPage';
 
 
 // Redux
@@ -33,7 +34,16 @@ const App = () => {
               <Route exact path='/funds' component={FundsPage} />
               <Route exact path='/test-page' component={TestPage} />
               <Route exact path='/login' component={LoginPage} />
-              <Route exact path='/create-account' component={CreateAccount} />
+              <Route
+                exact
+                path='/create-account/password'
+                component={CreateAccountByPasswordPage}
+              />
+              <Route
+                exact
+                path='/create-account'
+                component={CreateAccountByPasswordPage}
+              />
 
               <p>This is App</p>
             </Switch>

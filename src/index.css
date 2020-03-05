@@ -1135,10 +1135,28 @@ body {
 
 
 /*----------------CreateAccount by Password Page--------------------------------*/
+
 #cr-acc-pwd-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+#cr-acc-pwd-page  .page-container{
+  width: 52rem;
+  /* background-color: blue; */
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
+
+#cr-acc-pwd-page  .page-container img {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* background-color: yellow; */
+  opacity: 0.2;
+
 }
 #cr-acc-pwd-page #form-section .form-row {
   height: 5.5rem;

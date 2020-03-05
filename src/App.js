@@ -34,14 +34,10 @@ const App = () => {
               <Route exact path='/funds' component={FundsPage} />
               <Route exact path='/test-page' component={TestPage} />
               <Route exact path='/login' component={LoginPage} />
+              <Route exact path='/create-account' component={CreateAccount} />
               <Route
                 exact
                 path='/create-account/password'
-                component={CreateAccountByPasswordPage}
-              />
-              <Route
-                exact
-                path='/create-account'
                 component={CreateAccountByPasswordPage}
               />
 

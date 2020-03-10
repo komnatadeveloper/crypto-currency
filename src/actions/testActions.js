@@ -4,7 +4,30 @@ import {
 } from "./types";
 import LoomChain from '../utils/loom/chains/LoomChain'
 import EtheriumChain from '../utils/loom/chains/EthereumChain'
+import {makeWallet} from '../utils/generate-key/WalletFromPassword'
 
+
+export const makeLoomWallet = ({ email, password }) => async dispatch => {
+
+  makeWallet({
+    hardness: 1400,
+    email,
+    password,
+    bitCount: 512
+  });
+  console.log(email, password);
+
+}
+export const makeEtheriumWallet = ({ email, password }) => async dispatch => {
+
+  makeWallet({
+    hardness: 1400,
+    email,
+    password,
+    bitCount: 512
+  });
+  console.log(email, password);
+}
 
 
 export const createLoomChain = (  privateKey, test = true ) => async dispatch => {

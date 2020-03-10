@@ -1,16 +1,25 @@
 import React, {useState} from 'react'
 import { connect } from "react-redux";
-import { createLoomChain, createEthChain } from '../../actions/testActions';
+import { 
+  createLoomChain, 
+  createEthChain, 
+  makeEtheriumWallet, 
+  makeLoomWallet 
+} from '../../actions/testActions';
 
 
 const TestPage = ({
   createLoomChain,
   createEthChain,
+  makeEtheriumWallet,
+  makeLoomWallet,
   testReducer
 }) => {
 
   const [ loomKey, setLoomKey ] = useState('')
   const [ ethKey, setEthKey ] = useState('')
+  const [ email, setEmail ] = useState('')
+  const [ password, setPassword ] = useState('')
 
   return (
     <div>
@@ -68,7 +77,41 @@ const TestPage = ({
         id='test-button2'
       />
       <label htmlFor="test-button2">Private Key</label>
+      <h1
+        className='text-white'
+      >Create Key</h1>
+      <div>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          id=""
+          onChange={e => {
+            setEmail ( e.target.value)
+          }}
+        />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          id=""
+          onChange={e => {
+            setPassword( e.target.value)
+          }}
+        />
+        <button
+          onClick= { () => {
+
+            // makeLoomWallet({email, password})
+            makeEtheriumWallet({email, password})
+          }}
+        >
+          Create Key
+      </button>
+      </div>
     </div>
+
+    
   )
 }
 
@@ -76,6 +119,13 @@ const mapStateToProps = state => ({
   testReducer: state.testReducer
 });
 
-export default connect(mapStateToProps, { createLoomChain , createEthChain } ) (TestPage)
+export default connect(
+  mapStateToProps, 
+  { createLoomChain , 
+    createEthChain ,
+    makeEtheriumWallet,
+    makeLoomWallet 
+  } 
+  ) (TestPage)
 
 // export default TestPage

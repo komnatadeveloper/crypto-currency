@@ -1,33 +1,32 @@
-import { CHAIN_CREATED } from "./types";
+import { 
+  LOOM_CHAIN_CREATED, 
+  ETH_CHAIN_CREATED 
+} from "./types";
 import LoomChain from '../utils/loom/chains/LoomChain'
+import EtheriumChain from '../utils/loom/chains/EthereumChain'
 
 
-// Login User
-export const createChain = (  privateKey, test = true ) => async dispatch => {
+
+export const createLoomChain = (  privateKey, test = true ) => async dispatch => {
 
 
-    const chain = await new LoomChain(privateKey, true);
-    console.log(chain);
+    const loomChain = await new LoomChain(privateKey, true);
+  console.log(loomChain);
 
     dispatch({
-      type: CHAIN_CREATED,
-      payload: chain
-    });   
+      type: LOOM_CHAIN_CREATED,
+      payload: loomChain
+    }); 
+}
 
-  // try {
-  //   const chain = await new LoomChain( privateKey, true)
-  //   console.log(chain)
+export const createEthChain = (  privateKey, test = true ) => async dispatch => {
 
-  //   dispatch({
-  //     type: CHAIN_CREATED,
-  //     payload: chain
-  //   });   
-  // }
 
-  // catch{
-  //   dispatch({
-  //     type: CHAIN_CREATED,
-  //     payload: 'ERROR IN CHAIN'
-  //   }); 
-  // }
+    const ethChain = await new EtheriumChain(privateKey, true);
+  console.log(ethChain);
+
+    dispatch({
+      type: ETH_CHAIN_CREATED,
+      payload: ethChain
+    }); 
 }

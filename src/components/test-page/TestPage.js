@@ -1,20 +1,25 @@
 import React, {useState} from 'react'
 import { connect } from "react-redux";
-import { createChain } from '../../actions/testActions';
+import { createLoomChain, createEthChain } from '../../actions/testActions';
 
 
 const TestPage = ({
-  createChain,
+  createLoomChain,
+  createEthChain,
   testReducer
 }) => {
 
-  const [ key, setKey ] = useState('')
+  const [ loomKey, setLoomKey ] = useState('')
+  const [ ethKey, setEthKey ] = useState('')
 
   return (
     <div>
+      <h1
+        className='text-white'
+      >LOOM</h1>
       <button
         onClick= { e => {
-          console.log(key);
+          console.log(loomKey);
           console.log(testReducer);
         }
 
@@ -24,18 +29,45 @@ const TestPage = ({
 
       <button
         onClick= { () => {
-          createChain(key )
+          createLoomChain(loomKey )
         }}
       >Connect</button>
       <input 
         type="text" 
-        value={key} 
+        value={loomKey} 
         onChange= { e => {
-          setKey(e.target.value)
+          setLoomKey(e.target.value)
         }}
         id='test-button'
       />
       <label htmlFor="test-button">Private Key</label>
+      <h1
+        className='text-white'
+      >Etherium</h1>
+      <button
+        onClick= { e => {
+          console.log(ethKey);
+          console.log(testReducer);
+        }
+
+        }
+      
+      >Test</button>
+
+      <button
+        onClick= { () => {
+          createEthChain(ethKey )
+        }}
+      >Connect</button>
+      <input 
+        type="text" 
+        value={ethKey} 
+        onChange= { e => {
+          setEthKey(e.target.value)
+        }}
+        id='test-button2'
+      />
+      <label htmlFor="test-button2">Private Key</label>
     </div>
   )
 }
@@ -44,6 +76,6 @@ const mapStateToProps = state => ({
   testReducer: state.testReducer
 });
 
-export  default connect( mapStateToProps,  {createChain} ) (TestPage)
+export default connect(mapStateToProps, { createLoomChain , createEthChain } ) (TestPage)
 
 // export default TestPage

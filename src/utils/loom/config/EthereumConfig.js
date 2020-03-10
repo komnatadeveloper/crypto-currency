@@ -2,6 +2,7 @@ class EthereumConfig {
     constructor({ chainId, networkName }) {
         this.chainId = chainId;
         this.networkName = networkName;
+        // this.gateway = require("../contracts/networks/Gateway.json")[this.chainId];  2020.03.10 komnataDevelpper
         this.gateway = require("../contracts/networks/Gateway.json")[this.chainId];
     }
     static create(testnet = false) {

@@ -1,3 +1,12 @@
+import { ethers } from "ethers-alice";
+import Address from "../Address";
+import EthereumConfig from "../config/EthereumConfig";
+import { ZERO_ADDRESS } from "../constants";
+import ERC20 from "../contracts/ERC20";
+import Gateway from "../contracts/Gateway";
+import { toBigNumber } from "../utils/big-number-utils";
+import { getLogs } from "../utils/ethers-utils";
+
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -7,14 +16,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import { ethers } from "ethers-alice";
-import Address from "../Address";
-import EthereumConfig from "../config/EthereumConfig";
-import { ZERO_ADDRESS } from "../constants";
-import ERC20 from "../contracts/ERC20";
-import Gateway from "../contracts/Gateway";
-import { toBigNumber } from "../utils/big-number-utils";
-import { getLogs } from "../utils/ethers-utils";
+
 class EthereumChain {
     constructor(privateKey, testnet = false) {
         this.getPrivateKey = () => this.privateKey;

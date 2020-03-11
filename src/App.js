@@ -12,6 +12,7 @@ import LoginPage from './components/login/LoginPage';
 import CreateAccount from './components/login/CreateAccount';
 import  CreateAccountByPasswordPage  from './components/login/CreateAccountByPasswordPage';
 import { CreateAccountByWallet } from './components/login/CreateAccountByWallet';
+import { AccountsPage } from './components/accounts/AccountsPage';
 
 
 // Redux
@@ -33,6 +34,7 @@ const App = () => {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/funds' component={FundsPage} />
+              <Route exact path='/accounts' component={AccountsPage} />
               <Route exact path='/test-page' component={TestPage} />
               <Route exact path='/login' component={LoginPage} />
               <Route exact path='/create-account' component={CreateAccount} />

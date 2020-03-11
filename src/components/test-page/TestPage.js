@@ -3,16 +3,18 @@ import { connect } from "react-redux";
 import { 
   createLoomChain, 
   createEthChain, 
-  makeEtheriumWallet, 
-  makeLoomWallet 
+  // makeEtheriumWallet, 
+  // makeLoomWallet ,
+  createLoomAndEthKeys
 } from '../../actions/testActions';
 
 
 const TestPage = ({
   createLoomChain,
   createEthChain,
-  makeEtheriumWallet,
-  makeLoomWallet,
+  // makeEtheriumWallet,
+  // makeLoomWallet,
+  createLoomAndEthKeys,
   testReducer
 }) => {
 
@@ -103,7 +105,9 @@ const TestPage = ({
           onClick= { () => {
 
             // makeLoomWallet({email, password})
-            makeEtheriumWallet({email, password})
+            console.log(email, password);
+            createLoomAndEthKeys({email, password})
+            // makeEtheriumWallet({email, password})
           }}
         >
           Create Key
@@ -121,10 +125,12 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps, 
-  { createLoomChain , 
+  { 
+    createLoomChain , 
     createEthChain ,
-    makeEtheriumWallet,
-    makeLoomWallet 
+    // makeEtheriumWallet,
+    // makeLoomWallet , 
+    createLoomAndEthKeys
   } 
   ) (TestPage)
 

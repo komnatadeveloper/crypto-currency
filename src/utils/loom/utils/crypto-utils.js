@@ -8,6 +8,20 @@ export const createEthereumPrivateKey = () => {
 export const createLoomPrivateKey = () => {
     return CryptoUtils.Uint8ArrayToB64(CryptoUtils.generatePrivateKey());
 };
+
+// 2020.03.11 komnataDeveloper
+export const createLoomPrivateKeyFromEthKey = ( ethKey ) => {  
+    console.log(ethKey);  
+    const arrayForm = CryptoUtils.B64ToUint8Array(ethKey)
+    console.log(arrayForm);
+    const loomKey = CryptoUtils.Uint8ArrayToB64( arrayForm  );
+    console.log(loomKey);
+    
+    console.log(CryptoUtils.generatePrivateKey());
+    console.log(CryptoUtils.Uint8ArrayToB64(CryptoUtils.generatePrivateKey()));
+    return loomKey
+};
+
 export const ethereumPrivateKeyFromMnemonic = (mnemonic) => {
     return Wallet.fromMnemonic(mnemonic).privateKey;
 };

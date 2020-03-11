@@ -1,9 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
+import { connect } from "react-redux";
 import { OverlayTrigger, Tooltip,  Form, Button } from "react-bootstrap";
+
+import {
+   handleRegisterByEmailPassword 
+  } from '../../actions/testActions'
+
+
 
 import UserBiggerImage from "../../images/registration/account.svg";
 
-export const CreateAccountByPasswordPage = () => {
+const CreateAccountByPasswordPage = ( {
+  testReducer,
+  handleRegisterByEmailPassword
+} ) => {
+
+  const [email, setEmail] = useState('')
+  const [password1, setPassword1] = useState('')
+  const [password2, setPassword2] = useState('')
+  
+
   return (
     <div id='cr-acc-pwd-page'>
       <div className='page-container'>
@@ -44,6 +60,11 @@ export const CreateAccountByPasswordPage = () => {
 
             <Form.Control
               type='text'
+              name='email'
+              value={email}
+              onChange= { e => {
+                setEmail(e.target.value)
+              } }
               // placeholder='7584.81 USDT'
               // style={inputStyle}
             />
@@ -59,6 +80,11 @@ export const CreateAccountByPasswordPage = () => {
 
               <Form.Control
                 type='password'
+                name='password1'
+                value={ password1 }
+                onChange={e => {
+                  setPassword1(e.target.value)
+                }}
                 // placeholder='7584.81 USDT'
                 // style={inputStyle}
               />
@@ -75,6 +101,11 @@ export const CreateAccountByPasswordPage = () => {
 
               <Form.Control
                 type='password'
+                name='password2'
+                value={password2}
+                onChange={e => {
+                  setPassword2(e.target.value)
+                }}
                 // placeholder='7584.81 USDT'
                 // style={inputStyle}
               />
@@ -82,9 +113,31 @@ export const CreateAccountByPasswordPage = () => {
           </div>
           {/* End of Confirm Password */}
 
-          <Button variant='info'>Continue</Button>
+          <Button 
+            variant='info'
+            onClick={ () => {
+              handleRegisterByEmailPassword({
+                email, 
+                password: password1
+              });
+            }}
+          >
+              Continue
+            </Button>
         </div>
       </div>
     </div>
   );
 }
+
+
+const mapStateToProps = state => ({
+  testReducer: state.testReducer
+});
+
+export default connect(
+  mapStateToProps,
+  {
+    handleRegisterByEmailPassword
+  }
+)(CreateAccountByPasswordPage)

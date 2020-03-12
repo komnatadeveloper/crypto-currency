@@ -1253,17 +1253,67 @@ body {
 /* Accounts Page /  Profile Tab */
 #accounts-page #profile-tab {
   height: var(--each-tab-height);
+  --right-side-sect-height: calc(( var(--each-tab-height) - 4rem ) / 3 );
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding: 1rem;
 }
 #accounts-page #profile-tab #form-section-box {
-  border-bottom-left-radius: 1rem;
-  padding: 0.75rem;
+  padding-left: 0;
+  padding-right: 0.5rem;
 }
-#accounts-page #profile-tab #form-section-box input {
+#accounts-page #profile-tab #form-section-box #form-section {
+  border-bottom-left-radius: 1rem;
+  padding: 1rem;
+}
+
+#accounts-page #profile-tab #form-section-box input,
+#accounts-page #profile-tab #form-section-box select {
   width: 23rem;
 }
+
+#accounts-page #profile-tab #right-side {
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+#accounts-page #profile-tab #right-side #preferences-section {
+  height: var(--right-side-sect-height);
+  margin-bottom: 1rem;
+}
+#accounts-page #profile-tab #right-side #fees-section {
+  height: var(--right-side-sect-height);
+  margin-bottom: 1rem;
+}
+#accounts-page #profile-tab #right-side #resardis-club-section {
+  height: var(--right-side-sect-height);
+  border-bottom-right-radius: 1rem;
+}
+#accounts-page #profile-tab #right-side .title-row {
+  display: block;
+}
+#accounts-page #profile-tab #right-side .title-row {
+  display: block;
+  height: 1.75rem;
+}
+#accounts-page #profile-tab #right-side .title-row .section-title {
+  display: inline-block;
+  width: 12rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  padding-left: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+#accounts-page #profile-tab #right-side .section-label {
+  padding-left: 2rem;
+}
+#accounts-page #profile-tab #right-side .section-action {
+  display: inline-block;
+  /* background-color: blue; */
+  width: 40%;
+}
+
 
 
 

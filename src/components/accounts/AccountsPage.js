@@ -14,6 +14,9 @@ export const AccountsPage = () => {
   return (
     <div
       id='accounts-page'
+      style={{
+        backgroundColor:'#222'
+      }}
     >
     <Helmet>
       <title>Accounts</title>

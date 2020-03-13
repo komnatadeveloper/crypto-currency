@@ -9,9 +9,16 @@ export const ProfileTabForm = () => {
       id='form-section'
       className='bg-dark w-100 h-100'
     >
+      <p
+        className='text-light text-sm-2'
+      >
+        Alanları doldurmanın zorunlu olmadığına dair bir yazı. Alanları doldurmanın zorunlu olmadığına
+        dair bir yazı. Alanları doldurmanın zorunlu olmadığına dair bir yazı. Alanları doldurmanın zorun-
+        lu olmadığına dair bir yazı. Alanları doldurmanın zorunlu olmadığına dair bir yazı.
+      </p>
       {/* Email */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           E-Mail
             </span>
         <Form.Control
@@ -21,7 +28,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Phone Number */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Phone Number
             </span>
         <Form.Control
@@ -31,7 +38,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Name */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Name
             </span>
         <Form.Control
@@ -41,7 +48,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Surname */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Surname
             </span>
         <Form.Control
@@ -51,7 +58,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Date of Birth */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Date of Birth
             </span>
         <input
@@ -62,7 +69,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Place of Birth */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Place of Birth
             </span>
         <Form.Control
@@ -72,12 +79,12 @@ export const ProfileTabForm = () => {
       </div>
       {/* Nationality */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Nationality
             </span>
         <Form.Control
           as="select"
-          className='bg-dark text-light'
+          // className='bg-dark text-light'
           style={{
             //  color:'blue',
             //  backgroundColor:'orange'
@@ -91,12 +98,12 @@ export const ProfileTabForm = () => {
       </div>
       {/* Gender */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Gender
             </span>
         <Form.Control
           as="select"
-          className='bg-dark text-light'
+          // className='bg-dark text-light'
           style={{
             //  color:'blue',
             //  backgroundColor:'orange'
@@ -109,12 +116,12 @@ export const ProfileTabForm = () => {
       </div>
       {/* Native Language */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Native Language
             </span>
         <Form.Control
           as="select"
-          className='bg-dark text-light'
+          // className='bg-dark text-light'
           style={{
             //  color:'blue',
             //  backgroundColor:'orange'
@@ -129,12 +136,12 @@ export const ProfileTabForm = () => {
       </div>
       {/* Country */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
-          Native Language
+        <span className="text-light input-label">
+          Country
             </span>
         <Form.Control
           as="select"
-          className='bg-dark text-light'
+          // className='bg-dark text-light'
           style={{
             //  color:'blue',
             //  backgroundColor:'orange'
@@ -149,7 +156,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* State/Region */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           State/Region
             </span>
         <Form.Control
@@ -159,7 +166,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* City */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           City
             </span>
         <Form.Control
@@ -169,7 +176,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Street Line 1 */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Street Line 1
             </span>
         <Form.Control
@@ -179,7 +186,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Street Line 2 */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Street Line 2
             </span>
         <Form.Control
@@ -189,7 +196,7 @@ export const ProfileTabForm = () => {
       </div>
       {/* Zip Code */}
       <div className="d-flex flex-row justify-content-between">
-        <span className="text-light">
+        <span className="text-light input-label">
           Zip Code
             </span>
         <Form.Control

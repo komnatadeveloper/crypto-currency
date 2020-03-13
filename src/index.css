@@ -1195,18 +1195,22 @@ body {
 /* ACCOUNTS PAGE */
 
 #accounts-page {
-  --funds-page-min-height: calc(var(--app-container-min-height ) - 2rem);
-  --each-tab-height: calc(var(--funds-page-min-height) - 2rem - var(--tab-height));
-  min-height: var(--funds-page-min-height);  /* 2rem for bottom and top margins */
+  --accounts-page-height: calc(var(--app-container-min-height ) - 2rem);
+  --each-tab-height: calc(var(--accounts-page-height) - 2rem - var(--tab-height));
+  height: var(--accounts-page-height);  /* 2rem for bottom and top margins */
+  --accounts-page-min-height: 50rem;
+  --each-tab-min-height: calc(var(--accounts-page-min-height) - 2rem - var(--tab-height));
+  min-height: var( --accounts-page-min-height );
   margin-top: 1rem !important;
   margin-left: 1rem !important;
   margin-right: 1rem !important;
+  margin-bottom: 2rem;
   border-radius: 1rem;
   width: calc(100% - 2rem) !important;
   padding-top: 1rem;  /* Instead of margin-top of nav */
   padding-left: 1rem;  /* Instead of margin-top of nav */
   padding-right: 1rem;  /* Instead of margin-top of nav */
-  padding-bottom: 1rem;  /* Instead of margin-top of nav */
+
 }
 
 
@@ -1216,7 +1220,7 @@ body {
   
   height: var(--tab-height);
 
-  background-color: chartreuse !important;
+  /* background-color: chartreuse !important; */
   display: flex;
   padding-left: 1rem;
   border-bottom: none;
@@ -1253,10 +1257,14 @@ body {
 /* Accounts Page /  Profile Tab */
 #accounts-page #profile-tab {
   height: var(--each-tab-height);
+  min-height: var( --each-tab-min-height );
   --right-side-sect-height: calc(( var(--each-tab-height) - 4rem ) / 3 );
+  --right-side-sect-min-height: calc(( var(--each-tab-min-height) - 4rem ) / 3 );
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
   padding: 1rem;
+  margin-left: .25rem;
+  margin-right: .25rem;
 }
 #accounts-page #profile-tab #form-section-box {
   padding-left: 0;
@@ -1264,13 +1272,46 @@ body {
 }
 #accounts-page #profile-tab #form-section-box #form-section {
   border-bottom-left-radius: 1rem;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
 }
 
+#accounts-page #profile-tab #form-section-box .input-label {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
 #accounts-page #profile-tab #form-section-box input,
 #accounts-page #profile-tab #form-section-box select {
-  width: 23rem;
+  width: 20rem;  /* 23rem */
+  height: 1.5rem;
+  /* background-color: rgb(255, 255, 255) !important; */
+  margin-bottom: 0.75rem;
+  font-size: .9rem;
+  line-height: 1rem;
+  padding-top: 0;
+  padding-left: 0.25rem;
 }
+#accounts-page #profile-tab #form-section-box  input[type="date"] {
+    /* position: relative;
+    left: 9.5rem;
+    top: -1.55rem; */
+    /* width: 7.5rem; */
+    color: rgb(73, 80, 87);
+    font-size: .8rem;
+    line-height: 1.2rem;
+    padding-top: .5px;
+    /* padding-left: .5rem; */
+    padding-right: 0;
+    padding-bottom: .5px;
+    background-clip: padding-box;
+    /* background-color: rgb(255, 255, 255);
+    border-color: rgb(206, 212, 218) !important; */
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-appearance: none;     
+  }
 
 #accounts-page #profile-tab #right-side {
   padding-left: 0.5rem;
@@ -1279,14 +1320,17 @@ body {
 
 #accounts-page #profile-tab #right-side #preferences-section {
   height: var(--right-side-sect-height);
+  min-height: var(--right-side-sect-min-height);
   margin-bottom: 1rem;
 }
 #accounts-page #profile-tab #right-side #fees-section {
   height: var(--right-side-sect-height);
+  min-height: var(--right-side-sect-min-height);
   margin-bottom: 1rem;
 }
 #accounts-page #profile-tab #right-side #resardis-club-section {
   height: var(--right-side-sect-height);
+  min-height: var(--right-side-sect-min-height);
   border-bottom-right-radius: 1rem;
 }
 #accounts-page #profile-tab #right-side .title-row {
@@ -1295,6 +1339,7 @@ body {
 #accounts-page #profile-tab #right-side .title-row {
   display: block;
   height: 1.75rem;
+  margin-bottom: 1rem;
 }
 #accounts-page #profile-tab #right-side .title-row .section-title {
   display: inline-block;
@@ -1307,12 +1352,37 @@ body {
 
 #accounts-page #profile-tab #right-side .section-label {
   padding-left: 2rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
 }
 #accounts-page #profile-tab #right-side .section-action {
   display: inline-block;
   /* background-color: blue; */
   width: 40%;
+  margin-right: 2rem;
 }
+
+#accounts-page #profile-tab #right-side .section-action,
+#accounts-page #profile-tab #right-side .section-action input,
+#accounts-page #profile-tab #right-side .section-action select {
+  height: 1.5rem;
+  /* background-color: rgb(255, 255, 255) !important; */
+  margin-bottom: 0.75rem;
+  font-size: .9rem;
+  line-height: 1rem;
+  padding-top: 0;
+  padding-left: 0.25rem;
+
+}
+
+/* #accounts-page #profile-tab #right-side  input[type="checkbox"] {
+  height: 2rem !important;
+  padding:1rem !important;
+} */
+
+/* .custom-control-label::before ,.custom-control-label::after{width:20px; height:20px} */
+
+
 
 
 

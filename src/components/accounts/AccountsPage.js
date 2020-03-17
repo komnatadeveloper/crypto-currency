@@ -3,7 +3,8 @@ import Helmet from "react-helmet";
 import {
   Row, Col, Tabs, Tab, Form
 } from "react-bootstrap";
-import { ProfileTab } from './ProfileTab';
+import { ProfileTab } from './profile_tab/ProfileTab';
+import { AccountHistoryTab } from './account_history_tab/AccountHistoryTab';
 
 
 export const AccountsPage = () => {
@@ -46,7 +47,7 @@ export const AccountsPage = () => {
         </Tab>
 
         <Tab eventKey='accountHistory' title='Account History' className='mr-2'>
-          <p className='text-white'>Account History Tab</p>
+          <AccountHistoryTab />
         </Tab>
 
       </Tabs>

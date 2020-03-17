@@ -1372,17 +1372,139 @@ body {
   line-height: 1rem;
   padding-top: 0;
   padding-left: 0.25rem;
-
 }
 
-/* #accounts-page #profile-tab #right-side  input[type="checkbox"] {
-  height: 2rem !important;
-  padding:1rem !important;
+
+
+#accounts-page #account-history-tab {
+  height: var(--each-tab-height);
+  min-height: var( --each-tab-min-height );
+  --right-side-sect-height: calc(( var(--each-tab-height) - 4rem ) / 3 );
+  --right-side-sect-min-height: calc(( var(--each-tab-min-height) - 4rem ) / 3 );
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem;
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+#accounts-page #account-history-tab form {
+  display: inline-block;
+}
+#accounts-page #account-history-tab #buttons-bar {
+  height: 2.25rem !important;
+}
+#accounts-page #account-history-tab #buttons-bar input {
+  display: inline-block;
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: .5px;
+  padding-left: .5rem;
+  padding-right: 0;
+  padding-bottom: .5px;
+  height: 2rem;
+}
+#accounts-page #account-history-tab #buttons-bar #find-an-action input {
+  /* width: 7.5rem; */
+}
+
+#accounts-page #account-history-tab #buttons-bar input[type='date'] {  
+  /* position: relative; */
+  left: 9.5rem;
+  top: -1.55rem;
+  width: 7.5rem;
+  width: calc(( (100% - 38rem) * (4.6 / 38) ) + 4.6rem - 1rem );
+  margin-left: .5rem;
+  margin-right: .5rem;
+  color: rgb(73, 80, 87);
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: .5px;
+  padding-left: .5rem;
+  padding-right: 0;
+  padding-bottom: .5px;
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-appearance: none; 
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-an-action {
+  width: calc(( (100% - 38rem) * (6 / 38) ) + 6rem - 0.5rem  );
+  margin-left: 0.5rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-an-action input {
+  width: calc( 100% - 1rem );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-an-area {
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem - 0.5rem );
+  /* margin-left: 0.5rem ; */
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-an-area input {
+  width: calc( 100% - 1rem );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-a-subject {
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 4.75rem  );
+  margin-left: 0.5rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-a-subject input {
+  width: calc( 100% - 1rem );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-an-info {
+  width: calc(( (100% - 38rem) * (16 / 38) ) + 14rem );
+  margin-left: 0.5rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-an-info input {
+  width: 9rem;
+  margin-left: calc( (100% - 11rem) * 0.5 );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-a-status {
+  width: calc(( (100% - 38rem) * (4 / 38) ) + 4.1rem  );
+  margin-left: 0.3rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-a-status input {
+  width: calc( 100% - 1rem );
+}
+
+
+
+
+#accounts-page #account-history-tab #buttons-bar form span {
+  position: relative;
+  right: 1.15rem;
+  top: .25rem;
+}
+
+#accounts-page #account-history-tab table .col-date {
+  /* width: 4.6rem; */
+  width: calc(( (100% - 38rem) * (4.6 / 38) ) + 4.6rem );
+}
+#accounts-page #account-history-tab table .col-action {
+  /* width: 6rem; */
+  width: calc(( (100% - 38rem) * (6 / 38) ) + 6rem );
+}
+#accounts-page #account-history-tab table .col-area {
+  width: 3.7rem;
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem );
+}
+#accounts-page #account-history-tab table .col-subject {
+  width: 3.7rem;
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem );
+}
+#accounts-page #account-history-tab table .col-info {
+  width: 16rem;
+  width: calc(( (100% - 38rem) * (16 / 38) ) + 16rem );
+}
+/* #accounts-page #account-history-tab table .col-status {
+  width: 4rem;
 } */
-
-/* .custom-control-label::before ,.custom-control-label::after{width:20px; height:20px} */
-
-
 
 
 

@@ -1376,6 +1376,7 @@ body {
 }
 
 
+/* -------------- Accounts Page / Accounts History Tab   */
 
 #accounts-page #account-history-tab {
   height: var(--each-tab-height);
@@ -1501,7 +1502,8 @@ body {
 }
 #accounts-page #account-history-tab table tbody {
   overflow-y: scroll !important;
-  height: calc( var(--each-tab-height) - 2.75rem - var(--border-bottom-height) - var(--table-head-height)   ) !important;
+  height: calc( var(--each-tab-height) - 2.75rem - var(--border-bottom-height) - var(--table-head-height)   ) ;
+  min-height: calc( var(--each-tab-min-height) - 2.75rem - var(--border-bottom-height) - var(--table-head-height)  );
 }
 
 #accounts-page #account-history-tab table tbody tr,
@@ -1551,55 +1553,7 @@ body {
 
 
 
-/* Table For Funds / Trade History */
-#funds-page #trade-history-tab table {
-  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height)  );
-}
-#funds-page #trade-history-tab  thead,
-#funds-page #trade-history-tab  thead tr,
-#funds-page #trade-history-tab  thead th {
-  height: var(--table-head-height) !important; 
-}
 
-#funds-page #trade-history-tab  tbody tr,
-#funds-page #trade-history-tab  tbody td {
-  height: calc( (25.59/16) * 1rem ) !important; 
-}
-
-#funds-page #trade-history-tab  table tbody,
-#funds-page #trade-history-tab  table thead {  
-  display:block;
-}
-#funds-page #trade-history-tab tbody {
-  overflow-y: scroll;
-  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height) - var(--table-head-height)  );
-}
-
-#funds-page #trade-history-tab  table tr {
-  display:block;
-  width: 100%;
-}
-#funds-page #trade-history-tab  table th {
-  display:inline-block;
-  width: calc( (100% )/8);
-}
-#funds-page #trade-history-tab  table td {
-  display:inline-block;
-  width: calc( (100% )/8);
-}
-#funds-page #trade-history-tab  table td.text-right {
-  padding-left: 0;
-  padding-right: 4%;
-}
-#funds-page #trade-history-tab  table td button {
-  position: relative;
-  top: -0.1rem;
-  left: 35%;
-  padding: 0 .5rem;
-  line-height: .9rem;
-}
-
-/* End of FUNDS PAGE */
 
 
 

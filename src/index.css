@@ -620,6 +620,7 @@ body {
 #funds-page #assets-tab  table th {
   display:inline-block;
   width: calc( (100% )/10);
+  
 }
 #funds-page #assets-tab  table td {
   display:inline-block;
@@ -1383,7 +1384,7 @@ body {
   --right-side-sect-min-height: calc(( var(--each-tab-min-height) - 4rem ) / 3 );
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
-  padding: 1rem;
+  padding:  0.5rem 0 0 0;
   margin-left: .25rem;
   margin-right: .25rem;
 }
@@ -1472,39 +1473,133 @@ body {
 #accounts-page #account-history-tab #buttons-bar  form#find-a-status input {
   width: calc( 100% - 1rem );
 }
-
-
-
-
 #accounts-page #account-history-tab #buttons-bar form span {
   position: relative;
   right: 1.15rem;
   top: .25rem;
 }
 
+/* -------------- Accounts Page / Accounts History Tab / Table */
+
+
+#accounts-page #account-history-tab table {
+  height: calc( var(--each-tab-height) - 2.75rem - var(--border-bottom-height)  ) ;
+  min-height: calc( var(--each-tab-min-height) - 2.75rem - var(--border-bottom-height)  );
+  
+}
+
+#accounts-page #account-history-tab table  thead,
+#accounts-page #account-history-tab table  thead tr,
+#accounts-page #account-history-tab table  thead th {
+  height: var(--table-head-height) !important; 
+  
+}
+
+#accounts-page #account-history-tab table  tbody,
+#accounts-page #account-history-tab table  thead {  
+  display:block;
+}
+#accounts-page #account-history-tab table tbody {
+  overflow-y: scroll !important;
+  height: calc( var(--each-tab-height) - 2.75rem - var(--border-bottom-height) - var(--table-head-height)   ) !important;
+}
+
+#accounts-page #account-history-tab table tbody tr,
+#accounts-page #account-history-tab table tbody td {
+  height: calc( (25.59/16) * 1rem ) !important; 
+}
+
+
+#accounts-page #account-history-tab table tr {
+  display:block;
+  width: 100%;
+}
+#accounts-page #account-history-tab table th {
+  display:inline-block;
+}
+#accounts-page #account-history-tab table td {
+  display:inline-block;
+}
+
 #accounts-page #account-history-tab table .col-date {
   /* width: 4.6rem; */
-  width: calc(( (100% - 38rem) * (4.6 / 38) ) + 4.6rem );
+  width: calc(( (100% - 38rem) * (4.6 / 38) ) + 4.6rem ) ;
 }
 #accounts-page #account-history-tab table .col-action {
   /* width: 6rem; */
-  width: calc(( (100% - 38rem) * (6 / 38) ) + 6rem );
+  width: calc(( (100% - 38rem) * (6 / 38) ) + 6rem ) ;
 }
 #accounts-page #account-history-tab table .col-area {
-  width: 3.7rem;
+  /* width: 3.7rem; */
   width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem );
 }
 #accounts-page #account-history-tab table .col-subject {
-  width: 3.7rem;
+  /* width: 3.7rem; */
   width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem );
 }
 #accounts-page #account-history-tab table .col-info {
-  width: 16rem;
+  /* width: 16rem; */
   width: calc(( (100% - 38rem) * (16 / 38) ) + 16rem );
 }
-/* #accounts-page #account-history-tab table .col-status {
+#accounts-page #account-history-tab table .col-status {
   width: 4rem;
-} */
+  width: calc(( (100% - 38rem) * (4 / 38) ) + 4rem );
+}
+
+
+
+
+
+
+/* Table For Funds / Trade History */
+#funds-page #trade-history-tab table {
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height)  );
+}
+#funds-page #trade-history-tab  thead,
+#funds-page #trade-history-tab  thead tr,
+#funds-page #trade-history-tab  thead th {
+  height: var(--table-head-height) !important; 
+}
+
+#funds-page #trade-history-tab  tbody tr,
+#funds-page #trade-history-tab  tbody td {
+  height: calc( (25.59/16) * 1rem ) !important; 
+}
+
+#funds-page #trade-history-tab  table tbody,
+#funds-page #trade-history-tab  table thead {  
+  display:block;
+}
+#funds-page #trade-history-tab tbody {
+  overflow-y: scroll;
+  height: calc( var(--each-tab-height) - 2.5rem - var(--border-bottom-height) - var(--table-head-height)  );
+}
+
+#funds-page #trade-history-tab  table tr {
+  display:block;
+  width: 100%;
+}
+#funds-page #trade-history-tab  table th {
+  display:inline-block;
+  width: calc( (100% )/8);
+}
+#funds-page #trade-history-tab  table td {
+  display:inline-block;
+  width: calc( (100% )/8);
+}
+#funds-page #trade-history-tab  table td.text-right {
+  padding-left: 0;
+  padding-right: 4%;
+}
+#funds-page #trade-history-tab  table td button {
+  position: relative;
+  top: -0.1rem;
+  left: 35%;
+  padding: 0 .5rem;
+  line-height: .9rem;
+}
+
+/* End of FUNDS PAGE */
 
 
 

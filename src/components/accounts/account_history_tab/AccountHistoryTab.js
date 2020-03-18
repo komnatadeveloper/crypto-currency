@@ -81,6 +81,33 @@ export const AccountHistoryTab = () => {
           <AccountHistoryItem />
           <AccountHistoryItem />
           <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
+          <AccountHistoryItem />
         </tbody>
       </Table>
 

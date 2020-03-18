@@ -14,7 +14,7 @@ export const AccountHistoryItem = () => {
       <td className={`${textHeight} ${textAlignment} text-success col-info`}>
         Basic information about action will place here.
       </td>
-      <td className={`text-sm-3 text-success ${textAlignment} col-status`}>In Progress</td>
+      <td className={`${textHeight} text-success ${textAlignment} col-status`}>In Progress</td>
     </tr>
   )
 }

@@ -4,7 +4,9 @@ import { OverlayTrigger, Tooltip, Button } from "react-bootstrap";
 import UsbImage from '../../images/registration/flesh-active.svg'
 import UserImage from "../../images/registration/account-inactive.svg";
 
-const CreateAccount = () => {
+const CreateAccount = ({
+  history
+}) => {
   return (
     <div id='create-account-page'>
       <h1 className='text-light'>Registration</h1>
@@ -85,7 +87,14 @@ const CreateAccount = () => {
             </div>
             {/* End of Relative Container */}
             <div className='d-flex flex-row justify-content-center'>
-              <Button variant='info'>Continue</Button>
+              <Button 
+                variant='info'
+                onClick={() => {
+                  // history.push('/test')
+                }}
+              >
+                Continue
+              </Button>
             </div>
           </div>
           {/* End of Selection Box */}

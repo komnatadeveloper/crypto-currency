@@ -1078,12 +1078,16 @@ body {
 /*-----------------------------CreateAccount Page-------------------------------------*/
 #create-account-page h1{
   text-align: center;
+  
 }
 
 #create-account-page .selections {
   margin-top: 2rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* display: grid; */
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  /* grid-template-columns: 1fr 1fr; */
 }
 #create-account-page .selections .selection-box {
   height: 30rem;

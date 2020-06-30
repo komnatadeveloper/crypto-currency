@@ -1,4 +1,5 @@
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 
 export interface SavingsRecord {
     id: ethers.utils.BigNumber;

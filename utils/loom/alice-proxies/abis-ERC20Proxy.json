@@ -1,0 +1,23 @@
+[
+  {
+    "constant": true,
+    "inputs": [
+      {
+        "name": "addresses",
+        "type": "address[]",
+        "internalType": "address[]"
+      }
+    ],
+    "name": "getERC20Balances",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256[]",
+        "internalType": "uint256[]"
+      }
+    ],
+    "payable": false,
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

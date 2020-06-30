@@ -26,11 +26,16 @@ export const TradeHistory = () => {
             <TradeHistoryItem />
             <TradeHistoryItem />
             <TradeHistoryItem />
+            {/* <TradeHistoryItem />
             <TradeHistoryItem />
             <TradeHistoryItem />
             <TradeHistoryItem />
             <TradeHistoryItem />
             <TradeHistoryItem />
+            <TradeHistoryItem />
+            <TradeHistoryItem />
+            <TradeHistoryItem />
+            <TradeHistoryItem /> */}
             {/* <TradeHistoryItem /> */}
           </tbody>
         </Table>

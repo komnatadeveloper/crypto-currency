@@ -1,5 +1,6 @@
 import BN from "bn.js";
-import { ethers } from "ethers";
+// import { ethers } from "ethers";
+import { ethers } from "ethers-alice";
 
 export const toBigNumber = (value: ethers.utils.BigNumberish | BN) => {
     if (BN.isBN(value)) {

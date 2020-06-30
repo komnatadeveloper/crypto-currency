@@ -307,6 +307,7 @@ body {
 #market-center #open-ord-trd-hist table tbody {
   overflow-y: scroll;
   height: 100%; 
+  height: calc( var(--open-ord-trd-hist) - 2rem - 5px  );
 }
 
 #market-center #open-ord-trd-hist  table tr {
@@ -619,6 +620,7 @@ body {
 #funds-page #assets-tab  table th {
   display:inline-block;
   width: calc( (100% )/10);
+  
 }
 #funds-page #assets-tab  table td {
   display:inline-block;
@@ -1071,6 +1073,503 @@ body {
 }
 
 /* End of FUNDS PAGE */
+
+
+/*-----------------------------CreateAccount Page-------------------------------------*/
+#create-account-page h1{
+  text-align: center;
+  
+}
+
+#create-account-page .selections {
+  margin-top: 2rem;
+  /* display: grid; */
+  display: flex; 
+  flex-direction: row;
+  justify-content: center;
+  /* grid-template-columns: 1fr 1fr; */
+}
+#create-account-page .selections .selection-box {
+  height: 30rem;
+  width: 22rem;
+  border-radius: 1rem;
+}
+#create-account-page .selections .selection-box img {
+  position: relative;
+  top: -50px;
+  left: calc(50% - 50px);
+}
+#create-account-page .selections .selection-box .relative-container {
+  position: relative;
+  top: -50px;
+  /* width: 100%; */
+}
+#create-account-page .selections .selection-box .header-section {
+  height: 6.25rem;
+}
+
+#create-account-page .selections  #wallet-model {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+#create-account-page .selections h4 {
+  font-size: 1.375rem;
+}
+#create-account-page .selections  #wallet-model .bg-colored-text {
+  padding: .25rem 1rem;
+}
+#create-account-page .selections  #wallet-model .b-bottom-underlined,
+#create-account-page .selections  #account-model .b-bottom-underlined {
+  border-bottom: 1px solid;
+  padding-bottom: 1rem;
+  width: 65%;
+}
+#create-account-page .selections button {
+  padding: .25rem 1rem;
+  border-radius: 2rem;
+}
+
+.tooltip {
+  opacity: 0.8 !important;
+  font-size: 0.75rem ;
+  line-height: .95rem ;
+}
+/*-------------------------End of CreateAccount Page----------------------------------*/
+
+
+
+/*----------------CreateAccount by Password Page--------------------------------*/
+
+#cr-acc-pwd-page,
+#cr-acc-wallet-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+#cr-acc-pwd-page  .page-container,
+#cr-acc-wallet-page  .page-container{
+  width: 56rem;
+  /* background-color: blue; */
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+#cr-acc-pwd-page  .page-container img,
+#cr-acc-wallet-page  .page-container img {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  /* background-color: yellow; */
+  opacity: 0.2;
+
+}
+#cr-acc-pwd-page #form-section .form-row,
+#cr-acc-wallet-page #form-section .form-row {
+  height: 5.5rem;
+  width: 100%;
+  display: block;
+}
+
+#cr-acc-pwd-page #form-section .form-row input,
+#cr-acc-wallet-page #form-section .form-row input {
+  width: 70%;
+  max-width: 27rem;
+}
+
+#cr-acc-pwd-page #form-section  button,
+#cr-acc-wallet-page #form-section  button {
+  padding: .25rem 1rem;
+  border-radius: 2rem;
+}
+
+
+
+/*----------------End of CreateAccount by Password Page--------------------------------*/
+
+
+
+
+
+
+
+
+/*------------------------------Accounts Page---------------------------------------*/
+/* ACCOUNTS PAGE */
+
+#accounts-page {
+  --accounts-page-height: calc(var(--app-container-min-height ) - 2rem);
+  --each-tab-height: calc(var(--accounts-page-height) - 2rem - var(--tab-height));
+  height: var(--accounts-page-height);  /* 2rem for bottom and top margins */
+  --accounts-page-min-height: 50rem;
+  --each-tab-min-height: calc(var(--accounts-page-min-height) - 2rem - var(--tab-height));
+  min-height: var( --accounts-page-min-height );
+  margin-top: 1rem !important;
+  margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  width: calc(100% - 2rem) !important;
+  padding-top: 1rem;  /* Instead of margin-top of nav */
+  padding-left: 1rem;  /* Instead of margin-top of nav */
+  padding-right: 1rem;  /* Instead of margin-top of nav */
+
+}
+
+
+
+/* Accounts Page / Page Tabs */
+#accounts-page nav[role='tablist'] {
+  
+  height: var(--tab-height);
+
+  /* background-color: chartreuse !important; */
+  display: flex;
+  padding-left: 1rem;
+  border-bottom: none;
+  /* justify-content: center; */  
+  /* overflow-x: scroll !important; */
+  /* width: 100%; */
+}
+#accounts-page nav[role='tablist'] a[role='tab'] {
+  position: relative;
+  bottom: -0.5rem;
+  /* width: 40%; */
+  padding:0.25rem;
+  line-height: 1rem;
+  height: 1.5rem;
+  text-align: center;
+  border-top-left-radius: .7rem !important;
+  border-top-right-radius: .7rem !important;
+  margin-right: 1rem;
+  background-color: grey;
+  color: white;
+  margin-right: .5rem !important;
+
+}
+#accounts-page nav[role='tablist'] a[role='tab'].active {
+  background-color: blue;
+}
+#accounts-page div[role='tabpanel'] { 
+  margin-right: 0 !important; /* Somehow this margin exists, and now it is 0! */
+}
+/* End of Accounts Page / Page Tabs */
+
+
+
+/* Accounts Page /  Profile Tab */
+#accounts-page #profile-tab {
+  height: var(--each-tab-height);
+  min-height: var( --each-tab-min-height );
+  --right-side-sect-height: calc(( var(--each-tab-height) - 4rem ) / 3 );
+  --right-side-sect-min-height: calc(( var(--each-tab-min-height) - 4rem ) / 3 );
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding: 1rem;
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+#accounts-page #profile-tab #form-section-box {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+#accounts-page #profile-tab #form-section-box #form-section {
+  border-bottom-left-radius: 1rem;
+  padding: 1rem 1rem 0 1rem;
+}
+
+#accounts-page #profile-tab #form-section-box .input-label {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+}
+#accounts-page #profile-tab #form-section-box input,
+#accounts-page #profile-tab #form-section-box select {
+  width: 20rem;  /* 23rem */
+  height: 1.5rem;
+  /* background-color: rgb(255, 255, 255) !important; */
+  margin-bottom: 0.75rem;
+  font-size: .9rem;
+  line-height: 1rem;
+  padding-top: 0;
+  padding-left: 0.25rem;
+}
+#accounts-page #profile-tab #form-section-box  input[type="date"] {
+    /* position: relative;
+    left: 9.5rem;
+    top: -1.55rem; */
+    /* width: 7.5rem; */
+    color: rgb(73, 80, 87);
+    font-size: .8rem;
+    line-height: 1.2rem;
+    padding-top: .5px;
+    /* padding-left: .5rem; */
+    padding-right: 0;
+    padding-bottom: .5px;
+    background-clip: padding-box;
+    /* background-color: rgb(255, 255, 255);
+    border-color: rgb(206, 212, 218) !important; */
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-width: 1px;
+    -webkit-appearance: none;     
+  }
+
+#accounts-page #profile-tab #right-side {
+  padding-left: 0.5rem;
+  padding-right: 0;
+}
+
+#accounts-page #profile-tab #right-side #preferences-section {
+  height: var(--right-side-sect-height);
+  min-height: var(--right-side-sect-min-height);
+  margin-bottom: 1rem;
+}
+#accounts-page #profile-tab #right-side #fees-section {
+  height: var(--right-side-sect-height);
+  min-height: var(--right-side-sect-min-height);
+  margin-bottom: 1rem;
+}
+#accounts-page #profile-tab #right-side #resardis-club-section {
+  height: var(--right-side-sect-height);
+  min-height: var(--right-side-sect-min-height);
+  border-bottom-right-radius: 1rem;
+}
+#accounts-page #profile-tab #right-side .title-row {
+  display: block;
+}
+#accounts-page #profile-tab #right-side .title-row {
+  display: block;
+  height: 1.75rem;
+  margin-bottom: 1rem;
+}
+#accounts-page #profile-tab #right-side .title-row .section-title {
+  display: inline-block;
+  width: 12rem;
+  height: 1.75rem;
+  line-height: 1.75rem;
+  padding-left: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+
+#accounts-page #profile-tab #right-side .section-label {
+  padding-left: 2rem;
+  line-height: 1.5rem;
+  font-size: 0.9rem;
+}
+#accounts-page #profile-tab #right-side .section-action {
+  display: inline-block;
+  /* background-color: blue; */
+  width: 40%;
+  margin-right: 2rem;
+}
+
+#accounts-page #profile-tab #right-side .section-action,
+#accounts-page #profile-tab #right-side .section-action input,
+#accounts-page #profile-tab #right-side .section-action select {
+  height: 1.5rem;
+  /* background-color: rgb(255, 255, 255) !important; */
+  margin-bottom: 0.75rem;
+  font-size: .9rem;
+  line-height: 1rem;
+  padding-top: 0;
+  padding-left: 0.25rem;
+}
+
+
+/* -------------- Accounts Page / Accounts History Tab   */
+
+#accounts-page #account-history-tab {
+  height: var(--each-tab-height);
+  min-height: var( --each-tab-min-height );
+  --right-side-sect-height: calc(( var(--each-tab-height) - 4rem ) / 3 );
+  --right-side-sect-min-height: calc(( var(--each-tab-min-height) - 4rem ) / 3 );
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  padding:  0.5rem 0 0 0;
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+#accounts-page #account-history-tab form {
+  display: inline-block;
+}
+#accounts-page #account-history-tab #buttons-bar {
+  height: 2.25rem !important;
+}
+#accounts-page #account-history-tab #buttons-bar input {
+  display: inline-block;
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: .5px;
+  padding-left: .5rem;
+  padding-right: 0;
+  padding-bottom: .5px;
+  height: 2rem;
+}
+#accounts-page #account-history-tab #buttons-bar #find-an-action input {
+  /* width: 7.5rem; */
+}
+
+#accounts-page #account-history-tab #buttons-bar input[type='date'] {  
+  /* position: relative; */
+  left: 9.5rem;
+  top: -1.55rem;
+  width: 7.5rem;
+  width: calc(( (100% - 38rem) * (4.6 / 38) ) + 4.6rem - 1rem );
+  margin-left: .5rem;
+  margin-right: .5rem;
+  color: rgb(73, 80, 87);
+  font-size: .8rem;
+  line-height: 1.2rem;
+  padding-top: .5px;
+  padding-left: .5rem;
+  padding-right: 0;
+  padding-bottom: .5px;
+  background-clip: padding-box;
+  background-color: rgb(255, 255, 255);
+  border-color: rgb(206, 212, 218) !important;
+  border-radius: 0.25rem;
+  border-style: solid;
+  border-width: 1px;
+  -webkit-appearance: none; 
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-an-action {
+  width: calc(( (100% - 38rem) * (6 / 38) ) + 6rem - 0.5rem  );
+  margin-left: 0.5rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-an-action input {
+  width: calc( 100% - 1rem );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-an-area {
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem - 0.5rem );
+  /* margin-left: 0.5rem ; */
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-an-area input {
+  width: calc( 100% - 1rem );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-a-subject {
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 4.75rem  );
+  margin-left: 0.5rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-a-subject input {
+  width: calc( 100% - 1rem );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-an-info {
+  width: calc(( (100% - 38rem) * (16 / 38) ) + 14rem );
+  margin-left: 0.5rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-an-info input {
+  width: 9rem;
+  margin-left: calc( (100% - 11rem) * 0.5 );
+}
+
+#accounts-page #account-history-tab #buttons-bar  form#find-a-status {
+  width: calc(( (100% - 38rem) * (4 / 38) ) + 4.1rem  );
+  margin-left: 0.3rem ;
+}
+#accounts-page #account-history-tab #buttons-bar  form#find-a-status input {
+  width: calc( 100% - 1rem );
+}
+#accounts-page #account-history-tab #buttons-bar form span {
+  position: relative;
+  right: 1.15rem;
+  top: .25rem;
+}
+
+/* -------------- Accounts Page / Accounts History Tab / Table */
+
+
+#accounts-page #account-history-tab table {
+  height: calc( var(--each-tab-height) - 2.75rem - var(--border-bottom-height)  ) ;
+  min-height: calc( var(--each-tab-min-height) - 2.75rem - var(--border-bottom-height)  );
+  
+}
+
+#accounts-page #account-history-tab table  thead,
+#accounts-page #account-history-tab table  thead tr,
+#accounts-page #account-history-tab table  thead th {
+  height: var(--table-head-height) !important; 
+  
+}
+
+#accounts-page #account-history-tab table  tbody,
+#accounts-page #account-history-tab table  thead {  
+  display:block;
+}
+#accounts-page #account-history-tab table tbody {
+  overflow-y: scroll !important;
+  height: calc( var(--each-tab-height) - 2.75rem - var(--border-bottom-height) - var(--table-head-height)   ) ;
+  min-height: calc( var(--each-tab-min-height) - 2.75rem - var(--border-bottom-height) - var(--table-head-height)  );
+}
+
+#accounts-page #account-history-tab table tbody tr,
+#accounts-page #account-history-tab table tbody td {
+  height: calc( (25.59/16) * 1rem ) !important; 
+}
+
+
+#accounts-page #account-history-tab table tr {
+  display:block;
+  width: 100%;
+}
+#accounts-page #account-history-tab table th {
+  display:inline-block;
+}
+#accounts-page #account-history-tab table td {
+  display:inline-block;
+}
+
+#accounts-page #account-history-tab table .col-date {
+  /* width: 4.6rem; */
+  width: calc(( (100% - 38rem) * (4.6 / 38) ) + 4.6rem ) ;
+}
+#accounts-page #account-history-tab table .col-action {
+  /* width: 6rem; */
+  width: calc(( (100% - 38rem) * (6 / 38) ) + 6rem ) ;
+}
+#accounts-page #account-history-tab table .col-area {
+  /* width: 3.7rem; */
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem );
+}
+#accounts-page #account-history-tab table .col-subject {
+  /* width: 3.7rem; */
+  width: calc(( (100% - 38rem) * (3.7 / 38) ) + 3.7rem );
+}
+#accounts-page #account-history-tab table .col-info {
+  /* width: 16rem; */
+  width: calc(( (100% - 38rem) * (16 / 38) ) + 16rem );
+}
+#accounts-page #account-history-tab table .col-status {
+  width: 4rem;
+  width: calc(( (100% - 38rem) * (4 / 38) ) + 4rem );
+}
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------End of Accounts Page---------------------------------------*/
+
+
+
+
+
+
+
 
 
 

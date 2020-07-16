@@ -7,8 +7,8 @@ import AppNavbar from './components/layout/AppNavbar';
 import Home from './components/home/Home';
 import { AppFooter } from './components/layout/AppFooter';
 import { FundsPage } from './components/funds/FundsPage';
-import  TestPage  from './components/test-page/TestPage';
-import LoginPage from './components/login/LoginPage';
+import  LoginPage  from './components/loginPage/LoginPage';
+// import LoginPage from './components/login/LoginPage';
 import CreateAccount from './components/login/CreateAccount';
 import  CreateAccountByPasswordPage  from './components/login/CreateAccountByPasswordPage';
 import { CreateAccountByWallet } from './components/login/CreateAccountByWallet';
@@ -34,7 +34,7 @@ const App = () => {
             <Switch>
               <Route exact path='/' component={Home} />
               <Route exact path='/funds' component={FundsPage} />
-              <Route exact path='/test-page' component={TestPage} />
+              {/* <Route exact path='/test-page' component={TestPage} /> */}
               <Route exact path='/login' component={LoginPage} />
               <Route exact path='/create-account' component={CreateAccount} />
               <Route

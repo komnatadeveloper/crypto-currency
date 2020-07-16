@@ -1,0 +1,8 @@
+{
+    "networks": [
+      { "name": "maticMumbai", "chainId": 80001 },
+      { "name": "matic", "chainId": 137 }
+    ],
+    "defaultNetwork": { "name": "maticMumbai", "chainId": 80001 }
+  }
+  

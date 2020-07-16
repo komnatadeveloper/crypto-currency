@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from "react-redux";
+import  {
+  ethers
+}  from 'ethers';
 import {
   Button, Modal
 } from 'react-bootstrap'
@@ -11,12 +14,21 @@ import {
   // createLoomAndEthKeys
 } from '../../actions/testActions';
 
+import {
+  connectToWallet
+} from '../../actions/walletActions'
+
 import Portis from '@portis/web3';
 import Web3 from 'web3';
 
 
 
-const TestPage = ({
+const LoginPage = ({
+  // from reducers
+  walletAccount,
+  // from actions
+  connectToWallet,
+  // history
   history
 }) => {
 
@@ -39,21 +51,47 @@ const TestPage = ({
       switch (walletOption) {
 
         case 'portis':
-          const _portis = new Portis('45b0f39e-0d65-43e4-8e67-3a58c16b3da3', 'mainnet');
-          const _web3 = new Web3(_portis.provider)
-          setPortis( 
-            _portis 
-          );
-          setWeb3(
-            _web3
-          );
-          _web3.eth.getAccounts()
-            .then( (accounts) => {
-              console.log('TestPage -> getAccounts -> accounts ->', accounts)
-              setAccount(
-                accounts[0]
-              );
-            } )
+          
+          // // const _portis = new Portis('45b0f39e-0d65-43e4-8e67-3a58c16b3da3', 'mainnet');
+          // const _portis = new Portis('45b0f39e-0d65-43e4-8e67-3a58c16b3da3', 'maticTestnet');
+          // const _web3 = new Web3(_portis.provider)
+          // // Ethers.js
+          // const provider = new ethers.providers.Web3Provider(_portis.provider);
+          // let network;
+          // provider.getNetwork()
+          //   .then( res => { //then-1
+          //     network = res;
+
+
+
+          //     console.log("network: ",  network);
+          //     console.log("provider: ", provider);
+
+          //     provider.listAccounts().then(
+          //       (accounts) => {  //  then-2
+          //         console.log("Accounts from provider: ", accounts);
+
+          //           // setPortis( 
+          //           //   _portis 
+          //           // );
+          //           // setWeb3(
+          //           //   _web3
+          //           // );
+          //           _web3.eth.getAccounts()
+          //           .then( (accounts) => {  // then-3
+          //             console.log('TestPage -> getAccounts -> accounts ->', accounts)
+          //             setAccount(
+          //               accounts[0]
+          //             );
+          //           } // end of then-3
+          //         );
+          //       }  // end of then-2
+          //     );
+
+
+          //   }  // end of then-1
+          // )
+          connectToWallet()
           break;
         default:
           break;
@@ -61,6 +99,12 @@ const TestPage = ({
     }, 
     [walletOption]
   )
+
+  useEffect(  () => {
+    if(walletAccount ) {
+      history.push('/')
+    }
+  }, [walletAccount]);
 
 
 
@@ -110,18 +154,16 @@ const TestPage = ({
 }
 
 const mapStateToProps = state => ({
-  testReducer: state.testReducer
+  // testReducer: state.testReducer,
+  walletAccount: state.walletReducer.walletAccount
 });
 
 export default connect(
   mapStateToProps, 
   { 
-    // createLoomChain , 
-    // createEthChain ,
-    // // makeEtheriumWallet,
-    // // makeLoomWallet , 
-    // createLoomAndEthKeys
+    connectToWallet,
+    
   } 
-  ) (TestPage)
+  ) (LoginPage)
 
-// export default TestPage
+

@@ -2,17 +2,15 @@ import React, {useState} from 'react'
 import { connect } from "react-redux";
 import { OverlayTrigger, Tooltip,  Form, Button } from "react-bootstrap";
 
-import {
-   handleRegisterByEmailPassword 
-  } from '../../actions/testActions'
+
 
 
 
 import UserBiggerImage from "../../images/registration/account.svg";
 
 const CreateAccountByPasswordPage = ( {
-  testReducer,
-  handleRegisterByEmailPassword
+
+
 } ) => {
 
   const [email, setEmail] = useState('')
@@ -116,10 +114,7 @@ const CreateAccountByPasswordPage = ( {
           <Button 
             variant='info'
             onClick={ () => {
-              handleRegisterByEmailPassword({
-                email, 
-                password: password1
-              });
+
             }}
           >
               Continue
@@ -132,12 +127,12 @@ const CreateAccountByPasswordPage = ( {
 
 
 const mapStateToProps = state => ({
-  testReducer: state.testReducer
+  // testReducer: state.testReducer
 });
 
 export default connect(
   mapStateToProps,
   {
-    handleRegisterByEmailPassword
+    // some actions here
   }
 )(CreateAccountByPasswordPage)

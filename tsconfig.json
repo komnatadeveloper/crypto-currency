@@ -16,16 +16,11 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
     "jsx": "react",
-    "outDir": "src/utils/loom",
-    "rootDir": "utils/loom",
-    "sourceMap": true
+    "sourceMap": true,
+    "noEmit": true
   },
   "include": [
-    "utils/loom"
-  ],
-  "exclude": [
     "src"
   ]
 }

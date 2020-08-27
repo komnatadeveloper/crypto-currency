@@ -54,7 +54,7 @@ export const FundsPage = () => {
             borderTopLeftRadius: "10px"
           }}
         >
-          <p className='text-white'>{a.toString()}</p>
+          {/* <p className='text-white'>{a.toString()}</p> */}
           <Assets />
         </Tab>
 

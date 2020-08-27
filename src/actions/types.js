@@ -1,3 +1,6 @@
 export const LOOM_CHAIN_CREATED = "LOOM_CHAIN_CREATED";
 export const ETH_CHAIN_CREATED = "ETH_CHAIN_CREATED";
 export const KEYS_CREATED = "KEYS_CREATED";
+
+// Wallet Actions
+export const CONNECTED_TO_WALLET = "CONNECTED_TO_WALLET";
